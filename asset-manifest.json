@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.1a74b4a7.css",
+    "main.js": "/portfolio/static/js/main.9c4a4acd.js",
+    "static/media/music.mp3": "/portfolio/static/media/music.3b72ad636651834d29a3.mp3",
+    "static/media/project-phone-chatting.png": "/portfolio/static/media/project-phone-chatting.2f77d84f247e5b5f653e.png",
+    "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.1bb707ab25478e147a97.jpg",
+    "static/media/chair.png": "/portfolio/static/media/chair.8f55e7447f4b2a94e0cc.png",
+    "static/media/keyboard.png": "/portfolio/static/media/keyboard.bda04743fdd727b25b18.png",
+    "static/media/floor.jpg": "/portfolio/static/media/floor.803801d21e5dac50a9c0.jpg",
+    "static/media/table-texture.jpg": "/portfolio/static/media/table-texture.309fab70a6c9a3bde01f.jpg",
+    "static/media/speaker.png": "/portfolio/static/media/speaker.425f745f6a8d81347873.png",
+    "static/media/monitor.png": "/portfolio/static/media/monitor.350f0bb2ba435ccf9b3e.png",
+    "static/media/chair-move.mp3": "/portfolio/static/media/chair-move.289b8beac7ce0e1777b9.mp3",
+    "static/media/project-soon.png": "/portfolio/static/media/project-soon.54e34609db6944950ae1.png",
+    "static/media/mouse.png": "/portfolio/static/media/mouse.68274d48cfda92a338b9.png",
+    "static/media/chair-back.mp3": "/portfolio/static/media/chair-back.c4e9e2126b99c831f49d.mp3",
+    "static/media/metal-wall.jpg": "/portfolio/static/media/metal-wall.48cc17a2555b5ba765ee.jpg",
+    "static/media/keyboard-click.mp3": "/portfolio/static/media/keyboard-click.5e3edc7e3f83eca31529.mp3",
+    "static/media/paper-hover.mp3": "/portfolio/static/media/paper-hover.8e346d92e4e64b8e9461.mp3",
+    "static/media/drop.mp3": "/portfolio/static/media/drop.a56ef2b5043b7da8afcd.mp3",
+    "static/media/tap.mp3": "/portfolio/static/media/tap.f83ca8bc0f7e879193b4.mp3",
+    "static/media/mouse-click.mp3": "/portfolio/static/media/mouse-click.72139eba454624d67268.mp3",
+    "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
+    "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
+    "index.html": "/portfolio/index.html",
+    "main.1a74b4a7.css.map": "/portfolio/static/css/main.1a74b4a7.css.map",
+    "main.9c4a4acd.js.map": "/portfolio/static/js/main.9c4a4acd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a74b4a7.css",
+    "static/js/main.9c4a4acd.js"
+  ]
+}
