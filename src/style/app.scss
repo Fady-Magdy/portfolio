@@ -164,6 +164,7 @@ body {
     transform: scale(0.25) translate(20px, -40%) rotate(0deg);
     box-shadow: 200px 200px 80px rgba(0, 0, 0, 0.3);
     filter: brightness(1.2);
+    z-index: 3;
     .item-title {
       opacity: 1;
       top: -200px;
@@ -367,8 +368,8 @@ body {
 @media (max-width: 767px) {
   .app {
     &::after {
-      content: "";
-      transform: scale(0.8);
+      left: 300px;
+      top: -450px;
     }
     .office {
       .chair {
@@ -420,6 +421,11 @@ body {
 }
 @media (max-width: 480px) {
   .app {
+    &::after {
+      left: 200px;
+      top: -450px;
+    }
+
     .playMusic {
       width: 40px;
       height: 40px;
@@ -430,7 +436,8 @@ body {
     .office {
       .chair {
         width: 30vw;
-        top: 180px;
+        top: 50% !important;
+        left: 10% !important;
         &:hover {
           transform: translate(10px, 50px) rotate(-20deg);
         }
@@ -439,7 +446,8 @@ body {
         }
       }
       .table {
-        width: 400px;
+        width: 450px !important;
+        height: 40vw;
         animation: table-shadow-mobile 3s infinite alternate;
         .monitor {
           &::before {
@@ -453,11 +461,25 @@ body {
         .mouse {
           right: 25vw;
         }
+        .phone {
+          &.noScale {
+            transform: scale(0.6) translate(-70%, -81%) rotate(-90deg) !important;
+          }
+        }
+        .note {
+          &.noScale {
+            transform: scale(0, 7) translate(-50%, -50%) rotate(-90deg);
+          }
+        }
       }
     }
+  }
+}
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 768px) {
+  .app {
     &::after {
-      content: "";
-      transform: scale(0.65);
+      left: 400px;
+      top: -450px;
     }
   }
 }
@@ -466,27 +488,77 @@ body {
     .playMusic {
       transform: rotate(90deg);
       left: 20px;
-      bottom: 20px;
+      top: 20px;
     }
     .office {
+      transform: scale(1.2);
+      margin-right: 50px;
       .chair {
         top: 50%;
         left: 20vw;
         transform: translate(20px, -50%) rotate(90deg);
         &:hover {
-          transform: translate(-50px, -40%) rotate(70deg);
+          transform: translate(-30px, -40%) rotate(70deg);
         }
       }
       .table {
+        border-radius: 7px;
+        width: 80vw;
+        height: 40vw;
         top: 50%;
         transform: translate(10%, -70%) rotate(90deg);
+        .background-darkening-table {
+          border-radius: 7px;
+        }
         .phone,
         .note {
+          &.hover:hover {
+            box-shadow: 100px 100px 60px rgba(0, 0, 0, 0.3);
+          }
+          &.scale {
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+            top: calc(50% - 15vw);
+          }
           &.noScale {
             top: 50%;
-            left: 50%;
-            transform: scale(0.8) translate(-56%, -56%) rotate(-90deg);
+            left: 45%;
+            transform: scale(0.8) translate(-55%, -60%) rotate(-90deg);
+            .note-inside {
+              h1 {
+                font-size: 20px;
+              }
+              p {
+                font-size: 12px;
+              }
+            }
           }
+        }
+        .note {
+          &.noScale {
+            width: 300px;
+            transform: scale(1) translate(-50%, -50%) rotate(-90deg);
+            .note-inside {
+              padding: 20px;
+              h1 {
+                font-size: 17px;
+              }
+              span {
+                font-size: 16px;
+              }
+              i {
+                font-size: 30px;
+              }
+              p {
+                margin: 20px 0;
+              }
+            }
+          }
+        }
+        .keyboard {
+          left: 37%;
+        }
+        .mouse {
+          right: 35%;
         }
       }
     }

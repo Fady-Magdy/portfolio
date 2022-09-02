@@ -73,7 +73,8 @@ function App() {
           )}
         </div>
         <Table PlayMusic={PlayMusic} musicOn={musicOn} PlayAudio={PlayAudio} />
-        <audio ref={musicRef} src={Music} loop></audio>
+      </div>
+      <audio ref={musicRef} src={Music} loop></audio>
         <button className="playMusic" onClick={PlayMusic}>
           {musicOn ? (
             <span className="material-symbols-outlined">pause_circle</span>
@@ -81,7 +82,6 @@ function App() {
             <span className="material-symbols-outlined">play_circle</span>
           )}
         </button>
-      </div>
       {openingShow && <Openingshow />}
     </div>
   );
