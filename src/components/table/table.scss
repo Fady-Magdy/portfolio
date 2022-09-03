@@ -49,22 +49,31 @@ $table-border-radius: 15px;
 
   .monitor {
     width: 40vw;
-    min-width: 270px;
+    min-width: 250px;
     position: absolute;
     top: -80px;
     left: 50%;
     transform: translateX(-50%);
+
     .monitor-screen {
       position: absolute;
-      top: 19%;
+      top: 40%;
       left: 50%;
-      transform: translate(-50%);
-      clip-path: polygon(0% 0%, 100% 0%, 88% 100%, 12% 100%);
-      width: 700px;
-      height: 115px;
-      background-color: black;
-      display: none;
+      transform: translate(-50%, -50%) perspective(400px) rotateX(-45deg);
+      width: 80%;
+      height: 55%;
+      transition: 0.4s;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+      background-color: #000;
+      video {
+        width: 100%;
+      }
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -76,6 +85,20 @@ $table-border-radius: 15px;
     }
     img {
       width: 100%;
+      clip-path: polygon(
+        2% 13%,
+        99% 13%,
+        84% 65%,
+        60% 65%,
+        61% 83%,
+        39% 83%,
+        40% 65%,
+        15% 65%
+      );
+      cursor: pointer;
+      &:hover {
+        filter: brightness(1.2);
+      }
     }
   }
   .keyboard {
@@ -87,6 +110,7 @@ $table-border-radius: 15px;
     bottom: 10%;
     left: 30vw;
     transform: translateX(-50%);
+    z-index: 1;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
     cursor: pointer;
     &:hover {
@@ -97,37 +121,48 @@ $table-border-radius: 15px;
       height: 100%;
     }
   }
-  .mouse {
-    width: 4vw;
-    min-width: 20px;
+  .mouse-pad {
+    width: 10vw;
+    min-width: 50px;
     position: absolute;
-    bottom: 10%;
-    right: 20vw;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-    &:hover {
-      filter: brightness(1.2);
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 20%;
-      left: 33%;
-      z-index: -1;
-      border-radius: 20px;
-      width: 40%;
-      height: 60%;
-      box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.644);
-    }
+    bottom: 7%;
+    right: 17vw;
+
     img {
-      width: 160%;
+      width: 100%;
+    }
+    .mouse {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4vw;
+      min-width: 20px;
+      transform: translate(-50% , -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(1.2);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 33%;
+        z-index: -1;
+        border-radius: 20px;
+        width: 40%;
+        height: 60%;
+        box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.644);
+      }
+      img {
+        width: 160%;
+      }
     }
   }
-  .speaker  {
+  .speaker {
     width: 10%;
     min-width: 45px;
     position: absolute;
