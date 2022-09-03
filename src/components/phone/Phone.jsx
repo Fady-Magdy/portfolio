@@ -46,17 +46,21 @@ export default function Phone(props) {
           setTimeout(() => {
             props.PlayAudio(drop);
           }, 220);
+          props.setItemInUse(false)
         }
       }}
       onClick={(e) => {
-        setScale(false);
-        setHover(false);
-        if (!entered) {
-          props.PlayAudio(tap);
+        if (!props.itemInUse) {
+          setScale(false);
+          setHover(false);
+          if (!entered) {
+            props.PlayAudio(tap);
+          }
+          setTimeout(() => {
+            e.target.onMouseEnter = setEntered(true);
+          }, 400);
+          props.setItemInUse(true)
         }
-        setTimeout(() => {
-          e.target.onMouseEnter = setEntered(true);
-        }, 400);
       }}
       ref={phone}
       className={`phone ${scale ? "scale" : "noScale"} ${hover ? "hover" : ""}`}

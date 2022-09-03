@@ -16,6 +16,7 @@ function App() {
   const musicRef = useRef(null);
   const [secretMsg, setSecretMsg] = useState(false);
   const [secretUsed, setSecretUsed] = useState(false);
+  const [itemInUse , setItemInUse] = useState(false)
   const PlayMusic = () => {
     musicRef.current.volume = 0.1;
     if (musicOn) {
@@ -73,7 +74,7 @@ function App() {
             </div>
           )}
         </div>
-        <Table PlayMusic={PlayMusic} musicOn={musicOn} PlayAudio={PlayAudio} />
+        <Table itemInUse={itemInUse} setItemInUse={setItemInUse} PlayMusic={PlayMusic} musicOn={musicOn} PlayAudio={PlayAudio} />
         </div>
       </div>
       <audio ref={musicRef} src={Music} loop></audio>

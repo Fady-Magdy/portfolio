@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import React from "react";
 import Note from "../note/Note";
+import Book from "../book/Book";
 import Phone from "../phone/Phone";
 import "./table.scss";
 
@@ -15,14 +16,20 @@ import video from "../../images/video.mp4";
 import tableKnock from "../../audio/table-knock.mp3";
 import keyboardClick from "../../audio/keyboard-click.mp3";
 import mouseClick from "../../audio/mouse-click.mp3";
+import { useEffect } from "react";
 
 export default function Table(props) {
   const videoRef = useRef();
-  const [videoOn, setVideoOn] = useState(true);
+  const [videoOn, setVideoOn] = useState(false);
   function videoPlay() {
     videoOn ? videoRef.current.pause() : videoRef.current.play();
     setVideoOn(!videoOn);
   }
+  useEffect(() => {
+    setTimeout(() => {
+      setVideoOn(true);
+    }, 5000);
+  }, []);
   return (
     <div className="table">
       <div
@@ -33,13 +40,16 @@ export default function Table(props) {
       ></div>
       <div className="monitor">
         <div className="monitor-screen">
-          <video
-            ref={videoRef}
-            src={video}
-            loop
-            autoPlay={videoOn ? "autoplay" : ""}
-            muted
-          ></video>
+          <h1>Fady Magdy</h1>
+          {videoOn && (
+            <video
+              ref={videoRef}
+              src={video}
+              loop
+              autoPlay={videoOn ? "autoplay" : ""}
+              muted
+            ></video>
+          )}
         </div>
         <img src={Monitor} alt="" draggable="false" onClick={videoPlay} />
       </div>
@@ -51,19 +61,17 @@ export default function Table(props) {
       >
         <img src={Keyboard} alt="" draggable="false" />
       </div>
-      <div
-        className="mouse-pad">
+      <div className="mouse-pad">
         <img src={mousePad} alt="" draggable="false" />
         <div
-        className="mouse"
-        onClick={() => {
-          props.PlayAudio(mouseClick);
-        }}
-      >
-        <img src={mouse} alt="" draggable="false" />
+          className="mouse"
+          onClick={() => {
+            props.PlayAudio(mouseClick);
+          }}
+        >
+          <img src={mouse} alt="" draggable="false" />
+        </div>
       </div>
-    </div>
-
       <div className="speaker speaker-right" onClick={props.PlayMusic}>
         <img src={speaker} alt="" draggable="false" />
         <div className={` ${props.musicOn && "sound-wave"}`}>
@@ -78,8 +86,21 @@ export default function Table(props) {
           <div className="circle circle2 "></div>
         </div>
       </div>
-      <Phone PlayAudio={props.PlayAudio} />
-      <Note PlayAudio={props.PlayAudio} />
+      <Phone
+        PlayAudio={props.PlayAudio}
+        itemInUse={props.itemInUse}
+        setItemInUse={props.setItemInUse}
+      />
+      <Book
+        PlayAudio={props.PlayAudio}
+        itemInUse={props.itemInUse}
+        setItemInUse={props.setItemInUse}
+      />
+      <Note
+        PlayAudio={props.PlayAudio}
+        itemInUse={props.itemInUse}
+        setItemInUse={props.setItemInUse}
+      />
     </div>
   );
 }
