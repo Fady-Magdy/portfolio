@@ -34,12 +34,13 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setOpeningShow(false);
-    }, 3000);
+    }, 2950);
   }, [openingShow]);
 
   return (
     <div className="app">
       <div className="office">
+        <div className="office-inside">
         <div className="background">
           <div className="background-darkening-floor"></div>
         </div>
@@ -73,6 +74,7 @@ function App() {
           )}
         </div>
         <Table PlayMusic={PlayMusic} musicOn={musicOn} PlayAudio={PlayAudio} />
+        </div>
       </div>
       <audio ref={musicRef} src={Music} loop></audio>
         <button className="playMusic" onClick={PlayMusic}>

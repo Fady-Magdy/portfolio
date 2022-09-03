@@ -86,14 +86,14 @@ export default function Phone(props) {
               title="Phone Chatting"
               projectLink="https://fady-magdy.github.io/Phone-Chatting-v2/"
               projectCode="https://github.com/Fady-Magdy/Phone-Chatting-v2"
-              description="A phone chatting app i created using Vanilla JavaScript ( first Published )"
+              description="A Phone Chatting app i created using Vanilla JavaScript ( First Published )"
             />
             <Project
               image={project2}
               title="Notes"
               projectLink="https://fady-magdy.github.io/Notes/"
               projectCode="https://github.com/Fady-Magdy/Notes"
-              description="Tihs project is not ready but i'm working on it"
+              description="This project is not ready but i'm working on it"
             />
             <Project
               image={project3}
