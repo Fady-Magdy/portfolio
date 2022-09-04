@@ -20,14 +20,15 @@ import { useEffect } from "react";
 
 export default function Table(props) {
   const videoRef = useRef();
-  const [videoOn, setVideoOn] = useState(false);
+  const [videoOn, setVideoOn] = useState(true);
+  const [videoStart, setVideoStart] = useState(false);
   function videoPlay() {
     videoOn ? videoRef.current.pause() : videoRef.current.play();
     setVideoOn(!videoOn);
   }
   useEffect(() => {
     setTimeout(() => {
-      setVideoOn(true);
+      setVideoStart(true);
     }, 5000);
   }, []);
   return (
@@ -41,7 +42,7 @@ export default function Table(props) {
       <div className="monitor">
         <div className="monitor-screen">
           <h1>Fady Magdy</h1>
-          {videoOn && (
+          {videoStart && (
             <video
               ref={videoRef}
               src={video}

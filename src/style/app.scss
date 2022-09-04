@@ -175,7 +175,7 @@ body {
   }
 
   &.hover:hover {
-    transform: scale(0.25) translate(20px, -40%) rotate(0deg);
+    transform: scale(0.25) translate(20px, -30%) rotate(0deg);
     box-shadow: 200px 200px 80px rgba(0, 0, 0, 0.3);
     filter: brightness(1.2);
     z-index: 2;
@@ -202,13 +202,12 @@ body {
 
   &.scale {
     transition: 0.3s;
-    box-shadow: 35px 30px 10px rgba(0, 0, 0, 0.7);
-    top: calc(80% - 30vw);
+    box-shadow: 20px 15px 10px rgba(0, 0, 0, 0.7);
+    top: calc(85% - 27vw);
     left: 65%;
     z-index: 1;
     cursor: pointer;
-    &.note,
-    &.book {
+    &.note {
       box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.7);
     }
     .screen-content {
@@ -287,6 +286,30 @@ body {
     }
   }
 }
+@media (max-width : 1300px) {
+  .app {
+    .office {
+      .office-inside {
+        .table {
+          .speaker {
+            &::before {
+              border-radius: 8px;
+              width: 50%;
+              top: 36%;
+              left: 20%;
+              box-shadow: 20px -1px 10px 10px rgba(0, 0, 0, 0.7);
+            }
+          }
+          .speaker-left {
+            &::before {
+              box-shadow: 20px 5px 10px 10px rgba(0, 0, 0, 0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 1024px) {
   .app {
     .office {
@@ -322,15 +345,19 @@ body {
           .speaker {
             left: 90%;
             &::before {
-              border-radius: 10px;
+              border-radius: 5px;
               width: 50%;
               top: 36%;
               left: 20%;
+              box-shadow: 15px -1px 5px 10px rgba(0, 0, 0, 0.7);
             }
           }
           .speaker-left {
             left: 10%;
             transform: rotate(-15deg) translateX(-50%);
+            &::before {
+              box-shadow: 15px 3px 5px 10px rgba(0, 0, 0, 0.7);
+            }
           }
           .phone,
           .note ,
@@ -441,6 +468,8 @@ body {
             &::before {
               border-radius: 5px;
               left: 5%;
+              width: 40%;
+              box-shadow: 30px -1px 5px 10px rgba(0, 0, 0, 0.7);
             }
             .sound-wave {
               .circle {
@@ -453,6 +482,7 @@ body {
             &::before {
               top: 30%;
               left: 15%;
+              box-shadow: 20px 7px 5px 10px rgba(0, 0, 0, 0.7);
             }
           }
         }
@@ -476,9 +506,10 @@ body {
     }
     .office {
       .office-inside {
+        transform: scale(1.3);
         .chair {
           width: 30vw;
-          top: 50% !important;
+          top: 52% !important;
           left: 10% !important;
           &:hover {
             transform: translate(10px, 50px) rotate(-20deg);
@@ -507,6 +538,12 @@ body {
           }
           .mouse-pad {
             right: 30vw;
+          }
+          .speaker {
+            &::before {
+              width: 40%;
+              box-shadow: 15px -1px 5px 10px rgba(0, 0, 0, 0.7);
+            }
           }
           .phone {
             &.noScale {
@@ -572,18 +609,11 @@ body {
             }
             &.scale {
               box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
-              top: calc(50% - 18vw);
             }
             &.noScale {
               top: 60%;
               left: 45%;
               transform: scale(0.8) translate(-55%, -60%) rotate(-90deg);
-            }
-          }
-          .note , .book {
-            &.noScale {
-              top: 35%;
-              transform: scale(0.8) translate(-50%, -50%) rotate(-90deg);
             }
           }
           .keyboard {

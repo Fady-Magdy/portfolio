@@ -71,6 +71,7 @@ export default function Book(props) {
           <p>GitHub</p>
         </span>
       </div>
+      <p className="description">this is a list of the important skills and tech i've learned, Im very excited to learn more</p>
     </div>
   );
 }
