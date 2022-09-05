@@ -9,7 +9,6 @@
   z-index: 2;
   color: #333;
   cursor: default;
-
   .note-inside {
     width: 100%;
     height: 100%;
@@ -102,7 +101,17 @@ p::selection {
     &.scale {
       top: 20%;
       left: -5%;
-      font-size: 1.1vw;
+      .note-inside {
+        font-size: 1.1vw;
+        .note-links {
+          a {
+            margin: 1.5vw;
+            i {
+              font-size: 3vw;
+            }
+          }
+        }
+      }
     }
     &.noScale {
       margin-top: 20px;
@@ -110,6 +119,9 @@ p::selection {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 450px;
+      * {
+        transition: 0.1s;
+      }
     }
   }
 }

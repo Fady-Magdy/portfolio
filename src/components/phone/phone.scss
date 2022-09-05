@@ -90,6 +90,7 @@
           font-size: 18px;
           font-weight: 800;
           position: relative;
+          padding: 5px;
           &::after {
             content: "Time";
             position: absolute;
@@ -102,13 +103,13 @@
             align-items: center;
             background-color: #fff;
             color: #000;
-            border-radius: 10px;
+            border-radius: 5px;
             transition: 0.4s;
             opacity: 0;
           }
           &:hover {
             &::after {
-              transform: scale(1) translateY(-30px);
+              transform: scale(1) translateY(-20px);
               opacity: 1;
             }
           }
@@ -126,6 +127,7 @@
             height: auto;
             padding: 0;
             overflow: hidden;
+            border-bottom: 2px solid rgb(194, 194, 194);
             img {
               width: 100%;
               transition: 0.7s;
@@ -142,6 +144,17 @@
           background-color: rgba(131, 131, 131, 0.336);
           border: 5px solid #fff;
           color: #fff;
+        }
+        .project-section-title {
+          font-size: 20px;
+          padding: 15px 10px;
+          width: 100%;
+          border-radius: 5px;
+          text-align: center;
+          background-color: rgb(0, 93, 231);
+        }
+        .with-mentor-title {
+          background-color:  rgb(164, 55, 207)
         }
       }
     }

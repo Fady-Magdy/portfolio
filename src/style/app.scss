@@ -202,6 +202,7 @@ body {
     transition: 0.3s;
     box-shadow: 20px 15px 10px rgba(0, 0, 0, 0.7);
     cursor: pointer;
+
     &.note {
       box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.7);
     }
@@ -215,6 +216,7 @@ body {
   }
   &.noScale {
     z-index: 5;
+
   }
   @keyframes shine {
     0% {
@@ -473,6 +475,43 @@ body {
               box-shadow: 20px 7px 5px 10px rgba(0, 0, 0, 0.7);
             }
           }
+          .book {
+            &.scale {
+              .book-inside {
+                h1 {
+                  font-size: 3vw;
+                }
+                .skills-icons {
+                  span {
+                    height: 3.5vw;
+                    i {
+                      font-size: 3.4vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .note {
+            &.scale {
+              .note-inside {
+                font-size: 0.7vw;
+                .note-item {
+                  .copy {
+                    font-size: 2vw;
+                  }
+                }
+                .note-links {
+                  a {
+                    margin: 1.2vw;
+                    i {
+                      font-size: 2.5vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -530,15 +569,51 @@ body {
               box-shadow: 15px 3px 5px 10px rgba(0, 0, 0, 0.7);
             }
           }
+          .phone,
+          .note,
+          .book {
+            .item-title {
+              font-size: 60px;
+            }
+            &:hover {
+              .item-title {
+                top: -150px;
+              }
+            }
+          }
           .phone {
+            &.scale {
+              .phone-inside {
+                .screen-content {
+                  height: 85%;
+                }
+              }
+            }
             &.noScale {
-              transform: scale(0.6) translate(-70%, -81%) rotate(-90deg) !important;
+              transform: scale(0.6) translate(-80%, -80%) rotate(-90deg) !important;
             }
           }
           .note,
           .book {
             &.noScale {
               transform: scale(0.6) translate(-80%, -78%) rotate(-90deg) !important;
+            }
+          }
+          .book {
+            &.scale {
+              .book-inside {
+                h1 {
+                  font-size: 3vw;
+                }
+                .skills-icons {
+                  span {
+                    height: 2.3vw;
+                    i {
+                      font-size: 3vw;
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -598,6 +673,12 @@ body {
             }
             &.scale {
               box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+            }
+          }
+          .phone {
+            &.noScale {
+              top: 60%;
+              transform: scale(0.8) translate(-55%, -60%) rotate(-90deg);
             }
           }
           .note,

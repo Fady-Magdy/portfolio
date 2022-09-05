@@ -4,9 +4,10 @@ import "./phone.scss";
 import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
-import project1 from "../../images/project-phone-chatting.png";
-import project2 from "../../images/project-notes.png";
-import project3 from "../../images/project-soon.png";
+import projectPhoneChatting from "../../images/projects/phone-chatting.png";
+import projectSoon from "../../images/projects/soon.png";
+import projectAdminDashboard from "../../images/projects/admin-dashboard.png";
+import projectMoviesSearch from "../../images/projects/movies-search.png";
 import Project from "../project/Project";
 export default function Phone(props) {
   const [scale, setScale] = useState(true);
@@ -23,7 +24,7 @@ export default function Phone(props) {
     AmPm = hours >= 12 ? "PM" : "AM";
     hours = hours > 12 ? hours - 12 : hours;
     hours = hours < 10 ? "0" + hours : hours;
-    hours = hours === "00" ? "12" : hours
+    hours = hours === "00" ? "12" : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     return `${hours}:${minutes} ${AmPm}`;
   }
@@ -46,7 +47,7 @@ export default function Phone(props) {
           setTimeout(() => {
             props.PlayAudio(drop);
           }, 220);
-          props.setItemInUse(false)
+          props.setItemInUse(false);
         }
       }}
       onClick={(e) => {
@@ -59,7 +60,7 @@ export default function Phone(props) {
           setTimeout(() => {
             e.target.onMouseEnter = setEntered(true);
           }, 400);
-          props.setItemInUse(true)
+          props.setItemInUse(true);
         }
       }}
       ref={phone}
@@ -85,27 +86,40 @@ export default function Phone(props) {
           </div>
           <div className="screen-content">
             <h1 className="projects">PROJECTS</h1>
+            <h1 className="project-section-title">Projects From my mind</h1>
             <Project
-              image={project1}
+              image={projectPhoneChatting}
               title="Phone Chatting"
               projectLink="https://fady-magdy.github.io/Phone-Chatting-v2/"
               projectCode="https://github.com/Fady-Magdy/Phone-Chatting-v2"
               description="A Phone Chatting app i created using Vanilla JavaScript ( First Published )"
             />
             <Project
-              image={project2}
-              title="Notes"
-              projectLink="https://fady-magdy.github.io/Notes/"
-              projectCode="https://github.com/Fady-Magdy/Notes"
-              description="This project is not ready but i'm working on it"
-            />
-            <Project
-              image={project3}
-              title="New Project Soon"
+              image={projectSoon}
+              title="Simple Music Production App"
               projectLink={false}
               projectCode={false}
               description="A new project is on the way, I'm trying to do my best"
               soon="true"
+            />
+            <h1 className="project-section-title with-mentor-title">
+              Projects Made with mentor (YouTube)
+            </h1>
+            <Project
+              image={projectAdminDashboard}
+              title="Admin Dashboard"
+              projectLink="https://fady-magdy.github.io/admin-dashboard/"
+              projectCode="https://github.com/Fady-Magdy/admin-dashboard/tree/master"
+              description="This project i made with help of YouTube channel ( Just to learn )"
+              withMentor="true"
+            />
+            <Project
+              image={projectMoviesSearch}
+              title="Movies Search"
+              projectLink="https://fady-magdy.github.io/movies-search/"
+              projectCode="https://github.com/Fady-Magdy/movies-search/tree/master"
+              description="This project i made with help of YouTube channel ( Just to learn )"
+              withMentor="true"
             />
           </div>
         </div>

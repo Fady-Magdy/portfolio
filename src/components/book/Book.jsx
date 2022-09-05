@@ -42,7 +42,7 @@ export default function Book(props) {
       ref={phone}
       className={`book ${scale ? "scale" : "noScale"} ${hover ? "hover" : ""}`}
     >
-        <div className="item-title">Skills</div>
+      <div className="item-title">Skills</div>
       <div className="book-inside">
         <div className="background-darkening-items"></div>
         <h1>Skills</h1>
@@ -73,9 +73,11 @@ export default function Book(props) {
             <p>GitHub</p>
           </span>
         </div>
-        <p className="description">this is a list of the important skills and tech i've learned, Im very excited to learn more</p>
+        <p className="description">
+          this is a list of the important skills and tech i've learned, Im very
+          excited to learn more
+        </p>
       </div>
-
     </div>
   );
 }

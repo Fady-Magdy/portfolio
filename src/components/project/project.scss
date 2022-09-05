@@ -1,7 +1,6 @@
 .project {
   width: 100%;
   border-radius: 10px;
-
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -18,7 +17,7 @@
     background-color: #fff;
     h1 {
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       display: flex;
       justify-content: space-between;
@@ -56,6 +55,21 @@
   }
 }
 .soon {
-  margin-bottom: 0;
+  margin-bottom: 40px;
   text-align: center;
+}
+.with-mentor {
+  .bottom {
+    h1 {
+      .buttons {
+        a {
+          background-color: rgb(164, 55, 207);
+          &:hover {
+            border: 2px rgb(164, 55, 207) solid;
+            color: rgb(164, 55, 207);
+          }
+        }
+      }
+    }
+  }
 }

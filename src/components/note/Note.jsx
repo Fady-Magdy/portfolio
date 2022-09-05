@@ -24,7 +24,7 @@ export default function Note(props) {
           setTimeout(() => {
             props.PlayAudio(drop);
           }, 220);
-          props.setItemInUse(false)
+          props.setItemInUse(false);
         }
       }}
       onClick={(e) => {
@@ -37,7 +37,7 @@ export default function Note(props) {
           setTimeout(() => {
             e.target.onMouseEnter = setEntered(true);
           }, 400);
-          props.setItemInUse(true)
+          props.setItemInUse(true);
         }
       }}
       ref={phone}
