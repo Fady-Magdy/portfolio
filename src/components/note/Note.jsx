@@ -45,7 +45,7 @@ export default function Note(props) {
     >
       <div className="item-title">Contact</div>
       <div className="note-inside">
-        <div className="background-darkening-phone"></div>
+        <div className="background-darkening-items"></div>
         <div className="note-content">
           <h1 className="title">Fady Magdy</h1>
           <div className="note-item">

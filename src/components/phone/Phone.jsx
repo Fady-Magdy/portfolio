@@ -69,7 +69,7 @@ export default function Phone(props) {
       <div className="phone-left-shine"></div>
       <div className="phone-right-shine"></div>
       <div className="phone-inside">
-        <div className="background-darkening-phone"></div>
+        <div className="background-darkening-items"></div>
         <div className="screen">
           <div className="top">
             <div className="signal-icons">

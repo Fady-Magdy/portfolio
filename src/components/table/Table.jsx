@@ -41,7 +41,7 @@ export default function Table(props) {
       ></div>
       <div className="monitor">
         <div className="monitor-screen">
-          <h1>Fady Magdy</h1>
+          <h1>Welcome</h1>
           {videoStart && (
             <video
               ref={videoRef}

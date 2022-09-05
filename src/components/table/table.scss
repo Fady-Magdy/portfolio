@@ -70,17 +70,17 @@ $table-border-radius: 15px;
       z-index: -1;
       background-color: #000;
       h1 {
-        font-family: "lobster" , sans-serif;
+        font-family: "lobster", sans-serif;
         position: absolute;
         width: 200px;
         text-align: center;
-        left: -10%;
+        left: -25%;
         translate: -50%;
         letter-spacing: -20px;
         animation: screen-name-move 3s 2.5s;
         @keyframes screen-name-move {
           0% {
-            left: -10%;
+            left: -25%;
             letter-spacing: -20px;
           }
           30% {
@@ -92,7 +92,7 @@ $table-border-radius: 15px;
             letter-spacing: 0;
           }
           100% {
-            left: 120%;
+            left: 150%;
             letter-spacing: -20px;
           }
         }
@@ -100,7 +100,7 @@ $table-border-radius: 15px;
       video {
         width: 100%;
         z-index: 2;
-        transform: rotateX(40deg);
+        transform: rotateX(20deg);
       }
     }
 

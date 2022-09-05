@@ -1,7 +1,6 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
 .phone {
   position: absolute;
   transform: scale(0.15) rotate(15deg);
@@ -35,7 +34,7 @@
     background: url(../../images/phone-wallpaper.jpg);
     background-size: cover;
 
-    .background-darkening-phone {
+    .background-darkening-items {
       overflow: hidden;
       position: absolute;
       border-radius: 30px;
@@ -148,9 +147,24 @@
     }
   }
 }
+.scale {
+  top: calc(85% - 27vw);
+  left: 65%;
+  .screen-content {
+    filter: brightness(0.4);
+  }
+}
 .noScale {
   top: 45vh;
   left: 50%;
   width: 450px;
   transform: translate(-50%, -50%);
+  .project {
+    .top {
+      img:hover {
+        transform: scale(1.05);
+        filter: brightness(0.8);
+      }
+    }
+  }
 }

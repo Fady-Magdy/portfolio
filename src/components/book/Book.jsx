@@ -42,36 +42,40 @@ export default function Book(props) {
       ref={phone}
       className={`book ${scale ? "scale" : "noScale"} ${hover ? "hover" : ""}`}
     >
-      <div className="item-title">Skills</div>
-      <h1>Skills</h1>
-      <hr />
-      <div className="skills-icons">
-        <span>
-          <i className="fa-brands fa-html5"></i>
-          <p>HTML</p>
-        </span>
-        <span>
-          <i className="fa-brands fa-css3-alt"></i>
-          <p>CSS</p>
-        </span>
-        <span>
-          <i className="fa-brands fa-square-js"></i>
-          <p>JavaScript</p>
-        </span>
-        <span>
-          <i className="fa-brands fa-react"></i>
-          <p>React</p>
-        </span>
-        <span>
-          <i className="fa-brands fa-sass"></i>
-          <p>Sass</p>
-        </span>
-        <span>
-          <i className="fa-brands fa-github"></i>
-          <p>GitHub</p>
-        </span>
+        <div className="item-title">Skills</div>
+      <div className="book-inside">
+        <div className="background-darkening-items"></div>
+        <h1>Skills</h1>
+        <hr />
+        <div className="skills-icons">
+          <span>
+            <i className="fa-brands fa-html5"></i>
+            <p>HTML</p>
+          </span>
+          <span>
+            <i className="fa-brands fa-css3-alt"></i>
+            <p>CSS</p>
+          </span>
+          <span>
+            <i className="fa-brands fa-square-js"></i>
+            <p>JavaScript</p>
+          </span>
+          <span>
+            <i className="fa-brands fa-react"></i>
+            <p>React</p>
+          </span>
+          <span>
+            <i className="fa-brands fa-sass"></i>
+            <p>Sass</p>
+          </span>
+          <span>
+            <i className="fa-brands fa-github"></i>
+            <p>GitHub</p>
+          </span>
+        </div>
+        <p className="description">this is a list of the important skills and tech i've learned, Im very excited to learn more</p>
       </div>
-      <p className="description">this is a list of the important skills and tech i've learned, Im very excited to learn more</p>
+
     </div>
   );
 }
