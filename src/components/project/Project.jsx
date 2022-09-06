@@ -2,7 +2,11 @@ import React from "react";
 import "./project.scss";
 export default function Project(props) {
   return (
-    <div className={`project ${props.soon ? "soon" : ""} ${props.withMentor ? "with-mentor" : ""}`}>
+    <div
+      className={`project ${props.soon ? "soon" : ""} ${
+        props.withMentor ? "with-mentor" : ""
+      }`}
+    >
       <div className="top">
         <img src={props.image} alt="Project" />
       </div>

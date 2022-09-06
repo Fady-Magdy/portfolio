@@ -15,21 +15,27 @@ export default function Phone(props) {
   const [entered, setEntered] = useState(false);
   const phone = useRef(null);
   const [time, setTime] = useState();
+  const [fullTime, setFullTime] = useState();
 
-  function changeTime() {
+  function getTime() {
     let time = new Date();
     let hours = time.getHours();
     let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
     let AmPm = "AM";
     AmPm = hours >= 12 ? "PM" : "AM";
     hours = hours > 12 ? hours - 12 : hours;
     hours = hours < 10 ? "0" + hours : hours;
     hours = hours === "00" ? "12" : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
-    return `${hours}:${minutes} ${AmPm}`;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    let timeResult = `${hours}:${minutes} ${AmPm}`;
+    let fullTimeResult = `${hours}:${minutes}:${seconds} ${AmPm}`;
+    setTime(timeResult);
+    setFullTime(fullTimeResult);
   }
   setInterval(() => {
-    setTime(changeTime());
+    getTime();
   }, 1000);
 
   return (
@@ -82,7 +88,10 @@ export default function Phone(props) {
               </span>
               <span className="material-symbols-outlined">wifi</span>
             </div>
-            <p className="time">{time}</p>
+            <p className="time">
+              {time}
+              <span className="full-time">{fullTime}</span>
+            </p>
           </div>
           <div className="screen-content">
             <h1 className="projects">PROJECTS</h1>

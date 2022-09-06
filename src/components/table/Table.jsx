@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
-import React from "react";
+import "./table.scss";
+//  Components Import
 import Note from "../note/Note";
 import Book from "../book/Book";
 import Phone from "../phone/Phone";
-import "./table.scss";
-
 //  Img Import
-import Monitor from "../../images/monitor.png";
-import Keyboard from "../../images/keyboard.png";
-import mouse from "../../images/mouse.png";
-import mousePad from "../../images/mouse-pad.png";
+import Monitor from "../../images/computer/monitor.png";
+import Keyboard from "../../images/computer/keyboard.png";
+import mouse from "../../images/computer/mouse.png";
+import mousePad from "../../images/computer/mouse-pad.png";
+import speaker from "../../images/computer/speaker.png";
 import windowsImage from "../../images/windows.jpg";
-import speaker from "../../images/speaker.png";
+//  Videos Import
 import video from "../../videos/video.mp4";
 import video2 from "../../videos/video2.mp4";
 import video3 from "../../videos/video3.mp4";
@@ -29,8 +29,12 @@ export default function Table(props) {
   const [videoOrWindows, setVideoOrWindows] = useState(true);
   const videoList = [video, video2, video3];
   function videoPlay() {
-    videoOn ? videoRef.current.pause() : videoRef.current.play();
-    setVideoOn(!videoOn);
+    if (videoStart && videoOrWindows) {
+      videoOn ? videoRef.current.pause() : videoRef.current.play();
+      setVideoOn(!videoOn);
+    } else {
+      return false;
+    }
   }
   useEffect(() => {
     setTimeout(() => {

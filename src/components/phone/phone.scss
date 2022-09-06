@@ -91,24 +91,22 @@
           font-weight: 800;
           position: relative;
           padding: 5px;
-          &::after {
-            content: "Time";
+          .full-time {
             position: absolute;
+            width: 140px;
             top: -30px;
-            left: 0;
+            left: 50%;
+            translate: -50%;
             padding: 5px 15px;
-            transform: scale(0);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: #fff;
             color: #000;
             border-radius: 5px;
             transition: 0.4s;
+            transform: scale(0);
             opacity: 0;
           }
           &:hover {
-            &::after {
+            .full-time {
               transform: scale(1) translateY(-20px);
               opacity: 1;
             }
@@ -154,7 +152,7 @@
           background-color: rgb(0, 93, 231);
         }
         .with-mentor-title {
-          background-color:  rgb(164, 55, 207)
+          background-color: rgb(164, 55, 207);
         }
       }
     }
@@ -165,6 +163,10 @@
   left: 65%;
   .screen-content {
     filter: brightness(0.4);
+    .project-section-title {
+      font-size: 1vw !important;
+      padding: 1vw 0 !important;
+    }
   }
 }
 .noScale {

@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import "./style/app.scss";
-//  Components
+//  Components Import
 import Table from "./components/table/Table";
 import Openingshow from "./components/openingshow/Openingshow";
-//  images
+//  images Import
 import chairImg from "./images/chair.png";
-//  Audio
+//  Audio Import
 import parperSound from "./audio/paper-hover.mp3";
 import chairMove from "./audio/chair-move.mp3";
 import chairBack from "./audio/chair-back.mp3";
 import Music from "./audio/music.mp3";
+
 function App() {
   const [openingShow, setOpeningShow] = useState(true);
   const [musicOn, setMusicOn] = useState(false);
