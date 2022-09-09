@@ -6,6 +6,7 @@ import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
 import projectPhoneChatting from "../../images/projects/phone-chatting.png";
 import projectSoon from "../../images/projects/soon.png";
+import projectEcommerce from "../../images/projects/ecommerce-computer-shop.png";
 import projectAdminDashboard from "../../images/projects/admin-dashboard.png";
 import projectMoviesSearch from "../../images/projects/movies-search.png";
 import Project from "../project/Project";
@@ -95,7 +96,14 @@ export default function Phone(props) {
           </div>
           <div className="screen-content">
             <h1 className="projects">PROJECTS</h1>
-            <h1 className="project-section-title">Projects From my mind</h1>
+            <h1 className="project-section-title">Projects From My Mind</h1>
+            <Project
+              image={projectEcommerce}
+              title="Ecommerce"
+              projectLink="https://fady-magdy.github.io/ecommerce-Computer-Shop/"
+              projectCode="https://github.com/Fady-Magdy/ecommerce-Computer-Shop/tree/master"
+              description="A Computer Shop Ecommerce app i made using React and Sass and React-Router ( Still Developing )"
+            />
             <Project
               image={projectPhoneChatting}
               title="Phone Chatting"
