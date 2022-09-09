@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.b7a4cb58.css",
-    "main.js": "/portfolio/static/js/main.f30c8085.js",
+    "main.js": "/portfolio/static/js/main.aab66712.js",
     "static/media/video3.mp4": "/portfolio/static/media/video3.f33c9aeb8339b8c7c044.mp4",
     "static/media/video2.mp4": "/portfolio/static/media/video2.d4550cf68cf62c33632e.mp4",
     "static/media/video.mp4": "/portfolio/static/media/video.3908d08bb34a3fd084a8.mp4",
     "static/media/music.mp3": "/portfolio/static/media/music.3b72ad636651834d29a3.mp3",
     "static/media/movies-search.png": "/portfolio/static/media/movies-search.65b11515c0b8b7ef1065.png",
+    "static/media/ecommerce-computer-shop.png": "/portfolio/static/media/ecommerce-computer-shop.311cf8433525c0eaef84.png",
     "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.4e949145a3a30791c537.jpg",
     "static/media/phone-chatting.png": "/portfolio/static/media/phone-chatting.2f77d84f247e5b5f653e.png",
     "static/media/chair.png": "/portfolio/static/media/chair.bd246ee023126de0d179.png",
@@ -30,10 +31,10 @@
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
     "main.b7a4cb58.css.map": "/portfolio/static/css/main.b7a4cb58.css.map",
-    "main.f30c8085.js.map": "/portfolio/static/js/main.f30c8085.js.map"
+    "main.aab66712.js.map": "/portfolio/static/js/main.aab66712.js.map"
   },
   "entrypoints": [
     "static/css/main.b7a4cb58.css",
-    "static/js/main.f30c8085.js"
+    "static/js/main.aab66712.js"
   ]
 }
