@@ -52,7 +52,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         transition: 0.6s;
         border: 2px solid transparent;
         border-radius: 5px;
@@ -97,6 +97,7 @@ p::selection {
     &.scale {
       top: -5%;
       left: 14%;
+      
       h1 {
         font-size: 5vw;
       }

@@ -2,7 +2,8 @@ $table-border-radius: 15px;
 .table {
   width: 70%;
   height: 37vw;
-  min-height: 200px;
+  min-width: 550px;
+  min-height: 270px;
   border-radius: $table-border-radius;
   margin-top: 50px;
   background-image: url(../../images/table-texture.jpg);
@@ -49,7 +50,7 @@ $table-border-radius: 15px;
 
   .monitor {
     width: 40vw;
-    min-width: 250px;
+    min-width: 300px;
     position: absolute;
     top: -80px;
     left: 50%;
@@ -147,9 +148,9 @@ $table-border-radius: 15px;
   .keyboard {
     position: relative;
     width: 20vw;
-    min-width: 100px;
+    min-width: 150px;
     height: 6vw;
-    min-height: 30px;
+    min-height: 50px;
     position: absolute;
     bottom: 10%;
     left: 30vw;
@@ -192,7 +193,7 @@ $table-border-radius: 15px;
   }
   .mouse-pad {
     width: 10vw;
-    min-width: 50px;
+    min-width: 70px;
     position: absolute;
     bottom: 7%;
     right: 17vw;
@@ -205,7 +206,7 @@ $table-border-radius: 15px;
       top: 50%;
       left: 50%;
       width: 4vw;
-      min-width: 20px;
+      min-width: 30px;
       transform: translate(-50%, -50%);
       display: flex;
       justify-content: center;

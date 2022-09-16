@@ -161,6 +161,8 @@
 .scale {
   top: calc(85% - 27vw);
   left: 65%;
+  top: 10%;
+  min-width: 200px;
   .screen-content {
     filter: brightness(0.4);
     .project-section-title {

@@ -72,6 +72,10 @@ export default function Book(props) {
             <i className="fa-brands fa-github"></i>
             <p>GitHub</p>
           </span>
+          <span>
+            <i className="fa-brands fa-bootstrap"></i>
+            <p>Bootstrap</p>
+          </span>
         </div>
         <p className="description">
           this is a list of the important skills and tech i've learned, Im very

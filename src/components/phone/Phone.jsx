@@ -9,6 +9,7 @@ import projectSoon from "../../images/projects/soon.png";
 import projectEcommerce from "../../images/projects/ecommerce-computer-shop.png";
 import projectAdminDashboard from "../../images/projects/admin-dashboard.png";
 import projectMoviesSearch from "../../images/projects/movies-search.png";
+import projectFrontendBootcamp from "../../images/projects/frontend-bootcamp.png";
 import Project from "../project/Project";
 export default function Phone(props) {
   const [scale, setScale] = useState(true);
@@ -102,7 +103,7 @@ export default function Phone(props) {
               title="Ecommerce"
               projectLink="https://fady-magdy.github.io/ecommerce-Computer-Shop/"
               projectCode="https://github.com/Fady-Magdy/ecommerce-Computer-Shop/tree/master"
-              description="A Computer Shop Ecommerce app i made using React and Sass and React-Router ( Still Developing )"
+              description="A Computer Shop Advanced Ecommerce App i made using React - React Router - Sass  - Context API ( Still Developing )"
             />
             <Project
               image={projectPhoneChatting}
@@ -127,7 +128,7 @@ export default function Phone(props) {
               title="Admin Dashboard"
               projectLink="https://fady-magdy.github.io/admin-dashboard/"
               projectCode="https://github.com/Fady-Magdy/admin-dashboard/tree/master"
-              description="This project i made with help of YouTube channel ( Just to learn )"
+              description="Tech Used: React - Sass - React Router"
               withMentor="true"
             />
             <Project
@@ -135,7 +136,15 @@ export default function Phone(props) {
               title="Movies Search"
               projectLink="https://fady-magdy.github.io/movies-search/"
               projectCode="https://github.com/Fady-Magdy/movies-search/tree/master"
-              description="This project i made with help of YouTube channel ( Just to learn )"
+              description="Tech Used: React - API "
+              withMentor="true"
+            />
+            <Project
+              image={projectFrontendBootcamp}
+              title="Frontend Bootcamp"
+              projectLink="https://fady-magdy.github.io/frontend-bootcamp/"
+              projectCode="https://github.com/Fady-Magdy/frontend-bootcamp"
+              description="Tech Used: Bootstrap - HTML only"
               withMentor="true"
             />
           </div>
