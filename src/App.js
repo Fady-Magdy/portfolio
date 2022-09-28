@@ -1,25 +1,31 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./style/app.scss";
-//  Components Import
-import Table from "./components/table/Table";
+import "./style/dark-mode.scss";
 import Openingshow from "./components/openingshow/Openingshow";
-//  images Import
-import chairImg from "./images/chair.png";
-//  Audio Import
-import parperSound from "./audio/paper-hover.mp3";
-import chairMove from "./audio/chair-move.mp3";
-import chairBack from "./audio/chair-back.mp3";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Music from "./audio/music.mp3";
-
-function App() {
+import Office from "./pages/office/Office";
+import Home from "./pages/home/Home";
+const App = () => {
   const [openingShow, setOpeningShow] = useState(true);
   const [musicOn, setMusicOn] = useState(false);
   const musicRef = useRef(null);
-  const [secretMsg, setSecretMsg] = useState(false);
-  const [secretUsed, setSecretUsed] = useState(false);
-  const [itemInUse, setItemInUse] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  function showMainMenu() {
+    setShowMenu((prev) => !prev);
+    let listItems = document.querySelectorAll(".list-item");
+    let time = 100;
+    listItems.forEach((item) => {
+      setTimeout(() => {
+        item.classList.toggle("show");
+      }, time);
+      time += 100;
+    });
+  }
   const PlayMusic = () => {
-    musicRef.current.volume = 0.1;
+    musicRef.current.volume = 0.3;
     if (musicOn) {
       musicRef.current.pause();
       setMusicOn(false);
@@ -28,73 +34,59 @@ function App() {
       setMusicOn(true);
     }
   };
-  const PlayAudio = (audio) => {
-    const sound = new Audio(audio);
-    sound.volume = 0.3;
-    sound.play();
-  };
   useEffect(() => {
     setTimeout(() => {
       setOpeningShow(false);
     }, 2950);
   }, [openingShow]);
-
   return (
-    <div className="app">
-      <div className="office">
-        <div className="office-inside">
-          <div className="background">
-            <div className="background-darkening-floor"></div>
-          </div>
-          <div
-            className="chair"
-            onMouseEnter={() => {
-              PlayAudio(chairMove);
-            }}
-            onMouseLeave={() => {
-              PlayAudio(chairBack);
-            }}
-          >
-            <img src={chairImg} alt="Failed" draggable="false" />
-            {!secretUsed && (
-              <div
-                className={`secret-msg ${secretMsg && "secret-on"}`}
-                onClick={() => {
-                  setSecretMsg(true);
-                  PlayAudio(parperSound);
-                }}
-                onMouseLeave={() => {
-                  if (secretMsg) {
-                    setTimeout(() => {
-                      setSecretUsed(true);
-                    }, 500);
-                  }
-                }}
+    <BrowserRouter basename="/portfolio">
+      <div className={`app ${darkMode ? "dark" : ""}`}>
+        <div className={`menu-button ${showMenu ? "show" : ""}`}>
+          <i onClick={() => showMainMenu()} className={`fa-solid fa-bars `}></i>
+          <div className="menu">
+            <h3 className={`${showMenu ? "show" : ""}`}>Menu</h3>
+            <ul>
+              <Link to="/" className="list-item">
+                <div className="icon-holder">
+                  <i className="fa-solid fa-briefcase"></i>
+                </div>
+                Office
+              </Link>
+              <Link to="/home" className="list-item">
+                <div className="icon-holder">
+                  <i className="fa-solid fa-file"></i>
+                </div>
+                Quick Look
+              </Link>
+              <li
+                onClick={() => setDarkMode((prev) => !prev)}
+                className="list-item"
               >
-                {secretMsg && "Life is Good"}
-              </div>
-            )}
+                <div className="icon-holder">
+                  <i className="fa-solid fa-moon"></i>
+                </div>
+                {darkMode ? "Light" : "Dark"} Mode
+              </li>
+            </ul>
           </div>
-          <Table
-            itemInUse={itemInUse}
-            setItemInUse={setItemInUse}
-            PlayMusic={PlayMusic}
-            musicOn={musicOn}
-            PlayAudio={PlayAudio}
-          />
         </div>
+        <Routes>
+          <Route path="/" element={<Office />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+        {openingShow && <Openingshow />}
+        <button className="playMusic" onClick={PlayMusic}>
+          {musicOn ? (
+            <span className="material-symbols-outlined">pause_circle</span>
+          ) : (
+            <span className="material-symbols-outlined">play_circle</span>
+          )}
+        </button>
       </div>
       <audio ref={musicRef} src={Music} loop></audio>
-      <button className="playMusic" onClick={PlayMusic}>
-        {musicOn ? (
-          <span className="material-symbols-outlined">pause_circle</span>
-        ) : (
-          <span className="material-symbols-outlined">play_circle</span>
-        )}
-      </button>
-      {openingShow && <Openingshow />}
-    </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

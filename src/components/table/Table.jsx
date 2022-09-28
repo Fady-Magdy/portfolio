@@ -49,7 +49,7 @@ export default function Table(props) {
           props.PlayAudio(tableKnock);
         }}
       ></div>
-      <div className="monitor">
+      <div className={`monitor ${videoStart ? "on" : ""}`}>
         <div className="monitor-screen">
           <h1>Welcome</h1>
           {videoOrWindows && videoStart && (
