@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1c04ea85.css",
-    "main.js": "/portfolio/static/js/main.51f36c85.js",
+    "main.css": "/portfolio/static/css/main.39f0b153.css",
+    "main.js": "/portfolio/static/js/main.532b0537.js",
     "static/media/video3.mp4": "/portfolio/static/media/video3.f33c9aeb8339b8c7c044.mp4",
     "static/media/video2.mp4": "/portfolio/static/media/video2.d4550cf68cf62c33632e.mp4",
     "static/media/video.mp4": "/portfolio/static/media/video.3908d08bb34a3fd084a8.mp4",
     "static/media/music.mp3": "/portfolio/static/media/music.3b72ad636651834d29a3.mp3",
-    "static/media/movies-search.png": "/portfolio/static/media/movies-search.65b11515c0b8b7ef1065.png",
-    "static/media/ecommerce-computer-shop.png": "/portfolio/static/media/ecommerce-computer-shop.11ab74bb7d5cddba351f.png",
-    "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.4e949145a3a30791c537.jpg",
-    "static/media/phone-chatting.png": "/portfolio/static/media/phone-chatting.2f77d84f247e5b5f653e.png",
-    "static/media/chair.png": "/portfolio/static/media/chair.bd246ee023126de0d179.png",
-    "static/media/keyboard.png": "/portfolio/static/media/keyboard.bda04743fdd727b25b18.png",
-    "static/media/floor.jpg": "/portfolio/static/media/floor.803801d21e5dac50a9c0.jpg",
-    "static/media/admin-dashboard.png": "/portfolio/static/media/admin-dashboard.61753a0c923856d47477.png",
+    "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.f81b6a2ce879d782b516.jpg",
+    "static/media/chair.png": "/portfolio/static/media/chair.18ecc67b3755c48a61b7.png",
+    "static/media/movies-search.png": "/portfolio/static/media/movies-search.2c1f623b4f70239d306a.png",
     "static/media/table-texture.jpg": "/portfolio/static/media/table-texture.309fab70a6c9a3bde01f.jpg",
-    "static/media/speaker.png": "/portfolio/static/media/speaker.425f745f6a8d81347873.png",
-    "static/media/frontend-bootcamp.png": "/portfolio/static/media/frontend-bootcamp.23526b797fa97c70dfd5.png",
+    "static/media/redux.png": "/portfolio/static/media/redux.9ee0e789999c55bc1faa.png",
+    "static/media/floor.jpg": "/portfolio/static/media/floor.d8c59190055436ab1acc.jpg",
+    "static/media/phone-chatting.png": "/portfolio/static/media/phone-chatting.dd67d3274d7b18389adc.png",
+    "static/media/ecommerce-computer-shop.png": "/portfolio/static/media/ecommerce-computer-shop.7f1ad4514abf244c1fed.png",
+    "static/media/todo-app.png": "/portfolio/static/media/todo-app.28527bf222f4e10f08b5.png",
+    "static/media/keyboard.png": "/portfolio/static/media/keyboard.08c1378a848abe7f7018.png",
+    "static/media/speaker.png": "/portfolio/static/media/speaker.893550703a268d3e2e10.png",
     "static/media/windows.jpg": "/portfolio/static/media/windows.9d4db99f9613f13a340d.jpg",
+    "static/media/frontend-bootcamp.png": "/portfolio/static/media/frontend-bootcamp.bfb1172e544b4e46f7ba.png",
+    "static/media/admin-dashboard.png": "/portfolio/static/media/admin-dashboard.8ec8479e6b6103a3e307.png",
+    "static/media/games.png": "/portfolio/static/media/games.f90d14b32b6da7674d3c.png",
+    "static/media/jest.png": "/portfolio/static/media/jest.c0b661b27c8ba56c6593.png",
     "static/media/monitor.png": "/portfolio/static/media/monitor.72a0a77b71746bcfd22a.png",
     "static/media/chair-move.mp3": "/portfolio/static/media/chair-move.289b8beac7ce0e1777b9.mp3",
     "static/media/soon.png": "/portfolio/static/media/soon.54e34609db6944950ae1.png",
@@ -31,11 +35,11 @@
     "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
-    "main.1c04ea85.css.map": "/portfolio/static/css/main.1c04ea85.css.map",
-    "main.51f36c85.js.map": "/portfolio/static/js/main.51f36c85.js.map"
+    "main.39f0b153.css.map": "/portfolio/static/css/main.39f0b153.css.map",
+    "main.532b0537.js.map": "/portfolio/static/js/main.532b0537.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c04ea85.css",
-    "static/js/main.51f36c85.js"
+    "static/css/main.39f0b153.css",
+    "static/js/main.532b0537.js"
   ]
 }
