@@ -71,7 +71,7 @@ function App() {
                   }
                 }}
               >
-                {secretMsg && "I ♥ U"}
+                {secretMsg && "Life is Good"}
               </div>
             )}
           </div>

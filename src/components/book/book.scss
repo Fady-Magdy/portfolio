@@ -42,7 +42,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      padding-top: 35px;
+      padding-top: 20px;
       overflow: hidden;
       gap: 20px;
       span {
@@ -52,7 +52,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         transition: 0.6s;
         border: 2px solid transparent;
         border-radius: 5px;
@@ -66,6 +66,9 @@
         }
         i {
           font-size: 70px;
+        }
+        img {
+          width: 80%;
         }
         p {
           position: absolute;

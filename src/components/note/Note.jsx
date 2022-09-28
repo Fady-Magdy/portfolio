@@ -50,7 +50,7 @@ export default function Note(props) {
           <h1 className="title">Fady Magdy</h1>
           <div className="note-item">
             <h1>Email: </h1>
-            <p>fadymagdy.developer@gmail.com</p>
+            <p>fady.programmer@gmail.com</p>
             <span
               onClick={() => {
                 navigator.clipboard.writeText("fadymagdy.developer@gmail.com");
@@ -74,14 +74,11 @@ export default function Note(props) {
           </div>
           <div className="note-item">
             <h1>Location: </h1>
-            <p>Egypt (Willing to Relocate)</p>
+            <p>Asyut, Egypt (Willing to Relocate)</p>
           </div>
           <hr />
           <div className="note-links">
-            <a
-              target="blank"
-              href="https://www.linkedin.com/in/fady-magdy-961a6a241/"
-            >
+            <a target="blank" href="https://www.linkedin.com/in/fady-magdy-dev">
               <i className="fa-brands fa-linkedin"></i>
             </a>
             <a target="blank" href="https://github.com/Fady-Magdy">

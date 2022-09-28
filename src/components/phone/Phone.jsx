@@ -4,12 +4,17 @@ import "./phone.scss";
 import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
+//  Images
+import projectEcommerce from "../../images/projects/ecommerce-computer-shop.png";
+import projectTodoApp from "../../images/projects/todo-app.png";
+import projectGames from "../../images/projects/games.png";
 import projectPhoneChatting from "../../images/projects/phone-chatting.png";
 import projectSoon from "../../images/projects/soon.png";
-import projectEcommerce from "../../images/projects/ecommerce-computer-shop.png";
+
 import projectAdminDashboard from "../../images/projects/admin-dashboard.png";
 import projectMoviesSearch from "../../images/projects/movies-search.png";
 import projectFrontendBootcamp from "../../images/projects/frontend-bootcamp.png";
+
 import Project from "../project/Project";
 export default function Phone(props) {
   const [scale, setScale] = useState(true);
@@ -102,8 +107,22 @@ export default function Phone(props) {
               image={projectEcommerce}
               title="Ecommerce"
               projectLink="https://fady-magdy.github.io/ecommerce-Computer-Shop/"
-              projectCode="https://github.com/Fady-Magdy/ecommerce-Computer-Shop/tree/master"
-              description="A Computer Shop Advanced Ecommerce App i made using React - React Router - Sass  - Context API ( Still Developing )"
+              projectCode="https://github.com/Fady-Magdy/ecommerce-Computer-Shop"
+              description="Tech Used: React - Sass - Context API This is a full Ecommerce app which you can make a full shopping steps, Add items to Favourite list , Manage Your Orders and there is Dark/Light Mode and more to do"
+            />
+            <Project
+              image={projectTodoApp}
+              title="Todo App Redux"
+              projectLink="https://fady-magdy.github.io/Todo-App-Redux/"
+              projectCode="https://github.com/Fady-Magdy/Todo-App-Redux"
+              description="i Made this Project after learning Redux/ToolKit, It's just a Simple App"
+            />
+            <Project
+              image={projectGames}
+              title="Games"
+              projectLink="https://fady-magdy.github.io/games/"
+              projectCode="https://github.com/Fady-Magdy/games"
+              description="One Single Project with Multiple Games so that would be easier for you to see my work ( Still Developing )"
             />
             <Project
               image={projectPhoneChatting}
@@ -114,7 +133,7 @@ export default function Phone(props) {
             />
             <Project
               image={projectSoon}
-              title="Simple Music Production App"
+              title="More Projects on the way"
               projectLink={false}
               projectCode={false}
               description="A new project is on the way, I'm trying to do my best"
@@ -127,7 +146,7 @@ export default function Phone(props) {
               image={projectAdminDashboard}
               title="Admin Dashboard"
               projectLink="https://fady-magdy.github.io/admin-dashboard/"
-              projectCode="https://github.com/Fady-Magdy/admin-dashboard/tree/master"
+              projectCode="https://github.com/Fady-Magdy/admin-dashboard"
               description="Tech Used: React - Sass - React Router"
               withMentor="true"
             />
@@ -135,7 +154,7 @@ export default function Phone(props) {
               image={projectMoviesSearch}
               title="Movies Search"
               projectLink="https://fady-magdy.github.io/movies-search/"
-              projectCode="https://github.com/Fady-Magdy/movies-search/tree/master"
+              projectCode="https://github.com/Fady-Magdy/movies-search"
               description="Tech Used: React - API "
               withMentor="true"
             />

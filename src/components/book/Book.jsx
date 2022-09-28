@@ -3,6 +3,8 @@ import "./book.scss";
 import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
+import ReduxImg from "../../images/redux.png";
+import JestImg from "../../images/jest.png";
 export default function Book(props) {
   const [scale, setScale] = useState(true);
   const [hover, setHover] = useState(true);
@@ -65,6 +67,18 @@ export default function Book(props) {
             <p>React</p>
           </span>
           <span>
+            <img src={ReduxImg} alt="redux" />
+            <p>Redux/ToolKit</p>
+          </span>
+          <span>
+            <img src={JestImg} alt="" />
+            <p>Unit Test</p>
+          </span>
+          <span>
+            <i className="fa-brands fa-bootstrap"></i>
+            <p>Bootstrap</p>
+          </span>
+          <span>
             <i className="fa-brands fa-sass"></i>
             <p>Sass</p>
           </span>
@@ -72,15 +86,8 @@ export default function Book(props) {
             <i className="fa-brands fa-github"></i>
             <p>GitHub</p>
           </span>
-          <span>
-            <i className="fa-brands fa-bootstrap"></i>
-            <p>Bootstrap</p>
-          </span>
         </div>
-        <p className="description">
-          this is a list of the important skills and tech i've learned, Im very
-          excited to learn more
-        </p>
+        <p className="description">I also Learned OOP - Agile/Scrum</p>
       </div>
     </div>
   );
