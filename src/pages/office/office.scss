@@ -76,15 +76,7 @@
       transform: scale(1);
     }
   }
-  &::after {
-    content: "";
-    left: -450px;
-    top: -450px;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 300px 300px 500px 400px rgba(255, 255, 255, 0.788);
-    animation: light-change 3s infinite alternate;
-  }
+
   .background-darkening-floor {
     position: absolute;
     width: 100%;

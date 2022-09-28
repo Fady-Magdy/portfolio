@@ -61,9 +61,9 @@ body {
       border-radius: 3px;
       position: absolute;
       margin-top: -5px;
-      right: 0;
+      right: -300px;
       font-size: 20px;
-
+      background-color: red;
       h3 {
         position: relative;
         text-align: center;
@@ -71,7 +71,7 @@ body {
         line-height: 50px;
         background-color: #fff;
         border-radius: 30px 5px 5px;
-        right: -300px;
+        right: 0;
         scale: 0.5;
         font-weight: 400;
         letter-spacing: 2px;
@@ -80,7 +80,7 @@ body {
         cursor: default;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
         &.show {
-          right: 0;
+          right: 300px;
           scale: 1;
         }
       }
@@ -103,13 +103,13 @@ body {
           margin-bottom: 10px;
           font-weight: 500;
           font-size: 16px;
-          right: -300px;
+          right: 0;
           transition: 0.8s;
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
           scale: 0.5;
           cursor: pointer;
           &.show {
-            right: 0;
+            right: 300px;
             scale: 1;
             .icon-holder {
               rotate: 360deg;
@@ -138,6 +138,15 @@ body {
       }
     }
   }
+  &::after {
+    content: "";
+    left: -450px;
+    top: -450px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 300px 300px 500px 400px rgba(255, 255, 255, 0.788);
+    animation: light-change 3s infinite alternate;
+  }
 }
 @media (orientation: landscape) {
   @keyframes light-change {
@@ -146,6 +155,20 @@ body {
     }
     100% {
       box-shadow: 450px 350px 500px 400px rgba(255, 255, 255, 0.788);
+    }
+  }
+}
+@media (min-width: 2000px) {
+  .app {
+    .office {
+      .table {
+        .monitor {
+          .monitor-screen {
+            height: 48%;
+            transform: translate(-50%, -50%) perspective(400px) rotateX(-33deg);
+          }
+        }
+      }
     }
   }
 }
@@ -500,19 +523,41 @@ body {
           }
           .phone {
             &.noScale {
-              transform: scale(0.6) translate(-80%, -80%) rotate(-90deg) !important;
+              transform: scale(0.6) translate(-80%, -83%) rotate(-90deg) !important;
             }
           }
           .note {
             &.noScale {
-              transform: scale(0.6) translate(-80%, -78%) rotate(-90deg) !important;
+              transform: scale(0.6) translate(-80%, -80%) rotate(-90deg) !important;
             }
           }
           .book {
             &.noScale {
-              transform: scale(0.6) translate(-80%, -78%) rotate(-90deg) !important;
+              transform: scale(0.6) translate(-80%, -82%) rotate(-90deg) !important;
             }
           }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 400px)  {
+  .app {
+    .office {
+      .office-inside {
+        .chair {
+          left: -5% !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 360px)  {
+  .app {
+    .office {
+      .office-inside {
+        .chair {
+          left: -12% !important;
         }
       }
     }

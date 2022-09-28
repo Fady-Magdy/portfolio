@@ -72,7 +72,8 @@ const App = () => {
           </div>
         </div>
         <Routes>
-          <Route path="/" element={<Office />} />
+          <Route path="/" element={<Office PlayMusic={PlayMusic}
+          musicOn={musicOn} />} />
           <Route path="/home" element={<Home />} />
         </Routes>
         {openingShow && <Openingshow />}
