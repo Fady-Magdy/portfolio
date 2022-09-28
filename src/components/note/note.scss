@@ -107,6 +107,14 @@ p::selection {
       left: -5%;
       .note-inside {
         font-size: 1.1vw;
+        .note-item {
+          h1 {
+            font-size: 2vw;
+          }
+          p {
+            font-size: 1vw;
+          }
+        }
         .note-links {
           a {
             margin: 1.5vw;

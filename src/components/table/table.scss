@@ -20,14 +20,6 @@ $table-border-radius: 15px;
       box-shadow: 80px 80px 60px rgba(0, 0, 0, 0.74);
     }
   }
-  @keyframes table-shadow-mobile {
-    0% {
-      box-shadow: 35px 35px 20px rgba(0, 0, 0, 0.61);
-    }
-    100% {
-      box-shadow: 35px 35px 20px rgba(0, 0, 0, 0.658);
-    }
-  }
   @keyframes table-shadow-medium {
     0% {
       box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.61);
