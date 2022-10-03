@@ -101,7 +101,7 @@ export default function Phone(props) {
                     key={project.id}
                     className="project-section-title with-mentor-title"
                   >
-                    Projects Made with mentor (YouTube)
+                    Projects Made with mentor (Course)
                   </h1>
                 );
               } else {

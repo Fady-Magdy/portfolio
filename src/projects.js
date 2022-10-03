@@ -3,7 +3,7 @@ import projectEcommerce from "./images/projects/ecommerce-computer-shop.png";
 import projectTodoApp from "./images/projects/todo-app.png";
 import projectGames from "./images/projects/games.png";
 import projectPhoneChatting from "./images/projects/phone-chatting.png";
-import projectSoon from "./images/projects/soon.png";
+import projectSoon from "./images/projects/soon.jpg";
 
 import projectAdminDashboard from "./images/projects/admin-dashboard.png";
 import projectMoviesSearch from "./images/projects/movies-search.png";
@@ -52,7 +52,7 @@ const Projects = [
   },
   {
     id: 5,
-    title: "More Projects on the way",
+    title: "More Projects Soon!",
     image: projectSoon,
     projectLink: false,
     projectCode: false,

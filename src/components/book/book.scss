@@ -60,6 +60,8 @@
           transition: 0.2s;
           border: 2px solid #fff;
           p {
+            scale: 1 1;
+            top: -50px;
             transition: 0.2s;
             opacity: 1;
           }
@@ -72,7 +74,8 @@
         }
         p {
           position: absolute;
-          top: -50px;
+          scale: 0.7 0;
+          top: -30px;
           font-size: 18px;
           letter-spacing: 2px;
           opacity: 0;

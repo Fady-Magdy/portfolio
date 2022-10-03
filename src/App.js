@@ -69,12 +69,22 @@ const App = () => {
                 {darkMode ? "Light" : "Dark"} Mode
               </li>
               <a
-                href="https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view"
-                target="blank"
+                href="https://drive.google.com/uc?export=download&id=1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW"
                 className="list-item"
+                download
               >
                 <div className="icon-holder">
-                  <i className="fa-solid fa-file"></i>
+                  <i className="fa-solid fa-download"></i>
+                </div>
+                Download Resume
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view?usp=sharing"
+                className="list-item"
+                target="blank"
+              >
+                <div className="icon-holder">
+                  <i className="fa-solid fa-eye"></i>
                 </div>
                 View Resume
               </a>

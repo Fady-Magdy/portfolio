@@ -27,7 +27,7 @@ body {
     border-radius: 50%;
     border: none;
     overflow: hidden;
-    background-color: rgb(0, 102, 255);
+    background-color: rgb(112, 2, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,10 +35,14 @@ body {
     cursor: pointer;
     span {
       font-size: 74px;
-      transition: 0.2s;
+      transition: 0.7s;
     }
     &:hover {
-      background-color: rgb(137, 184, 255);
+      span {
+        rotate: 360deg;
+      }
+      background-color: rgb(144, 59, 255);
+      box-shadow: 0 0 10px #fff;
     }
   }
   .menu-button {
@@ -121,7 +125,13 @@ body {
           }
           &:hover {
             transition: 0.2s;
-            background-color: rgb(231, 206, 255);
+            color: #fff;
+            background-color: rgba(139, 37, 255, 0.486);
+            .icon-holder {
+              i {
+                color: #fff;
+              }
+            }
           }
           .icon-holder {
             display: flex;

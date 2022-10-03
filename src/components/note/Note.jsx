@@ -53,7 +53,7 @@ export default function Note(props) {
             <p>fady.programmer@gmail.com</p>
             <span
               onClick={() => {
-                navigator.clipboard.writeText("fadymagdy.developer@gmail.com");
+                navigator.clipboard.writeText("fady.programmer@gmail.com");
               }}
               className="copy material-symbols-outlined"
             >
@@ -76,23 +76,29 @@ export default function Note(props) {
             <h1>Location: </h1>
             <p>Asyut, Egypt (Willing to Relocate)</p>
           </div>
-          <hr />
           <div className="buttons">
+            <span>
+              <i className="fa-solid fa-file"></i> Resume:
+            </span>
             <a
-              href="../../images/resume.pdf"
+              href="https://drive.google.com/uc?export=download&id=1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW"
               className="resume-button"
               download
             >
-              Download Resume
+              <i className="fa-solid fa-download"></i>
+              Download
             </a>
             <a
               className="resume-button"
               href="https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view?usp=sharing"
               target="blank"
             >
-              View Resume
+              <i className="fa-solid fa-eye"></i>
+              View
             </a>
           </div>
+          <hr />
+
           <div className="note-links">
             <a target="blank" href="https://www.linkedin.com/in/fady-magdy-dev">
               <i className="fa-brands fa-linkedin"></i>
