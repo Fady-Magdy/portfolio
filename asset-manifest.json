@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.31f678f8.css",
-    "main.js": "/portfolio/static/js/main.4b3da5aa.js",
+    "main.css": "/portfolio/static/css/main.4d752e87.css",
+    "main.js": "/portfolio/static/js/main.be73fa42.js",
     "static/media/video3.mp4": "/portfolio/static/media/video3.f33c9aeb8339b8c7c044.mp4",
     "static/media/video2.mp4": "/portfolio/static/media/video2.d4550cf68cf62c33632e.mp4",
     "static/media/video.mp4": "/portfolio/static/media/video.3908d08bb34a3fd084a8.mp4",
@@ -9,6 +9,7 @@
     "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.f81b6a2ce879d782b516.jpg",
     "static/media/super-dog.png": "/portfolio/static/media/super-dog.e0fda549d847d5611b8e.png",
     "static/media/games.png": "/portfolio/static/media/games.b344ec207869d6c283bf.png",
+    "static/media/soon.jpg": "/portfolio/static/media/soon.1819176ce2d940b999cd.jpg",
     "static/media/chair.png": "/portfolio/static/media/chair.18ecc67b3755c48a61b7.png",
     "static/media/movies-search.png": "/portfolio/static/media/movies-search.2c1f623b4f70239d306a.png",
     "static/media/table-texture.jpg": "/portfolio/static/media/table-texture.309fab70a6c9a3bde01f.jpg",
@@ -25,7 +26,6 @@
     "static/media/jest.png": "/portfolio/static/media/jest.c0b661b27c8ba56c6593.png",
     "static/media/monitor.png": "/portfolio/static/media/monitor.72a0a77b71746bcfd22a.png",
     "static/media/chair-move.mp3": "/portfolio/static/media/chair-move.289b8beac7ce0e1777b9.mp3",
-    "static/media/soon.png": "/portfolio/static/media/soon.54e34609db6944950ae1.png",
     "static/media/mouse.png": "/portfolio/static/media/mouse.68274d48cfda92a338b9.png",
     "static/media/chair-back.mp3": "/portfolio/static/media/chair-back.c4e9e2126b99c831f49d.mp3",
     "static/media/keyboard-click.mp3": "/portfolio/static/media/keyboard-click.5e3edc7e3f83eca31529.mp3",
@@ -36,11 +36,11 @@
     "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
-    "main.31f678f8.css.map": "/portfolio/static/css/main.31f678f8.css.map",
-    "main.4b3da5aa.js.map": "/portfolio/static/js/main.4b3da5aa.js.map"
+    "main.4d752e87.css.map": "/portfolio/static/css/main.4d752e87.css.map",
+    "main.be73fa42.js.map": "/portfolio/static/js/main.be73fa42.js.map"
   },
   "entrypoints": [
-    "static/css/main.31f678f8.css",
-    "static/js/main.4b3da5aa.js"
+    "static/css/main.4d752e87.css",
+    "static/js/main.be73fa42.js"
   ]
 }
