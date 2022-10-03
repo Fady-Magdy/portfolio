@@ -4,16 +4,7 @@ import "./phone.scss";
 import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
-//  Images
-import projectEcommerce from "../../images/projects/ecommerce-computer-shop.png";
-import projectTodoApp from "../../images/projects/todo-app.png";
-import projectGames from "../../images/projects/games.png";
-import projectPhoneChatting from "../../images/projects/phone-chatting.png";
-import projectSoon from "../../images/projects/soon.png";
-
-import projectAdminDashboard from "../../images/projects/admin-dashboard.png";
-import projectMoviesSearch from "../../images/projects/movies-search.png";
-import projectFrontendBootcamp from "../../images/projects/frontend-bootcamp.png";
+import Projects from "../../projects";
 
 import Project from "../project/Project";
 export default function Phone(props) {
@@ -103,69 +94,31 @@ export default function Phone(props) {
           <div className="screen-content">
             <h1 className="projects">PROJECTS</h1>
             <h1 className="project-section-title">Projects From My Mind</h1>
-            <Project
-              image={projectEcommerce}
-              title="Ecommerce"
-              projectLink="https://fady-magdy.github.io/ecommerce-Computer-Shop/"
-              projectCode="https://github.com/Fady-Magdy/ecommerce-Computer-Shop"
-              description="Tech Used: React - Sass - Context API This is a full Ecommerce app which you can make a full shopping steps, Add items to Favourite list , Manage Your Orders and there is Dark/Light Mode and more to do"
-            />
-            <Project
-              image={projectTodoApp}
-              title="Todo App Redux"
-              projectLink="https://fady-magdy.github.io/Todo-App-Redux/"
-              projectCode="https://github.com/Fady-Magdy/Todo-App-Redux"
-              description="i Made this Project after learning Redux/ToolKit, It's just a Simple App"
-            />
-            <Project
-              image={projectGames}
-              title="Games"
-              projectLink="https://fady-magdy.github.io/games/"
-              projectCode="https://github.com/Fady-Magdy/games"
-              description="One Single Project with Multiple Games so that would be easier for you to see my work ( Still Developing )"
-            />
-            <Project
-              image={projectPhoneChatting}
-              title="Phone Chatting"
-              projectLink="https://fady-magdy.github.io/Phone-Chatting-v2/"
-              projectCode="https://github.com/Fady-Magdy/Phone-Chatting-v2"
-              description="A Phone Chatting app i created using Vanilla JavaScript ( First Published )"
-            />
-            <Project
-              image={projectSoon}
-              title="More Projects on the way"
-              projectLink={false}
-              projectCode={false}
-              description="A new project is on the way, I'm trying to do my best"
-              soon="true"
-            />
-            <h1 className="project-section-title with-mentor-title">
-              Projects Made with mentor (YouTube)
-            </h1>
-            <Project
-              image={projectAdminDashboard}
-              title="Admin Dashboard"
-              projectLink="https://fady-magdy.github.io/admin-dashboard/"
-              projectCode="https://github.com/Fady-Magdy/admin-dashboard"
-              description="Tech Used: React - Sass - React Router"
-              withMentor="true"
-            />
-            <Project
-              image={projectMoviesSearch}
-              title="Movies Search"
-              projectLink="https://fady-magdy.github.io/movies-search/"
-              projectCode="https://github.com/Fady-Magdy/movies-search"
-              description="Tech Used: React - API "
-              withMentor="true"
-            />
-            <Project
-              image={projectFrontendBootcamp}
-              title="Frontend Bootcamp"
-              projectLink="https://fady-magdy.github.io/frontend-bootcamp/"
-              projectCode="https://github.com/Fady-Magdy/frontend-bootcamp"
-              description="Tech Used: Bootstrap - HTML only"
-              withMentor="true"
-            />
+            {Projects.map((project) => {
+              if (project.switchArea) {
+                return (
+                  <h1
+                    key={project.id}
+                    className="project-section-title with-mentor-title"
+                  >
+                    Projects Made with mentor (YouTube)
+                  </h1>
+                );
+              } else {
+                return (
+                  <Project
+                    key={project.id}
+                    image={project.image}
+                    title={project.title}
+                    projectLink={project.projectLink}
+                    projectCode={project.projectCode}
+                    description={project.description}
+                    withMentor={project.withMentor}
+                    soon={project.soon}
+                  />
+                );
+              }
+            })}
           </div>
         </div>
         <div className="top-curve">

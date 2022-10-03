@@ -5,17 +5,19 @@
   background-color: transparent;
 }
 body {
+  height: 100vh;
   background-color: black;
   margin: 0;
   color: #fff;
   overflow: hidden;
-  height: 100vh;
   font-family: "Roboto", sans-serif;
 }
 .app {
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   .playMusic {
     width: 60px;
     height: 60px;
@@ -40,7 +42,7 @@ body {
     }
   }
   .menu-button {
-    position: absolute;
+    position: fixed;
     width: 50px;
     text-align: center;
     border-radius: 3px;
@@ -53,6 +55,7 @@ body {
       background-color: rgb(105, 0, 224);
     }
     i {
+      transition: 0.3s;
       cursor: pointer;
     }
     .menu {
@@ -541,7 +544,7 @@ body {
     }
   }
 }
-@media (max-width: 400px)  {
+@media (max-width: 400px) {
   .app {
     .office {
       .office-inside {
@@ -552,7 +555,7 @@ body {
     }
   }
 }
-@media (max-width: 360px)  {
+@media (max-width: 360px) {
   .app {
     .office {
       .office-inside {
@@ -574,9 +577,18 @@ body {
 @media (orientation: portrait) {
   .app {
     .playMusic {
-      transform: rotate(90deg);
       left: 20px;
       top: 20px;
+    }
+    .menu-button {
+      i {
+        color: black;
+      }
+      &.show {
+        i {
+          color: #fff;
+        }
+      }
     }
     .office {
       .office-inside {

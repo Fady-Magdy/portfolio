@@ -77,6 +77,22 @@ export default function Note(props) {
             <p>Asyut, Egypt (Willing to Relocate)</p>
           </div>
           <hr />
+          <div className="buttons">
+            <a
+              href="../../images/resume.pdf"
+              className="resume-button"
+              download
+            >
+              Download Resume
+            </a>
+            <a
+              className="resume-button"
+              href="https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view?usp=sharing"
+              target="blank"
+            >
+              View Resume
+            </a>
+          </div>
           <div className="note-links">
             <a target="blank" href="https://www.linkedin.com/in/fady-magdy-dev">
               <i className="fa-brands fa-linkedin"></i>

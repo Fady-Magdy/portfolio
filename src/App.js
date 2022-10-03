@@ -55,9 +55,9 @@ const App = () => {
               </Link>
               <Link to="/home" className="list-item">
                 <div className="icon-holder">
-                  <i className="fa-solid fa-file"></i>
+                  <i className="fa-solid fa-home"></i>
                 </div>
-                Quick Look
+                Normal Page
               </Link>
               <li
                 onClick={() => setDarkMode((prev) => !prev)}
@@ -68,12 +68,24 @@ const App = () => {
                 </div>
                 {darkMode ? "Light" : "Dark"} Mode
               </li>
+              <a
+                href="https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view"
+                target="blank"
+                className="list-item"
+              >
+                <div className="icon-holder">
+                  <i className="fa-solid fa-file"></i>
+                </div>
+                View Resume
+              </a>
             </ul>
           </div>
         </div>
         <Routes>
-          <Route path="/" element={<Office PlayMusic={PlayMusic}
-          musicOn={musicOn} />} />
+          <Route
+            path="/"
+            element={<Office PlayMusic={PlayMusic} musicOn={musicOn} />}
+          />
           <Route path="/home" element={<Home />} />
         </Routes>
         {openingShow && <Openingshow />}
