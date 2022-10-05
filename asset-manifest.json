@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.4d752e87.css",
-    "main.js": "/portfolio/static/js/main.be73fa42.js",
+    "main.css": "/portfolio/static/css/main.58143150.css",
+    "main.js": "/portfolio/static/js/main.286192c5.js",
     "static/media/video3.mp4": "/portfolio/static/media/video3.f33c9aeb8339b8c7c044.mp4",
     "static/media/video2.mp4": "/portfolio/static/media/video2.d4550cf68cf62c33632e.mp4",
     "static/media/video.mp4": "/portfolio/static/media/video.3908d08bb34a3fd084a8.mp4",
@@ -27,6 +27,7 @@
     "static/media/monitor.png": "/portfolio/static/media/monitor.72a0a77b71746bcfd22a.png",
     "static/media/chair-move.mp3": "/portfolio/static/media/chair-move.289b8beac7ce0e1777b9.mp3",
     "static/media/mouse.png": "/portfolio/static/media/mouse.68274d48cfda92a338b9.png",
+    "static/media/projects-background.jpg": "/portfolio/static/media/projects-background.a64f2b0531376df1710d.jpg",
     "static/media/chair-back.mp3": "/portfolio/static/media/chair-back.c4e9e2126b99c831f49d.mp3",
     "static/media/keyboard-click.mp3": "/portfolio/static/media/keyboard-click.5e3edc7e3f83eca31529.mp3",
     "static/media/paper-hover.mp3": "/portfolio/static/media/paper-hover.8e346d92e4e64b8e9461.mp3",
@@ -36,11 +37,11 @@
     "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
-    "main.4d752e87.css.map": "/portfolio/static/css/main.4d752e87.css.map",
-    "main.be73fa42.js.map": "/portfolio/static/js/main.be73fa42.js.map"
+    "main.58143150.css.map": "/portfolio/static/css/main.58143150.css.map",
+    "main.286192c5.js.map": "/portfolio/static/js/main.286192c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d752e87.css",
-    "static/js/main.be73fa42.js"
+    "static/css/main.58143150.css",
+    "static/js/main.286192c5.js"
   ]
 }
