@@ -98,7 +98,7 @@ const App = () => {
           />
           <Route path="/home" element={<Home />} />
         </Routes>
-        {openingShow && <Openingshow />}
+        {/* {openingShow && <Openingshow />} */}
         <button className="playMusic" onClick={PlayMusic}>
           {musicOn ? (
             <span className="material-symbols-outlined">pause_circle</span>

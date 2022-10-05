@@ -50,8 +50,8 @@ body {
     width: 50px;
     text-align: center;
     border-radius: 3px;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
     font-size: 40px;
     transition: 0.3s;
     z-index: 4;
@@ -150,15 +150,6 @@ body {
         }
       }
     }
-  }
-  &::after {
-    content: "";
-    left: -450px;
-    top: -450px;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 300px 300px 500px 400px rgba(255, 255, 255, 0.788);
-    animation: light-change 3s infinite alternate;
   }
 }
 @media (orientation: landscape) {
@@ -365,11 +356,11 @@ body {
 }
 @media (max-width: 767px) {
   .app {
-    &::after {
-      left: 300px;
-      top: -450px;
-    }
     .office {
+      &::after {
+        left: 300px;
+        top: -450px;
+      }
       .office-inside {
         .chair {
           left: 13% !important;
@@ -492,11 +483,6 @@ body {
 }
 @media (max-width: 480px) {
   .app {
-    &::after {
-      left: 200px;
-      top: -550px;
-    }
-
     .playMusic {
       width: 40px;
       height: 40px;
@@ -505,6 +491,10 @@ body {
       }
     }
     .office {
+      &::after {
+        left: 200px;
+        top: -550px;
+      }
       .office-inside {
         .chair {
           width: 30vw;
@@ -578,9 +568,11 @@ body {
 }
 @media (orientation: portrait) and (max-width: 1024px) and (min-width: 768px) {
   .app {
-    &::after {
-      left: 400px;
-      top: -450px;
+    .office {
+      &::after {
+        left: 400px;
+        top: -450px;
+      }
     }
   }
 }
