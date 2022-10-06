@@ -28,7 +28,7 @@ export default function Table(props) {
   const [videoStart, setVideoStart] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [videoOrWindows, setVideoOrWindows] = useState(true);
-  const { animateMyName, myNameArray , firstVisit } = useContext(appContext);
+  const { animateMyName, myNameArray, firstVisit } = useContext(appContext);
   const videoList = [video, video2, video3];
   function videoPlay() {
     if (videoStart && videoOrWindows) {
@@ -51,7 +51,6 @@ export default function Table(props) {
         setVideoStart(true);
       }, 100);
     }
-
   }, []);
   return (
     <div className="table">
@@ -167,23 +166,26 @@ export default function Table(props) {
         setItemInUse={props.setItemInUse}
       />
       <div className="my-name-out">
-        {firstVisit.current && myNameArray.map((letter, index) => {
-          if (letter !== " ") {
-            return (
-              <div className="my-name-letter" key={index}>
-                {letter}
-              </div>
-            );
-          } else {
-            return (
-              <span className="my-name-letter hidden" key={index}>
-                s
-              </span>
-            );
-          }
-        })}
+        {firstVisit.current &&
+          myNameArray.map((letter, index) => {
+            if (letter !== " ") {
+              return (
+                <div className="my-name-letter" key={index}>
+                  {letter}
+                </div>
+              );
+            } else {
+              return (
+                <span className="my-name-letter hidden" key={index}>
+                  s
+                </span>
+              );
+            }
+          })}
       </div>
-      { firstVisit.current && <h4 className="job-title">Jr Front End Developer</h4> }
+      {firstVisit.current && (
+        <h4 className="job-title">Jr Front End Developer</h4>
+      )}
     </div>
   );
 }
