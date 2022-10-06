@@ -12,6 +12,7 @@ body {
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -583,9 +584,9 @@ body {
       top: 20px;
     }
     .menu-button {
-      i {
-        color: black;
-      }
+      background-color: rgb(105, 0, 224);
+      top: 20px;
+      right: 20px;
       &.show {
         i {
           color: #fff;

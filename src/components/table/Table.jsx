@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "./table.scss";
 //  Components Import
 import Note from "../note/Note";
@@ -20,6 +20,7 @@ import tableKnock from "../../audio/table-knock.mp3";
 import keyboardClick from "../../audio/keyboard-click.mp3";
 import mouseClick from "../../audio/mouse-click.mp3";
 import { useEffect } from "react";
+import { appContext } from "../../context/AppContext";
 
 export default function Table(props) {
   const videoRef = useRef();
@@ -27,6 +28,7 @@ export default function Table(props) {
   const [videoStart, setVideoStart] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [videoOrWindows, setVideoOrWindows] = useState(true);
+  const { animateMyName, myNameArray , firstVisit } = useContext(appContext);
   const videoList = [video, video2, video3];
   function videoPlay() {
     if (videoStart && videoOrWindows) {
@@ -37,9 +39,19 @@ export default function Table(props) {
     }
   }
   useEffect(() => {
-    setTimeout(() => {
-      setVideoStart(true);
-    }, 5000);
+    animateMyName(document.querySelectorAll(".my-name-letter"), true);
+  }, []);
+  useEffect(() => {
+    if (firstVisit.current) {
+      setTimeout(() => {
+        setVideoStart(true);
+      }, 7000);
+    } else {
+      setTimeout(() => {
+        setVideoStart(true);
+      }, 100);
+    }
+
   }, []);
   return (
     <div className="table">
@@ -51,7 +63,7 @@ export default function Table(props) {
       ></div>
       <div className={`monitor ${videoStart ? "on" : ""}`}>
         <div className="monitor-screen">
-          <h1>Welcome</h1>
+          {firstVisit.current && <h1>Welcome</h1>}
           {videoOrWindows && videoStart && (
             <video
               ref={videoRef}
@@ -154,6 +166,24 @@ export default function Table(props) {
         itemInUse={props.itemInUse}
         setItemInUse={props.setItemInUse}
       />
+      <div className="my-name-out">
+        {firstVisit.current && myNameArray.map((letter, index) => {
+          if (letter !== " ") {
+            return (
+              <div className="my-name-letter" key={index}>
+                {letter}
+              </div>
+            );
+          } else {
+            return (
+              <span className="my-name-letter hidden" key={index}>
+                s
+              </span>
+            );
+          }
+        })}
+      </div>
+      { firstVisit.current && <h4 className="job-title">Jr Front End Developer</h4> }
     </div>
   );
 }

@@ -16,7 +16,7 @@ $opening-show-background: rgb(0, 102, 255);
     translate: -50% -50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    border: solid 60px #fff;
+    border: solid 60px rgb(255, 255, 255);
     z-index: 0;
 
     box-shadow: 0px 0px 15px rgb(31, 31, 31) inset;
@@ -28,7 +28,7 @@ $opening-show-background: rgb(0, 102, 255);
   .big-circle {
     width: 0;
     animation: big-circle-scale 2.5s infinite alternate;
-    border: solid 2000px rgb(0, 110, 255);
+    border: solid 2000px rgb(118, 0, 253);
   }
 
   @keyframes circle-scale {
@@ -43,7 +43,7 @@ $opening-show-background: rgb(0, 102, 255);
     100% {
       width: 320px;
       border-width: 73px;
-      transform: scale(16);
+      transform: scale(22);
     }
   }
   @keyframes big-circle-scale {
@@ -57,7 +57,7 @@ $opening-show-background: rgb(0, 102, 255);
     100% {
       width: 500px;
       border-width: 100px;
-      transform: scale(10);
+      transform: scale(14);
     }
   }
 }

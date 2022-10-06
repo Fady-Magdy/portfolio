@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import './office.scss'
 //  Components Import
 import Table from "../../components/table/Table";
@@ -9,23 +9,27 @@ import chairImg from "../../images/chair.png";
 import parperSound from "../../audio/paper-hover.mp3";
 import chairMove from "../../audio/chair-move.mp3";
 import chairBack from "../../audio/chair-back.mp3";
-
-
+import { useEffect } from "react";
+import { useContext } from "react";
+import { appContext } from "../../context/AppContext";
 function Office(props) {
   const [secretMsg, setSecretMsg] = useState(false);
   const [secretUsed, setSecretUsed] = useState(false);
   const [itemInUse, setItemInUse] = useState(false);
-
+  const { firstVisit } = useContext(appContext)
   const PlayAudio = (audio) => {
     const sound = new Audio(audio);
     sound.volume = 0.3;
     sound.play();
   };
-
+  useEffect(() => {
+    setTimeout(() => {
+      firstVisit.current = false
+    }, 8000);
+  }, [])
   return (
-
       <div className="office">
-        <div className="office-inside">
+        <div className={`office-inside ${firstVisit.current ? "zoom" : ""}`}>
           <div className="background">
             <div className="background-darkening-floor"></div>
           </div>

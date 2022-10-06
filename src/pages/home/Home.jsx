@@ -1,41 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./home.scss";
 import Projects from "../../projects";
-import { useRef } from "react";
+import { useContext } from "react";
+import { appContext } from "../../context/AppContext";
 const Home = () => {
+  const { animateMyName, myNameArray ,firstVisit } = useContext(appContext);
   const [currentProject, setCurrentProject] = useState(0);
   const projects = Projects.filter(
     (project) => !project.soon && !project.switchArea
   );
-  const [myNameArray] = useState([
-    "F",
-    "a",
-    "d",
-    "y",
-    " ",
-    "M",
-    "a",
-    "g",
-    "d",
-    "y",
-  ]);
   useEffect(() => {
-    animateMyName();
+    animateMyName(document.querySelectorAll(".my-name-letter"));
+    firstVisit.current = false
   }, []);
-  function animateMyName() {
-    let myNameLetters = document.querySelectorAll(".my-name-letter");
-    let timeOut = 500;
-    myNameLetters.forEach((letter) => {
-      setTimeout(() => {
-        letter.style.transform = "scale(1.4)";
-        letter.style.opacity = "1";
-      }, timeOut);
-      setTimeout(() => {
-        letter.style.transform = "scale(1)";
-      }, timeOut + 500);
-      timeOut += 150;
-    });
-  }
+  
   useEffect(() => {
     scrollProjects();
   }, [currentProject]);
@@ -129,7 +107,7 @@ const Home = () => {
       <section className="projects">
         <h1 className="title">PROJECTS</h1>
         <div className="projects-container">
-          {projects.map((project, index) => {
+          {projects.map((project) => {
             return (
               <div className="project" key={project.id}>
                 <div className="top-image">
