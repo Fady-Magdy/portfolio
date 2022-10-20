@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Music from "./audio/music.mp3";
 import Office from "./pages/office/Office";
 import Home from "./pages/home/Home";
-
 const App = () => {
   const [openingShow, setOpeningShow] = useState(true);
   const [musicOn, setMusicOn] = useState(false);
@@ -14,7 +13,6 @@ const App = () => {
   const musicRef = useRef(null);
   const [showMenu, setShowMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-
   function showMainMenu() {
     setShowMenu((prev) => !prev);
     let listItems = document.querySelectorAll(".list-item");

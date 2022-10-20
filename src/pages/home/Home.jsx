@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./home.scss";
 import Projects from "../../projects";
-import { useContext } from "react";
 import { appContext } from "../../context/AppContext";
+import ReduxImg from "../../images/redux.png";
+import JestImg from "../../images/jest.png";
 const Home = () => {
-  const { animateMyName, myNameArray ,firstVisit } = useContext(appContext);
+  const { animateMyName, myNameArray, firstVisit } = useContext(appContext);
   const [currentProject, setCurrentProject] = useState(0);
   const projects = Projects.filter(
     (project) => !project.soon && !project.switchArea
   );
   useEffect(() => {
     animateMyName(document.querySelectorAll(".my-name-letter"));
-    firstVisit.current = false
+    firstVisit.current = false;
   }, []);
-  
+
   useEffect(() => {
     scrollProjects();
+    showSkills();
   }, [currentProject]);
   function goRight() {
     if (currentProject >= projects.length - 1) {
@@ -33,7 +35,16 @@ const Home = () => {
     }
     scrollProjects();
   }
-
+  function showSkills() {
+    let skills = document.querySelectorAll(".skill");
+    let time = 4500;
+    skills.forEach((skill) => {
+      setTimeout(() => {
+        skill.style.transform = "scale(1) translateX(0) rotateY(0)";
+      }, time);
+      time += 100;
+    });
+  }
   function scrollProjects() {
     let projectsCards = document.querySelectorAll(".project");
     projectsCards.forEach((project, index) => {
@@ -84,28 +95,72 @@ const Home = () => {
 
   return (
     <div className="home">
-      <section className="top">
-        <div className="my-name">
-          {myNameArray.map((letter, index) => {
-            if (letter !== " ") {
-              return (
-                <div className="my-name-letter" key={index}>
-                  {letter}
-                </div>
-              );
-            } else {
-              return (
-                <span className="my-name-letter hidden" key={index}>
-                  s
-                </span>
-              );
-            }
-          })}
+      <section className="first-section">
+        <div className="top">
+          <div className="my-name">
+            {myNameArray.map((letter, index) => {
+              if (letter !== " ") {
+                return (
+                  <div className="my-name-letter" key={index}>
+                    {letter}
+                  </div>
+                );
+              } else {
+                return (
+                  <span className="my-name-letter hidden" key={index}>
+                    s
+                  </span>
+                );
+              }
+            })}
+          </div>
+          <h4 className="job-title">Junior Front End Developer</h4>
         </div>
-        <h4 className="job-title">Junior Front End Developer</h4>
+
+        <div className="skills">
+          <h2>Skills</h2>
+          <div className="skills-container">
+            <span className="skill">
+              <i className="fa-brands fa-html5"></i>
+              <p>HTML</p>
+            </span>
+            <span className="skill">
+              <i className="fa-brands fa-css3-alt"></i>
+              <p>CSS</p>
+            </span>
+            <span className="skill">
+              <i className="fa-brands fa-square-js"></i>
+              <p>JavaScript</p>
+            </span>
+            <span className="skill">
+              <i className="fa-brands fa-react"></i>
+              <p>React</p>
+            </span>
+            <span className="skill">
+              <img src={ReduxImg} alt="redux" />
+              <p>Redux/ToolKit</p>
+            </span>
+            <span className="skill">
+              <img src={JestImg} alt="" />
+              <p>Unit Test</p>
+            </span>
+            <span className="skill">
+              <i className="fa-brands fa-bootstrap"></i>
+              <p>Bootstrap</p>
+            </span>
+            <span className="skill">
+              <i className="fa-brands fa-sass"></i>
+              <p>Sass</p>
+            </span>
+            <span className="skill">
+              <i className="fa-brands fa-github"></i>
+              <p>GitHub</p>
+            </span>
+          </div>
+        </div>
       </section>
       <section className="projects">
-        <h1 className="title">PROJECTS</h1>
+        <h1 className="title">Projects</h1>
         <div className="projects-container">
           {projects.map((project) => {
             return (
@@ -154,6 +209,58 @@ const Home = () => {
           })}
           <div onClick={goRight} className="arrow go-right">
             <i className="fa-solid fa-caret-right"></i>
+          </div>
+        </div>
+      </section>
+      <section className="contact">
+        <h1 className="title">Contact</h1>
+        <div className="container">
+          <div className="contact-details">
+            <div className="detail">
+              <h3>
+                <i className="fa-solid fa-phone"></i> <span>Phone:</span>
+              </h3>
+              <a href="tel:+201067530598">+20 106 753 0598</a>
+            </div>
+            <div className="detail">
+              <h3>
+                <i className="fa-solid fa-envelope"></i> <span>Email:</span>
+              </h3>
+              <a href="mailto:fady.programmer@gmail.com">
+                fady.programmer@gmail.com
+              </a>
+            </div>
+            <div className="detail">
+              <h3>
+                <i className="fa-solid fa-location-dot"></i>{" "}
+                <span> Location:</span>
+              </h3>
+              <span>Asyut, Egypt (Willing to relocate)</span>
+            </div>
+          </div>
+          <div className="links">
+            <h2 className="title">Links</h2>
+            <div className="links-container">
+              <div className="link">
+                <a href="https://www.linkedin.com/in/fady-magdy-dev/">
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+
+                <h3>LinkedIn</h3>
+              </div>
+              <div className="link">
+                <a href="https://github.com/Fady-Magdy">
+                  <i className="fa-brands fa-square-github"></i>
+                </a>
+                <h3>Github</h3>
+              </div>
+              <div className="link">
+                <a href="https://www.facebook.com/fady.magdy.dev/">
+                  <i className="fa-brands fa-square-facebook"></i>
+                </a>
+                <h3>Facebook</h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>

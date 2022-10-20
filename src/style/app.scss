@@ -25,6 +25,8 @@ body {
     right: 30px;
     width: 130px;
     display: flex;
+    height: fit-content;
+    z-index: 4;
     justify-content: space-between;
     .playMusic,
     .playSound {

@@ -35,7 +35,6 @@ export default function Phone(props) {
   setInterval(() => {
     getTime();
   }, 1000);
-
   return (
     <div
       onMouseEnter={() => {

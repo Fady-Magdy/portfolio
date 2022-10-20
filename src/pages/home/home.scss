@@ -5,6 +5,7 @@
   overflow-y: scroll;
   background-image: url(../../images/projects-background.jpg);
   background-size: cover;
+  cursor: default;
   &::-webkit-scrollbar-thumb {
     background-color: rgb(92, 32, 202);
     border: 1px solid rgba(255, 255, 255, 0.274);
@@ -14,8 +15,7 @@
     background-color: rgb(43, 0, 92);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.473);
   }
-  .top {
-    width: 100%;
+  .first-section {
     height: 100vh;
     background: linear-gradient(
       0deg,
@@ -24,65 +24,109 @@
       rgb(32, 0, 53)
     );
     padding: 70px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .my-name {
+    .top {
       display: flex;
-      font-family: lobster, sans-serif;
-      .my-name-letter {
-        font-size: 50px;
-        transition: 0.5s;
-        transform: scale(0) translateY(-40px) rotate(-75deg);
-        letter-spacing: 2px;
-        opacity: 0;
-        transform-origin: left;
-        &:hover {
-          scale: 1.3;
-          cursor: default;
+      flex-direction: column;
+      align-items: center;
+      height: 250px;
+      margin-top: 50px;
+      .my-name {
+        display: flex;
+        font-family: lobster, sans-serif;
+        .my-name-letter {
+          font-size: 50px;
+          transition: 0.5s;
+          transform: scale(0) translateY(-40px) rotate(-75deg);
+          letter-spacing: 2px;
+          opacity: 0;
+          transform-origin: left;
+          &:hover {
+            scale: 1.3;
+            cursor: default;
+          }
+          &.hidden {
+            visibility: hidden;
+            letter-spacing: 0;
+            cursor: default;
+          }
         }
-        &.hidden {
-          visibility: hidden;
-          letter-spacing: 0;
-          cursor: default;
+      }
+      .job-title {
+        translate: 0 -30px;
+        opacity: 0;
+        cursor: default;
+        animation: job-title-show 1s 3.7s forwards;
+        @keyframes job-title-show {
+          0% {
+            translate: 0 -30px;
+            opacity: 0;
+          }
+          100% {
+            translate: 0 0;
+            opacity: 0.8;
+          }
         }
       }
     }
-    .job-title {
-      translate: 0 -30px;
-      opacity: 0;
-      cursor: default;
-      animation: job-title-show 1s 3.7s forwards;
-      @keyframes job-title-show {
+
+    .skills {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        margin-bottom: 50px;
+        font-size: 30px;
+        opacity: 0;
+        transition: 0.5s;
+        animation: showSkillsTitle 2s 4s forwards;
+      }
+      @keyframes showSkillsTitle {
         0% {
-          translate: 0 -30px;
           opacity: 0;
         }
         100% {
-          translate: 0 0;
-          opacity: 0.8;
+          opacity: 1;
+        }
+      }
+      .skills-container {
+        display: flex;
+        width: 90%;
+        justify-content: center;
+        flex-wrap: wrap;
+        .skill {
+          width: 100px;
+          height: 120px;
+          transition: 0.5s;
+          transform: scale(0.5) translateX(-30px) rotateY(90deg);
+          text-align: center;
+          i {
+            font-size: 50px;
+          }
+          img {
+            width: 50px;
+            height: 46px;
+          }
         }
       }
     }
   }
+  .title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
   .projects {
     width: 100%;
-    padding: 40px;
     height: 100vh;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    .title {
-      text-align: center;
-      font-size: 40px;
-      margin-bottom: 50px;
-    }
     .projects-container {
       position: relative;
       width: 100%;
-      height: 500px;
+      height: 100%;
       .project {
         transform: perspective(100px);
         position: absolute;
@@ -149,7 +193,7 @@
     .projects-circles {
       display: flex;
       align-items: center;
-      margin-top: 20px;
+      margin-bottom: 100px;
       gap: 10px;
       .circle {
         width: 20px;
@@ -176,6 +220,104 @@
         cursor: pointer;
         &:hover {
           background-color: rgba(255, 255, 255, 0.904);
+        }
+      }
+    }
+  }
+  .contact {
+    padding: 50px 100px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.781);
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      .contact-details,
+      .links {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 250px;
+        padding: 20px 40px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #000;
+      }
+      .contact-details {
+        justify-content: center;
+        .detail {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          h3 {
+            font-size: 20px;
+            text-align: start;
+            width: 150px;
+            i {
+              margin-right: 10px;
+              color: rgb(90, 0, 192);
+            }
+          }
+          a,
+          span {
+            font-weight: 600;
+            color: #000;
+          }
+        }
+      }
+      .links {
+        align-items: center;
+        .title {
+          font-size: 30px;
+          margin: 10px;
+          margin-bottom: 40px;
+        }
+        .links-container {
+          display: flex;
+          gap: 20px;
+          .link {
+            a {
+              i {
+                font-size: 40px;
+                color: rgb(90, 0, 192);
+              }
+            }
+            h3 {
+              margin: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .home {
+    .contact {
+      .container {
+        .contact-details {
+          height: auto;
+          .detail {
+            flex-direction: column;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+            h3 {
+              text-align: center;
+              width: 100%;
+              i {
+                font-size: 30px;
+              }
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+        .contact-details,
+        .links {
+          min-width: 90vw;
         }
       }
     }

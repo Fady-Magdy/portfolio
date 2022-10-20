@@ -50,7 +50,9 @@ export default function Note(props) {
           <h1 className="title">Fady Magdy</h1>
           <div className="note-item">
             <h1>Email: </h1>
-            <p>fady.programmer@gmail.com</p>
+            <a href="mailto:fady.programmer@gmail.com">
+              fady.programmer@gmail.com
+            </a>
             <span
               onClick={() => {
                 navigator.clipboard.writeText("fady.programmer@gmail.com");
@@ -62,7 +64,7 @@ export default function Note(props) {
           </div>
           <div className="note-item">
             <h1>Phone: </h1>
-            <p>+20 106 753 0598</p>
+            <a href="tel:+201067530598">+20 106 753 0598</a>
             <span
               onClick={() => {
                 navigator.clipboard.writeText("+201067530598");
