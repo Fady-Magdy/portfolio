@@ -10,6 +10,7 @@ import Home from "./pages/home/Home";
 const App = () => {
   const [openingShow, setOpeningShow] = useState(true);
   const [musicOn, setMusicOn] = useState(false);
+  const [soundOn, setSoundOn] = useState(false);
   const musicRef = useRef(null);
   const [showMenu, setShowMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -95,18 +96,30 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Office PlayMusic={PlayMusic} musicOn={musicOn} />}
+            element={
+              <Office
+                PlayMusic={PlayMusic}
+                musicOn={musicOn}
+                soundOn={soundOn}
+              />
+            }
           />
           <Route path="/home" element={<Home />} />
         </Routes>
         {openingShow && <Openingshow />}
-        <button className="playMusic" onClick={PlayMusic}>
-          {musicOn ? (
-            <span className="material-symbols-outlined">pause_circle</span>
-          ) : (
-            <span className="material-symbols-outlined">play_circle</span>
-          )}
-        </button>
+        <div className="sound-buttons">
+          <button
+            className="playSound"
+            onClick={() => setSoundOn((prev) => !prev)}
+          >
+            <i
+              className={`fa-solid fa-volume-${soundOn ? "high" : "xmark"}`}
+            ></i>
+          </button>
+          <button className="playMusic" onClick={PlayMusic}>
+            <i className={`fa-solid fa-${musicOn ? "pause" : "play"}`}></i>
+          </button>
+        </div>
       </div>
       <audio ref={musicRef} src={Music} loop></audio>
     </BrowserRouter>

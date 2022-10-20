@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import './office.scss'
+import "./office.scss";
 //  Components Import
 import Table from "../../components/table/Table";
 
@@ -16,61 +16,63 @@ function Office(props) {
   const [secretMsg, setSecretMsg] = useState(false);
   const [secretUsed, setSecretUsed] = useState(false);
   const [itemInUse, setItemInUse] = useState(false);
-  const { firstVisit } = useContext(appContext)
+  const { firstVisit } = useContext(appContext);
   const PlayAudio = (audio) => {
-    const sound = new Audio(audio);
-    sound.volume = 0.3;
-    sound.play();
+    if (props.soundOn) {
+      const sound = new Audio(audio);
+      sound.volume = 0.3;
+      sound.play();
+    }
   };
   useEffect(() => {
     setTimeout(() => {
-      firstVisit.current = false
+      firstVisit.current = false;
     }, 8000);
-  }, [])
+  }, []);
   return (
-      <div className="office">
-        <div className={`office-inside ${firstVisit.current ? "zoom" : ""}`}>
-          <div className="background">
-            <div className="background-darkening-floor"></div>
-          </div>
-          <div
-            className="chair"
-            onMouseEnter={() => {
-              PlayAudio(chairMove);
-            }}
-            onMouseLeave={() => {
-              PlayAudio(chairBack);
-            }}
-          >
-            <img src={chairImg} alt="Failed" draggable="false" />
-            {!secretUsed && (
-              <div
-                className={`secret-msg ${secretMsg && "secret-on"}`}
-                onClick={() => {
-                  setSecretMsg(true);
-                  PlayAudio(parperSound);
-                }}
-                onMouseLeave={() => {
-                  if (secretMsg) {
-                    setTimeout(() => {
-                      setSecretUsed(true);
-                    }, 500);
-                  }
-                }}
-              >
-                {secretMsg && "Life is Good"}
-              </div>
-            )}
-          </div>
-          <Table
-            itemInUse={itemInUse}
-            setItemInUse={setItemInUse}
-            PlayMusic={props.PlayMusic}
-            musicOn={props.musicOn}
-            PlayAudio={PlayAudio}
-          />
+    <div className="office">
+      <div className={`office-inside ${firstVisit.current ? "zoom" : ""}`}>
+        <div className="background">
+          <div className="background-darkening-floor"></div>
         </div>
+        <div
+          className="chair"
+          onMouseEnter={() => {
+            PlayAudio(chairMove);
+          }}
+          onMouseLeave={() => {
+            PlayAudio(chairBack);
+          }}
+        >
+          <img src={chairImg} alt="Failed" draggable="false" />
+          {!secretUsed && (
+            <div
+              className={`secret-msg ${secretMsg && "secret-on"}`}
+              onClick={() => {
+                setSecretMsg(true);
+                PlayAudio(parperSound);
+              }}
+              onMouseLeave={() => {
+                if (secretMsg) {
+                  setTimeout(() => {
+                    setSecretUsed(true);
+                  }, 500);
+                }
+              }}
+            >
+              {secretMsg && "Life is Good"}
+            </div>
+          )}
+        </div>
+        <Table
+          itemInUse={itemInUse}
+          setItemInUse={setItemInUse}
+          PlayMusic={props.PlayMusic}
+          musicOn={props.musicOn}
+          PlayAudio={PlayAudio}
+        />
       </div>
+    </div>
   );
 }
 

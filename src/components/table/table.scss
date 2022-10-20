@@ -49,6 +49,7 @@ $table-border-radius: 15px;
     font-family: lobster, sans-serif;
     z-index: 5;
     .my-name-letter {
+      font-size: 60px;
       font-size: 5cqw;
       transition: 0.5s;
       transform: scale(0) translateY(-40px) rotate(-75deg);
@@ -68,10 +69,11 @@ $table-border-radius: 15px;
   }
   .job-title {
     position: absolute;
+    font-size: 20px;
     font-size: 1.5cqw;
     top: 37%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     opacity: 0;
     z-index: 7;
     cursor: default;
@@ -93,7 +95,7 @@ $table-border-radius: 15px;
         opacity: 0;
       }
       100% {
-       display: none;
+        display: none;
       }
     }
   }

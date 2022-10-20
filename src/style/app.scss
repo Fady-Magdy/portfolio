@@ -19,33 +19,36 @@ body {
   display: flex;
   justify-content: center;
   overflow: hidden;
-  .playMusic {
-    width: 60px;
-    height: 60px;
+  .sound-buttons {
     position: absolute;
-    bottom: 50px;
-    right: 50px;
-    border-radius: 50%;
-    border: none;
-    overflow: hidden;
-    background-color: rgb(112, 2, 255);
+    bottom: 30px;
+    right: 30px;
+    width: 130px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-    cursor: pointer;
-    span {
-      font-size: 74px;
-      transition: 0.7s;
-    }
-    &:hover {
-      span {
-        rotate: 360deg;
+    justify-content: space-between;
+    .playMusic,
+    .playSound {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: rgb(112, 2, 255);
+      transition: 0.2s;
+      border: 3px solid #000;
+      cursor: pointer;
+      i {
+        transition: 0.2s;
+        font-size: 25px;
       }
-      background-color: rgb(144, 59, 255);
-      box-shadow: 0 0 10px #fff;
+      &:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.555);
+        border-color: rgba(255, 255, 255, 0.493);
+        i {
+          color: #fff;
+        }
+      }
     }
   }
+
   .menu-button {
     position: fixed;
     width: 50px;
@@ -96,7 +99,6 @@ body {
         margin: 0;
         list-style: none;
         padding-left: 0;
-
         .list-item {
           text-decoration: none;
           color: #000;
@@ -484,11 +486,17 @@ body {
 }
 @media (max-width: 480px) {
   .app {
-    .playMusic {
-      width: 40px;
-      height: 40px;
-      span {
-        font-size: 50px;
+    .sound-buttons {
+      top: 20px;
+      left: 20px;
+      width: 110px;
+      .playMusic,
+      .playSound {
+        width: 50px;
+        height: 50px;
+        i {
+          font-size: 20px;
+        }
       }
     }
     .office {
@@ -579,7 +587,7 @@ body {
 }
 @media (orientation: portrait) {
   .app {
-    .playMusic {
+    .sound-buttons {
       left: 20px;
       top: 20px;
     }
