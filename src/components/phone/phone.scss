@@ -119,6 +119,7 @@
         width: 100%;
         height: 96.3%;
         padding: 20px;
+        padding-top: 0;
         transition: 0.5s;
         overflow-x: hidden;
         .project {
@@ -136,17 +137,9 @@
             }
           }
         }
-        .projects {
-          margin-top: 0;
-          margin-bottom: 10px;
-          text-align: center;
-          font-weight: 800;
-          font-size: 40px;
-          color: #fff;
-        }
-        .project-section-title {
-          font-size: 20px;
-          padding: 20px 10px;
+        .projects-title {
+          font-size: 30px;
+          padding: 15px;
           margin-left: -10%;
           margin-bottom: 20px;
           width: 120%;
@@ -154,10 +147,6 @@
           text-align: center;
           background-color: rgb(105, 0, 224);
           box-shadow: 0 10px 20px rgba(104, 0, 224, 0.534);
-        }
-        .with-mentor-title {
-          background-color: rgb(0, 93, 231);
-          box-shadow: 0 10px 20px rgba(0, 90, 224, 0.534);
         }
       }
     }
@@ -170,10 +159,6 @@
   min-width: 200px;
   .screen-content {
     filter: brightness(0.6);
-    .project-section-title {
-      font-size: 1vw !important;
-      padding: 1.5vw 0 !important;
-    }
   }
 }
 .noScale {

@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./home.scss";
-import Projects from "../../projects";
+import projects from "../../projects";
 import { appContext } from "../../context/AppContext";
 import ReduxImg from "../../images/redux.png";
 import JestImg from "../../images/jest.png";
 const Home = () => {
   const { animateMyName, myNameArray, firstVisit } = useContext(appContext);
   const [currentProject, setCurrentProject] = useState(0);
-  const projects = Projects.filter(
-    (project) => !project.soon && !project.switchArea
-  );
+
   useEffect(() => {
     animateMyName(document.querySelectorAll(".my-name-letter"));
     firstVisit.current = false;
@@ -173,22 +171,24 @@ const Home = () => {
                     <h1>{project.title}</h1>
                     <p>{project.description}</p>
                   </div>
-                  <div className="buttons">
-                    <a
-                      href={project.projectLink}
-                      target="blank"
-                      className="project-button"
-                    >
-                      Demo
-                    </a>
-                    <a
-                      href={project.projectCode}
-                      target="blank"
-                      className="project-button"
-                    >
-                      Code
-                    </a>
-                  </div>
+                  {!project.soon && (
+                    <div className="buttons">
+                      <a
+                        href={project.projectLink}
+                        target="blank"
+                        className="project-button"
+                      >
+                        Demo
+                      </a>
+                      <a
+                        href={project.projectCode}
+                        target="blank"
+                        className="project-button"
+                      >
+                        Code
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             );

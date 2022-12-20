@@ -91,32 +91,9 @@ export default function Phone(props) {
             </p>
           </div>
           <div className="screen-content">
-            <h1 className="projects">PROJECTS</h1>
-            <h1 className="project-section-title">Projects From My Mind</h1>
+            <h1 className="projects-title">PROJECTS</h1>
             {Projects.map((project) => {
-              if (project.switchArea) {
-                return (
-                  <h1
-                    key={project.id}
-                    className="project-section-title with-mentor-title"
-                  >
-                    Projects made with Bootcamp
-                  </h1>
-                );
-              } else {
-                return (
-                  <Project
-                    key={project.id}
-                    image={project.image}
-                    title={project.title}
-                    projectLink={project.projectLink}
-                    projectCode={project.projectCode}
-                    description={project.description}
-                    withMentor={project.withMentor}
-                    soon={project.soon}
-                  />
-                );
-              }
+              return <Project key={project.id} project={project} />;
             })}
           </div>
         </div>

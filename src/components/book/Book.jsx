@@ -9,7 +9,6 @@ export default function Book(props) {
   const [scale, setScale] = useState(true);
   const [hover, setHover] = useState(true);
   const [entered, setEntered] = useState(false);
-  const phone = useRef(null);
   return (
     <div
       onMouseEnter={() => {
@@ -41,7 +40,6 @@ export default function Book(props) {
           props.setItemInUse(true);
         }
       }}
-      ref={phone}
       className={`book ${scale ? "scale" : "noScale"} ${hover ? "hover" : ""}`}
     >
       <div className="item-title">Skills</div>

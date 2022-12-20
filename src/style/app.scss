@@ -314,9 +314,10 @@ body {
                 .screen-content {
                   padding: 5px;
                 }
-                .projects {
-                  font-size: 10px;
-                  margin: 0;
+                .projects-title {
+                  color: #fff;
+                  font-size: 25px;
+                  margin: 0 -20px;
                 }
                 .project {
                   margin: 5px;
@@ -338,14 +339,14 @@ body {
             &.scale {
               .book-inside {
                 h1 {
-                  font-size: 4vw;
-                  margin: 0.5vw;
+                  font-size: 5vw;
+                  margin: 2vw;
                 }
                 .skills-icons {
-                  margin-top: 0;
-                  padding: 0;
+                  margin-top: 5px;
+                  padding: 5px;
                   span {
-                    height: 5vw;
+                    height: 6vw;
                     i {
                       font-size: 4vw;
                     }
@@ -432,7 +433,7 @@ body {
                 }
                 .skills-icons {
                   span {
-                    height: 30px;
+                    height: 40px;
                     i {
                       font-size: 25px;
                     }

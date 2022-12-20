@@ -2,27 +2,23 @@ import React from "react";
 import "./project.scss";
 export default function Project(props) {
   return (
-    <div
-      className={`project ${props.soon ? "soon" : ""} ${
-        props.withMentor ? "with-mentor" : ""
-      }`}
-    >
+    <div className={`project ${props.project.soon ? "soon" : ""}`}>
       <div className="top">
-        <img src={props.image} alt="Project" />
+        <img src={props.project.image} alt="Project" />
       </div>
       <div className="bottom">
-        <h1 className="project-name">{props.title}</h1>
-        <p className="description">{props.description}</p>
-        {!props.soon && (
+        <h1 className="project-name">{props.project.title}</h1>
+        <p className="description">{props.project.description}</p>
+        {!props.project.soon && (
           <div className="buttons">
-            {props.projectLink && (
-              <a href={props.projectLink} target="blank">
+            {props.project.projectLink && (
+              <a href={props.project.projectLink} target="blank">
                 <i className="fa-solid fa-eye"></i>
                 Demo
               </a>
             )}
-            {props.projectCode && (
-              <a href={props.projectCode} target="blank">
+            {props.project.projectCode && (
+              <a href={props.project.projectCode} target="blank">
                 <i className="fa-solid fa-code"></i>
                 Code
               </a>
