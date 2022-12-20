@@ -1,35 +1,43 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
+import { appContext } from "../../context/AppContext";
 import "./table.scss";
-//  Components Import
+//  Components
 import Note from "../note/Note";
 import Book from "../book/Book";
 import Phone from "../phone/Phone";
-//  Img Import
+//  Images
 import Monitor from "../../images/computer/monitor.png";
 import Keyboard from "../../images/computer/keyboard.png";
 import mouse from "../../images/computer/mouse.png";
 import mousePad from "../../images/computer/mouse-pad.png";
 import speaker from "../../images/computer/speaker.png";
 import windowsImage from "../../images/windows.jpg";
-//  Videos Import
+//  Videos
 import video from "../../videos/video.mp4";
 import video2 from "../../videos/video2.mp4";
 import video3 from "../../videos/video3.mp4";
-//  Audio Import
+//  Audio
 import tableKnock from "../../audio/table-knock.mp3";
 import keyboardClick from "../../audio/keyboard-click.mp3";
 import mouseClick from "../../audio/mouse-click.mp3";
-import { useEffect } from "react";
-import { appContext } from "../../context/AppContext";
-
-export default function Table(props) {
+// ---------------------------------------------------------------------------
+export default function Table({
+  PlayAudio,
+  PlayMusic,
+  musicOn,
+  itemInUse,
+  setItemInUse,
+}) {
+  // States
   const videoRef = useRef();
   const [videoOn, setVideoOn] = useState(true);
   const [videoStart, setVideoStart] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
-  const [videoOrWindows, setVideoOrWindows] = useState(true);
+  const [videoOrWindows, setVideoOrWindows] = useState(true); // to switch between video and windows image
   const { animateMyName, myNameArray, firstVisit } = useContext(appContext);
   const videoList = [video, video2, video3];
+  // -------------------------------------------------------------------------
+  // Functions
   function videoPlay() {
     if (videoStart && videoOrWindows) {
       videoOn ? videoRef.current.pause() : videoRef.current.play();
@@ -38,6 +46,8 @@ export default function Table(props) {
       return false;
     }
   }
+  // -------------------------------------------------------------------------
+  // Use Effects
   useEffect(() => {
     animateMyName(document.querySelectorAll(".my-name-letter"), true);
   }, []);
@@ -52,14 +62,17 @@ export default function Table(props) {
       }, 100);
     }
   }, []);
+  // --------------------------------------------------------------------------
+  // JSX
   return (
     <div className="table">
       <div
         className="background-darkening-table"
         onClick={() => {
-          props.PlayAudio(tableKnock);
+          PlayAudio(tableKnock);
         }}
       ></div>
+      {/* Monitor -------------------------------------------------------- */}
       <div className={`monitor ${videoStart ? "on" : ""}`}>
         <div className="monitor-screen">
           {firstVisit.current && <h1>Welcome</h1>}
@@ -79,92 +92,89 @@ export default function Table(props) {
         <img
           className="monitorImage"
           src={Monitor}
-          alt=""
+          alt="Monitor"
           draggable="false"
           onClick={() => {
             setVideoStart(!videoStart);
           }}
         />
       </div>
+      {/* Keyboard -------------------------------------------------------- */}
       <div
         className="keyboard"
         onClick={() => {
-          props.PlayAudio(keyboardClick);
+          PlayAudio(keyboardClick);
         }}
       >
-        <img src={Keyboard} alt="" draggable="false" />
+        <img src={Keyboard} alt="Keyboard" draggable="false" />
         <div className="space" onClick={videoPlay}></div>
         <div
-          className="arrow left-arrow"
+          className="arrow left"
           onClick={() => {
             if (videoStart && videoOrWindows) {
               if (currentVideo > 0) {
-                setVideoStart(false);
                 setCurrentVideo(currentVideo - 1);
-                setTimeout(() => {
-                  setVideoStart(true);
-                }, 100);
               }
             }
           }}
         ></div>
         <div
-          className="arrow right-arrow"
+          className="arrow right"
           onClick={() => {
             if (videoStart && videoOrWindows) {
               if (currentVideo < videoList.length - 1) {
-                setVideoStart(false);
                 setCurrentVideo(currentVideo + 1);
-                setTimeout(() => {
-                  setVideoStart(true);
-                }, 100);
               }
             }
           }}
         ></div>
       </div>
+      {/* Mouse -------------------------------------------------------- */}
       <div className="mouse-pad">
-        <img src={mousePad} alt="" draggable="false" />
-        <div className="mouse" onClick={() => {}}>
-          <img src={mouse} alt="" draggable="false" />
+        <img src={mousePad} alt="Mouse Pad" draggable="false" />
+        <div className="mouse">
+          <img src={mouse} alt="Mouse" draggable="false" />
           <div
-            className="right-click"
+            className="left-click"
             onClick={() => {
-              props.PlayAudio(mouseClick);
+              PlayAudio(mouseClick);
               setVideoOrWindows(!videoOrWindows);
             }}
           ></div>
         </div>
       </div>
-      <div className="speaker speaker-right" onClick={props.PlayMusic}>
-        <img src={speaker} alt="" draggable="false" />
-        <div className={` ${props.musicOn && "sound-wave"}`}>
+      {/* Speakers -------------------------------------------------------- */}
+      <div className="speaker speaker-right" onClick={PlayMusic}>
+        <img src={speaker} alt="Speaker Right" draggable="false" />
+        <div className={` ${musicOn && "sound-wave"}`}>
           <div className="circle"></div>
           <div className="circle circle2 "></div>
         </div>
       </div>
-      <div className="speaker speaker-left" onClick={props.PlayMusic}>
-        <img src={speaker} alt="" draggable="false" />
-        <div className={` ${props.musicOn && "sound-wave"}`}>
+      <div className="speaker speaker-left" onClick={PlayMusic}>
+        <img src={speaker} alt="Speaker Left" draggable="false" />
+        <div className={` ${musicOn && "sound-wave"}`}>
           <div className="circle"></div>
           <div className="circle circle2 "></div>
         </div>
       </div>
+      {/* Items -------------------------------------------------------- */}
       <Phone
-        PlayAudio={props.PlayAudio}
-        itemInUse={props.itemInUse}
-        setItemInUse={props.setItemInUse}
+        PlayAudio={PlayAudio}
+        itemInUse={itemInUse}
+        setItemInUse={setItemInUse}
       />
       <Book
-        PlayAudio={props.PlayAudio}
-        itemInUse={props.itemInUse}
-        setItemInUse={props.setItemInUse}
+        PlayAudio={PlayAudio}
+        itemInUse={itemInUse}
+        setItemInUse={setItemInUse}
       />
       <Note
-        PlayAudio={props.PlayAudio}
-        itemInUse={props.itemInUse}
-        setItemInUse={props.setItemInUse}
+        PlayAudio={PlayAudio}
+        itemInUse={itemInUse}
+        setItemInUse={setItemInUse}
       />
+      {/* My Name Show -------------------------------------------------- */}
       <div className="my-name-out">
         {firstVisit.current &&
           myNameArray.map((letter, index) => {

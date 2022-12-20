@@ -44,9 +44,9 @@
         .speaker,
         .keyboard,
         .mouse-pad,
-        .phone.scale,
-        .note.scale,
-        .book.scale {
+        .phone.scaleDown,
+        .note.scaleDown,
+        .book.scaleDown {
           filter: brightness(0.7);
           &:hover {
             filter: brightness(0.9);
@@ -92,21 +92,6 @@
                   p {
                     color: rgba(255, 255, 255, 0.562);
                     font-weight: 500;
-                  }
-                }
-              }
-            }
-          }
-          .with-mentor {
-            .bottom {
-              h1 {
-                .buttons {
-                  a {
-                    background-color: rgb(164, 55, 207);
-                    &:hover {
-                      border: 2px rgb(164, 55, 207) solid;
-                      color: rgb(164, 55, 207);
-                    }
                   }
                 }
               }

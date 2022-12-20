@@ -1,36 +1,26 @@
 import React, { useState, useEffect, useContext } from "react";
-import "./home.scss";
-import projects from "../../projects";
 import { appContext } from "../../context/AppContext";
-import ReduxImg from "../../images/redux.png";
-import JestImg from "../../images/jest.png";
+import { Projects, Skills, fadyData } from "../../data/myData";
+import "./home.scss";
+// -------------------------------------------------------------------------
 const Home = () => {
+  // States
   const { animateMyName, myNameArray, firstVisit } = useContext(appContext);
   const [currentProject, setCurrentProject] = useState(0);
-
-  useEffect(() => {
-    animateMyName(document.querySelectorAll(".my-name-letter"));
-    firstVisit.current = false;
-  }, []);
-
-  useEffect(() => {
-    scrollProjects();
-    showSkills();
-  }, [currentProject]);
+  // -------------------------------------------------------------------------
+  // Functions
   function goRight() {
-    if (currentProject >= projects.length - 1) {
-      setCurrentProject(0);
-    } else {
-      setCurrentProject((prev) => prev + 1);
-    }
+    setCurrentProject((prev) => {
+      if (currentProject >= Projects.length - 1) return 0;
+      else return prev + 1;
+    });
     scrollProjects();
   }
   function goLeft() {
-    if (currentProject > 0) {
-      setCurrentProject((prev) => prev - 1);
-    } else {
-      setCurrentProject(projects.length - 1);
-    }
+    setCurrentProject((prev) => {
+      if (currentProject > 0) return prev - 1;
+      else return Projects.length - 1;
+    });
     scrollProjects();
   }
   function showSkills() {
@@ -43,54 +33,60 @@ const Home = () => {
       time += 100;
     });
   }
+  // to update project style depending on it's index
+  function updateProject(project, rotate, scale, zIndex, left) {
+    project.style.transform = `perspective(600px) rotateY(${rotate}) scale(${scale})`;
+    project.style.zIndex = zIndex;
+    project.style.left = left;
+  }
   function scrollProjects() {
     let projectsCards = document.querySelectorAll(".project");
     projectsCards.forEach((project, index) => {
+      // if this is current project
       if (index === currentProject) {
-        project.style.transform = "translateX(-50%)";
-        project.style.zIndex = 2;
-        project.style.left = "50%";
+        updateProject(project, "0deg", 1, 2, "50%");
         project.classList.remove("in-the-side");
+        // if this is project before current one
       } else if (index === currentProject - 1) {
-        project.style.transform =
-          "translateX(-50%) perspective(600px) rotateY(40deg) scale(0.7)";
-        project.style.left = "calc(50% - 250px)";
-        project.style.zIndex = 1;
+        updateProject(project, "40deg", 0.7, 1, "calc(50% - 250px)");
         project.classList.add("in-the-side");
+        // if this is project after current one
       } else if (index === currentProject + 1) {
-        project.style.transform =
-          "translateX(-50%) perspective(600px) rotateY(-40deg) scale(0.7)";
-        project.style.left = "calc(50% + 250px)";
-        project.style.zIndex = 1;
+        updateProject(project, "-40deg", 0.7, 1, "calc(50% + 250px)");
         project.classList.add("in-the-side");
-      } else if (index < currentProject + 2) {
-        project.style.transform =
-          "translateX(-50%)  perspective(600px) rotateY(0) scale(0.2)";
-        project.style.left = "50%";
-        project.style.zIndex = 0;
-        project.classList.add("in-the-side");
-      } else if (index > currentProject - 2) {
-        project.style.transform =
-          "translateX(-50%)  perspective(600px) rotateY(0) scale(0.2)";
-        project.style.left = "50%";
-        project.style.zIndex = 0;
+      } else {
+        updateProject(project, "0", 0.2, 0, "50%");
         project.classList.add("in-the-side");
       }
     });
-    if (currentProject === projects.length - 1) {
-      projectsCards[0].style.transform =
-        "translateX(-50%) perspective(600px) rotateY(-40deg) scale(0.7)";
-      projectsCards[0].style.left = "calc(50% + 250px)";
-      projectsCards[0].style.zIndex = 1;
+    // if this is last project (show first project after it)
+    if (currentProject === Projects.length - 1) {
+      updateProject(projectsCards[0], "-40deg", 0.7, 1, "calc(50% + 250px)");
     }
+    // if this is first project (show last project before it)
     if (currentProject === 0) {
-      projectsCards[projects.length - 1].style.transform =
-        "translateX(-50%) perspective(600px) rotateY(40deg) scale(0.7)";
-      projectsCards[projects.length - 1].style.left = "calc(50% - 250px)";
-      projectsCards[projects.length - 1].style.zIndex = 1;
+      updateProject(
+        projectsCards[Projects.length - 1],
+        "40deg",
+        0.7,
+        1,
+        "calc(50% - 250px)"
+      );
     }
   }
+  // -------------------------------------------------------------------------
+  // Use Effects
+  useEffect(() => {
+    animateMyName(document.querySelectorAll(".my-name-letter"));
+    firstVisit.current = false;
+  }, []);
 
+  useEffect(() => {
+    scrollProjects();
+    showSkills();
+  }, [currentProject]);
+  // -------------------------------------------------------------------------
+  // JSX
   return (
     <div className="home">
       <section className="first-section">
@@ -118,49 +114,21 @@ const Home = () => {
         <div className="skills">
           <h2>Skills</h2>
           <div className="skills-container">
-            <span className="skill">
-              <i className="fa-brands fa-html5"></i>
-              <p>HTML</p>
-            </span>
-            <span className="skill">
-              <i className="fa-brands fa-css3-alt"></i>
-              <p>CSS</p>
-            </span>
-            <span className="skill">
-              <i className="fa-brands fa-square-js"></i>
-              <p>JavaScript</p>
-            </span>
-            <span className="skill">
-              <i className="fa-brands fa-react"></i>
-              <p>React</p>
-            </span>
-            <span className="skill">
-              <img src={ReduxImg} alt="redux" />
-              <p>Redux/ToolKit</p>
-            </span>
-            <span className="skill">
-              <img src={JestImg} alt="" />
-              <p>Unit Test</p>
-            </span>
-            <span className="skill">
-              <i className="fa-brands fa-bootstrap"></i>
-              <p>Bootstrap</p>
-            </span>
-            <span className="skill">
-              <i className="fa-brands fa-sass"></i>
-              <p>Sass</p>
-            </span>
-            <span className="skill">
-              <i className="fa-brands fa-github"></i>
-              <p>GitHub</p>
-            </span>
+            {Skills.map((skill, index) => {
+              return (
+                <span key={index} className="skill">
+                  {skill.icon}
+                  <p>{skill.name}</p>
+                </span>
+              );
+            })}
           </div>
         </div>
       </section>
       <section className="projects">
         <h1 className="title">Projects</h1>
         <div className="projects-container">
-          {projects.map((project) => {
+          {Projects.map((project) => {
             return (
               <div className="project" key={project.id}>
                 <div className="top-image">
@@ -198,7 +166,7 @@ const Home = () => {
           <div onClick={goLeft} className="arrow go-left">
             <i className="fa-solid fa-caret-left"></i>
           </div>
-          {projects.map((project, index) => {
+          {Projects.map((project, index) => {
             return (
               <div
                 onClick={(e) => setCurrentProject(index)}
@@ -220,46 +188,33 @@ const Home = () => {
               <h3>
                 <i className="fa-solid fa-phone"></i> <span>Phone:</span>
               </h3>
-              <a href="tel:+201067530598">+20 106 753 0598</a>
+              <a href={`tel:${fadyData.phone}`}>{fadyData.phone}</a>
             </div>
             <div className="detail">
               <h3>
                 <i className="fa-solid fa-envelope"></i> <span>Email:</span>
               </h3>
-              <a href="mailto:fady.programmer@gmail.com">
-                fady.programmer@gmail.com
-              </a>
+              <a href={`mailto:${fadyData.email}`}>{fadyData.email}</a>
             </div>
             <div className="detail">
               <h3>
                 <i className="fa-solid fa-location-dot"></i>{" "}
                 <span> Location:</span>
               </h3>
-              <span>Asyut, Egypt (Willing to relocate)</span>
+              <span>{fadyData.location}</span>
             </div>
           </div>
           <div className="links">
             <h2 className="title">Links</h2>
             <div className="links-container">
-              <div className="link">
-                <a href="https://www.linkedin.com/in/fady-magdy-dev/">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-
-                <h3>LinkedIn</h3>
-              </div>
-              <div className="link">
-                <a href="https://github.com/Fady-Magdy">
-                  <i className="fa-brands fa-square-github"></i>
-                </a>
-                <h3>Github</h3>
-              </div>
-              <div className="link">
-                <a href="https://www.facebook.com/fady.magdy.dev/">
-                  <i className="fa-brands fa-square-facebook"></i>
-                </a>
-                <h3>Facebook</h3>
-              </div>
+              {fadyData.socialLinks.map((link, index) => {
+                return (
+                  <div className="link" key={index}>
+                    <a href={link.url}>{link.icon}</a>
+                    <h3>{link.name}</h3>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

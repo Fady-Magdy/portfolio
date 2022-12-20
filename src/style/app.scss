@@ -1,162 +1,15 @@
 * {
   box-sizing: border-box;
 }
-*::selection {
-  background-color: transparent;
-}
+
 body {
   height: 100vh;
-  background-color: black;
   margin: 0;
   color: #fff;
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
 
-.app {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  .sound-buttons {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 130px;
-    display: flex;
-    height: fit-content;
-    z-index: 4;
-    justify-content: space-between;
-    .playMusic,
-    .playSound {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: rgb(112, 2, 255);
-      transition: 0.2s;
-      border: 3px solid #000;
-      cursor: pointer;
-      i {
-        transition: 0.2s;
-        font-size: 25px;
-      }
-      &:hover {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.555);
-        border-color: rgba(255, 255, 255, 0.493);
-        i {
-          color: #fff;
-        }
-      }
-    }
-  }
-
-  .menu-button {
-    position: fixed;
-    width: 50px;
-    text-align: center;
-    border-radius: 3px;
-    top: 40px;
-    right: 40px;
-    font-size: 40px;
-    transition: 0.3s;
-    z-index: 4;
-    &.show {
-      background-color: rgb(105, 0, 224);
-    }
-    i {
-      transition: 0.3s;
-      cursor: pointer;
-    }
-    .menu {
-      width: 200px;
-      color: #000;
-      border-radius: 3px;
-      position: absolute;
-      margin-top: -5px;
-      right: -300px;
-      font-size: 20px;
-      background-color: red;
-      h3 {
-        position: relative;
-        text-align: center;
-        margin: 15px 0;
-        line-height: 50px;
-        background-color: #fff;
-        border-radius: 30px 5px 5px;
-        right: 0;
-        scale: 0.5;
-        font-weight: 400;
-        letter-spacing: 2px;
-        transition: 0.8s;
-        font-family: "lobster", sans-serif;
-        cursor: default;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
-        &.show {
-          right: 300px;
-          scale: 1;
-        }
-      }
-      ul {
-        margin: 0;
-        list-style: none;
-        padding-left: 0;
-        .list-item {
-          text-decoration: none;
-          color: #000;
-          position: relative;
-          border-radius: 5px;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          height: 40px;
-          padding: 5px 10px;
-          background-color: #fff;
-          margin-bottom: 10px;
-          font-weight: 500;
-          font-size: 16px;
-          right: 0;
-          transition: 0.8s;
-          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
-          scale: 0.5;
-          cursor: pointer;
-          &.show {
-            right: 300px;
-            scale: 1;
-            .icon-holder {
-              rotate: 360deg;
-              scale: 1;
-            }
-          }
-          &:hover {
-            transition: 0.2s;
-            color: #fff;
-            background-color: rgba(139, 37, 255, 0.486);
-            .icon-holder {
-              i {
-                color: #fff;
-              }
-            }
-          }
-          .icon-holder {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 30px;
-            height: 30px;
-            transition: 0.8s;
-            scale: 0.2;
-            margin-right: 5px;
-            i {
-              color: rgb(105, 0, 224);
-              font-size: 20px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 @media (orientation: landscape) {
   @keyframes light-change {
     0% {
@@ -201,7 +54,7 @@ body {
       .office-inside {
         .table {
           .phone {
-            &.scale {
+            &.scaleDown {
               .phone-inside {
                 .screen-content {
                   height: 95%;
@@ -281,7 +134,7 @@ body {
           .phone,
           .note,
           .book {
-            &.scale {
+            &.scaleDown {
               .phone-inside {
                 .top-curve {
                   height: 10px;
@@ -306,7 +159,7 @@ body {
             }
           }
           .phone {
-            &.scale {
+            &.scaleDown {
               border: 8px solid rgba(255, 255, 255, 0.733);
               border-radius: 25px;
               .phone-inside {
@@ -336,13 +189,13 @@ body {
             }
           }
           .book {
-            &.scale {
+            &.scaleDown {
               .book-inside {
                 h1 {
                   font-size: 5vw;
                   margin: 2vw;
                 }
-                .skills-icons {
+                .skills-list {
                   margin-top: 5px;
                   padding: 5px;
                   span {
@@ -426,12 +279,12 @@ body {
             }
           }
           .book {
-            &.scale {
+            &.scaleDown {
               .book-inside {
                 h1 {
                   font-size: 20px;
                 }
-                .skills-icons {
+                .skills-list {
                   span {
                     height: 40px;
                     i {
@@ -446,7 +299,7 @@ body {
             }
           }
           .note {
-            &.scale {
+            &.scaleDown {
               .note-inside {
                 font-size: 0.7vw;
                 .note-item {
@@ -537,17 +390,17 @@ body {
             }
           }
           .phone {
-            &.noScale {
+            &.noScaleDown {
               transform: scale(0.6) translate(-80%, -83%) rotate(-90deg) !important;
             }
           }
           .note {
-            &.noScale {
+            &.noScaleDown {
               transform: scale(0.6) translate(-80%, -80%) rotate(-90deg) !important;
             }
           }
           .book {
-            &.noScale {
+            &.noScaleDown {
               transform: scale(0.6) translate(-80%, -82%) rotate(-90deg) !important;
             }
           }
@@ -637,7 +490,7 @@ body {
           .phone,
           .note,
           .book {
-            &.hover:hover {
+            &:hover {
               box-shadow: 100px 100px 30px rgba(0, 0, 0, 0.3);
             }
             &.scale {
@@ -645,14 +498,14 @@ body {
             }
           }
           .phone {
-            &.noScale {
+            &.noScaleDown {
               top: 60%;
               transform: scale(0.8) translate(-55%, -60%) rotate(-90deg);
             }
           }
           .note,
           .book {
-            &.noScale {
+            &.noScaleDown {
               top: 50%;
               transform: scale(0.8) translate(-55%, -60%) rotate(-90deg);
             }

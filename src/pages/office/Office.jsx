@@ -1,18 +1,17 @@
-import { useRef, useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { appContext } from "../../context/AppContext";
 import "./office.scss";
-//  Components Import
+//  Component
 import Table from "../../components/table/Table";
-
-//  images Import
+//  images
 import chairImg from "../../images/chair.png";
-//  Audio Import
+//  Audio
 import parperSound from "../../audio/paper-hover.mp3";
 import chairMove from "../../audio/chair-move.mp3";
 import chairBack from "../../audio/chair-back.mp3";
-import { useEffect } from "react";
-import { useContext } from "react";
-import { appContext } from "../../context/AppContext";
+// ------------------------------------------------------------------------
 function Office(props) {
+  // States
   const [secretMsg, setSecretMsg] = useState(false);
   const [secretUsed, setSecretUsed] = useState(false);
   const [itemInUse, setItemInUse] = useState(false);
@@ -24,11 +23,15 @@ function Office(props) {
       sound.play();
     }
   };
+  // ------------------------------------------------------------------------
+  // Use States
   useEffect(() => {
     setTimeout(() => {
       firstVisit.current = false;
     }, 8000);
   }, []);
+  // ------------------------------------------------------------------------
+  // JSX
   return (
     <div className="office">
       <div className={`office-inside ${firstVisit.current ? "zoom" : ""}`}>

@@ -1,91 +1,71 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { Skills } from "../../data/myData";
 import "./book.scss";
+// Sound Effects
 import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
-import ReduxImg from "../../images/redux.png";
-import JestImg from "../../images/jest.png";
+// Images
+
+// ------------------------------------------------------------
 export default function Book(props) {
-  const [scale, setScale] = useState(true);
-  const [hover, setHover] = useState(true);
+  // States
+  const [scaleDown, setScaleDown] = useState(true);
   const [entered, setEntered] = useState(false);
+  // ---------------------------------------------------------
+  // Functions
+  // when mouse enter book
+  const hoverBook = () => {
+    if (!entered) props.PlayAudio(hoverSound);
+  };
+  // when mouse leave book
+  const leaveBook = () => {
+    if (entered) {
+      setScaleDown(true);
+      setEntered(false);
+      setTimeout(() => {
+        props.PlayAudio(drop);
+      }, 220);
+      // prevent other items to scale up
+      props.setItemInUse(false);
+    }
+  };
+  const ScaleUpBook = () => {
+    if (!props.itemInUse) {
+      // scale up book when clicked
+      setScaleDown(false);
+      if (!entered) props.PlayAudio(tap);
+      setTimeout(() => {
+        setEntered(true);
+      }, 400);
+      // allow other items to scale up
+      props.setItemInUse(true);
+    }
+  };
+  // ----------------------------------------------------------------
+  // JSX
   return (
     <div
-      onMouseEnter={() => {
-        if (!entered) {
-          props.PlayAudio(hoverSound);
-        }
-      }}
-      onMouseLeave={() => {
-        if (entered) {
-          setScale(true);
-          setHover(true);
-          setEntered(false);
-          setTimeout(() => {
-            props.PlayAudio(drop);
-          }, 220);
-          props.setItemInUse(false);
-        }
-      }}
-      onClick={(e) => {
-        if (!props.itemInUse) {
-          setScale(false);
-          setHover(false);
-          if (!entered) {
-            props.PlayAudio(tap);
-          }
-          setTimeout(() => {
-            e.target.onMouseEnter = setEntered(true);
-          }, 400);
-          props.setItemInUse(true);
-        }
-      }}
-      className={`book ${scale ? "scale" : "noScale"} ${hover ? "hover" : ""}`}
+      onMouseEnter={hoverBook}
+      onMouseLeave={leaveBook}
+      onClick={ScaleUpBook}
+      className={`book ${scaleDown ? "scaleDown" : "noScaleDown"}`}
     >
       <div className="item-title">Skills</div>
       <div className="book-inside">
         <div className="background-darkening-items"></div>
         <h1>Skills</h1>
         <hr />
-        <div className="skills-icons">
-          <span>
-            <i className="fa-brands fa-html5"></i>
-            <p>HTML</p>
-          </span>
-          <span>
-            <i className="fa-brands fa-css3-alt"></i>
-            <p>CSS</p>
-          </span>
-          <span>
-            <i className="fa-brands fa-square-js"></i>
-            <p>JavaScript</p>
-          </span>
-          <span>
-            <i className="fa-brands fa-react"></i>
-            <p>React</p>
-          </span>
-          <span>
-            <img src={ReduxImg} alt="redux" />
-            <p>Redux/ToolKit</p>
-          </span>
-          <span>
-            <img src={JestImg} alt="" />
-            <p>Unit Test</p>
-          </span>
-          <span>
-            <i className="fa-brands fa-bootstrap"></i>
-            <p>Bootstrap</p>
-          </span>
-          <span>
-            <i className="fa-brands fa-sass"></i>
-            <p>Sass</p>
-          </span>
-          <span>
-            <i className="fa-brands fa-github"></i>
-            <p>GitHub</p>
-          </span>
+        <div className="skills-list">
+          {Skills.map((skill, index) => {
+            return (
+              <span key={index}>
+                {skill.icon}
+                <p>{skill.name}</p>
+              </span>
+            );
+          })}
         </div>
-        <p className="description">I also Learned OOP - Agile/Scrum</p>
       </div>
     </div>
   );

@@ -1,61 +1,68 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { fadyData } from "../../data/myData";
 import "./note.scss";
+// Sound Effects
 import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/paper-hover.mp3";
 import drop from "../../audio/drop.mp3";
-export default function Note(props) {
-  const [scale, setScale] = useState(true);
-  const [hover, setHover] = useState(true);
+// -------------------------------------------------------
+const Note = (props) => {
+  // States
+  const [scaleDown, setScaleDown] = useState(true);
   const [entered, setEntered] = useState(false);
-  const phone = useRef(null);
-
+  // -----------------------------------------------------
+  // Functions
+  // when mouse enter note
+  const hoverNote = () => {
+    if (!entered) props.PlayAudio(hoverSound);
+  };
+  // when mouse leave note
+  const leaveNote = () => {
+    if (entered) {
+      setScaleDown(true);
+      setEntered(false);
+      setTimeout(() => {
+        props.PlayAudio(drop);
+      }, 220);
+      // prevent other items to scale up
+      props.setItemInUse(false);
+    }
+  };
+  const ScaleUpNote = () => {
+    if (!props.itemInUse) {
+      // scale up Note when clicked
+      setScaleDown(false);
+      if (!entered) props.PlayAudio(tap);
+      setTimeout(() => {
+        setEntered(true);
+      }, 400);
+      // allow other items to scale up
+      props.setItemInUse(true);
+    }
+  };
+  const copyText = (text) => {
+    navigator.clipboard.writeText(text);
+  };
+  // -----------------------------------------------------
+  // JSX
   return (
     <div
-      onMouseEnter={() => {
-        if (!entered) {
-          props.PlayAudio(hoverSound);
-        }
-      }}
-      onMouseLeave={() => {
-        if (entered) {
-          setScale(true);
-          setHover(true);
-          setEntered(false);
-          setTimeout(() => {
-            props.PlayAudio(drop);
-          }, 220);
-          props.setItemInUse(false);
-        }
-      }}
-      onClick={(e) => {
-        if (!props.itemInUse) {
-          setScale(false);
-          setHover(false);
-          if (!entered) {
-            props.PlayAudio(tap);
-          }
-          setTimeout(() => {
-            e.target.onMouseEnter = setEntered(true);
-          }, 400);
-          props.setItemInUse(true);
-        }
-      }}
-      ref={phone}
-      className={`note ${scale ? "scale" : "noScale"} ${hover ? "hover" : ""}`}
+      onMouseEnter={hoverNote}
+      onMouseLeave={leaveNote}
+      onClick={ScaleUpNote}
+      className={`note ${scaleDown ? "scaleDown" : "noScaleDown"}`}
     >
       <div className="item-title">Contact</div>
       <div className="note-inside">
         <div className="background-darkening-items"></div>
         <div className="note-content">
-          <h1 className="title">Fady Magdy</h1>
+          <h1 className="title">{fadyData.name}</h1>
           <div className="note-item">
             <h1>Email: </h1>
-            <a href="mailto:fady.programmer@gmail.com">
-              fady.programmer@gmail.com
-            </a>
+            <a href={`mailto:${fadyData.email}`}>{fadyData.email}</a>
             <span
               onClick={() => {
-                navigator.clipboard.writeText("fady.programmer@gmail.com");
+                copyText(fadyData.email);
               }}
               className="copy material-symbols-outlined"
             >
@@ -64,10 +71,10 @@ export default function Note(props) {
           </div>
           <div className="note-item">
             <h1>Phone: </h1>
-            <a href="tel:+201067530598">+20 106 753 0598</a>
+            <a href={`tel:${fadyData.phone}`}>{fadyData.phone}</a>
             <span
               onClick={() => {
-                navigator.clipboard.writeText("+201067530598");
+                copyText(fadyData.phone);
               }}
               className="copy material-symbols-outlined"
             >
@@ -76,14 +83,15 @@ export default function Note(props) {
           </div>
           <div className="note-item">
             <h1>Location: </h1>
-            <p>Asyut, Egypt (Willing to Relocate)</p>
+            <p>{fadyData.location}</p>
           </div>
+          {/* Resume Buttons */}
           <div className="buttons">
             <span>
               <i className="fa-solid fa-file"></i> Resume:
             </span>
             <a
-              href="https://drive.google.com/uc?export=download&id=1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW"
+              href={fadyData.resumeDownloadUrl}
               className="resume-button"
               download
             >
@@ -92,7 +100,7 @@ export default function Note(props) {
             </a>
             <a
               className="resume-button"
-              href="https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view?usp=sharing"
+              href={fadyData.resumeViewUrl}
               target="blank"
             >
               <i className="fa-solid fa-eye"></i>
@@ -100,20 +108,19 @@ export default function Note(props) {
             </a>
           </div>
           <hr />
-
+          {/* Social Links */}
           <div className="note-links">
-            <a target="blank" href="https://www.linkedin.com/in/fady-magdy-dev">
-              <i className="fa-brands fa-linkedin"></i>
-            </a>
-            <a target="blank" href="https://github.com/Fady-Magdy">
-              <i className="fa-brands fa-square-github"></i>
-            </a>
-            <a target="blank" href="https://www.facebook.com/fady.magdy.dev">
-              <i className="fa-brands fa-square-facebook"></i>
-            </a>
+            {fadyData.socialLinks.map((link, index) => {
+              return (
+                <a key={index} target="blank" href={link.url}>
+                  {link.icon}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+export default Note;

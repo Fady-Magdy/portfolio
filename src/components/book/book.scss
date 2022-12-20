@@ -37,7 +37,7 @@
       width: 80%;
       opacity: 0.4;
     }
-    .skills-icons {
+    .skills-list {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -83,15 +83,6 @@
         }
       }
     }
-    .description {
-      position: absolute;
-      padding: 0 30px;
-      bottom: 10px;
-      opacity: 0.7;
-      text-align: center;
-      font-size: 18px;
-      font-weight: 300;
-    }
   }
 }
 
@@ -100,14 +91,13 @@ p::selection {
 }
 .table {
   .book {
-    &.scale {
+    &.scaleDown {
       top: -5%;
       left: 14%;
-
       h1 {
         font-size: 5vw;
       }
-      .skills-icons {
+      .skills-list {
         span {
           height: 6.2vw;
           display: flex;
@@ -119,12 +109,8 @@ p::selection {
           }
         }
       }
-      .description {
-        font-size: 1vw;
-        opacity: 0.5;
-      }
     }
-    &.noScale {
+    &.noScaleDown {
       margin-top: 20px;
       top: 40vh;
       left: 50%;

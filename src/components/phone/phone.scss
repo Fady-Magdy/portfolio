@@ -152,7 +152,7 @@
     }
   }
 }
-.scale {
+.scaleDown {
   top: calc(85% - 27vw);
   left: 65%;
   top: 10%;
@@ -161,7 +161,7 @@
     filter: brightness(0.6);
   }
 }
-.noScale {
+.noScaleDown {
   top: 45vh;
   left: 50%;
   width: 450px;

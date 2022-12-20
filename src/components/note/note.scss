@@ -135,7 +135,7 @@ p::selection {
 }
 .table {
   .note {
-    &.scale {
+    &.scaleDown {
       top: 20%;
       left: -5%;
       .note-inside {
@@ -163,7 +163,7 @@ p::selection {
         }
       }
     }
-    &.noScale {
+    &.noScaleDown {
       margin-top: 20px;
       top: 40vh;
       left: 50%;
