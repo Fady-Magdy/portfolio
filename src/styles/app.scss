@@ -9,7 +9,9 @@ body {
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
-
+.app {
+  overflow: hidden;
+}
 @media (orientation: landscape) {
   @keyframes light-change {
     0% {

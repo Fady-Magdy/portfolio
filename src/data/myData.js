@@ -1,37 +1,59 @@
 //  Images
-import projectEcommerce from "../images/projects/ecommerce-computer-shop.png";
-import projectTodoApp from "../images/projects/todo-app.png";
-import projectGames from "../images/projects/games.png";
-import projectPhoneChatting from "../images/projects/phone-chatting.png";
-import projectHomeStuffOrganizer from "../images/projects/home-stuff-organizer.jpg";
-import projectSoon from "../images/projects/soon.jpg";
-
+// Projects
+import ecommerce1 from "../images/projects/ecommerce/1.png";
+import ecommerce2 from "../images/projects/ecommerce/2.png";
+import ecommerce3 from "../images/projects/ecommerce/3.jpg";
+import ecommerce4 from "../images/projects/ecommerce/4.jpg";
+import ecommerce5 from "../images/projects/ecommerce/5.jpg";
+import ecommerce6 from "../images/projects/ecommerce/6.jpg";
+import hso1 from "../images/projects/hso/1.jpg";
+import hso2 from "../images/projects/hso/2.jpg";
+import hso3 from "../images/projects/hso/3.jpg";
+import hso4 from "../images/projects/hso/4.jpg";
+import hso5 from "../images/projects/hso/5.jpg";
+import hso6 from "../images/projects/hso/6.jpg";
+import games1 from "../images/projects/games/1.png";
+import games2 from "../images/projects/games/2.jpg";
+import games3 from "../images/projects/games/3.jpg";
+import games4 from "../images/projects/games/4.jpg";
+import games5 from "../images/projects/games/5.jpg";
+import todo1 from "../images/projects/todo/1.jpg";
+import todo2 from "../images/projects/todo/2.jpg";
+import todo3 from "../images/projects/todo/3.jpg";
+import phoneChat1 from "../images/projects/phoneChat/1.jpg";
+import phoneChat2 from "../images/projects/phoneChat/2.jpg";
+import soon from "../images/projects/soon.jpg";
+// Skills
 import ReduxImg from "../images/redux.png";
 import JestImg from "../images/jest.png";
 
 export const Projects = [
   {
-    id: 1,
     title: "Ecommerce PC Store",
-    image: projectEcommerce,
+    images: [
+      ecommerce1,
+      ecommerce2,
+      ecommerce3,
+      ecommerce4,
+      ecommerce5,
+      ecommerce6,
+    ],
     projectLink: "https://fady-magdy.github.io/ecommerce-Computer-Shop",
     projectCode: "https://github.com/Fady-Magdy/ecommerce-Computer-Shop",
     description:
       "Tech Used: React - Sass - Context API This is a full Ecommerce app which you can make a full shopping steps, Add items to Favourite list , Manage Your Orders and there is Dark/Light Mode and more to do",
   },
   {
-    id: 2,
     title: "Home Stuff Organizer (Incomplete)",
-    image: projectHomeStuffOrganizer,
+    images: [hso1, hso2, hso3, hso4, hso5, hso6],
     projectLink: "https://hso-fady-magdy.vercel.app",
     projectCode: "https://github.com/Fady-Magdy/home-stuff-organizer",
     description:
       "Full Stack (MERN), I made this project for my family, it will help you organize your home items and find your stuff easily by just typing it's name it will show you where is it, I'm still working on it and hope I make something useful",
   },
   {
-    id: 3,
     title: "Games",
-    image: projectGames,
+    images: [games1, games2, games3, games4, games5],
     projectLink: "https://fady-magdy.github.io/games",
     projectCode: "https://github.com/Fady-Magdy/games",
     description:
@@ -39,26 +61,23 @@ export const Projects = [
     withMentor: false,
   },
   {
-    id: 4,
     title: "Todo App",
-    image: projectTodoApp,
+    images: [todo1, todo2, todo3],
     projectLink: "https://fady-magdy.github.io/Todo-App-Redux",
     projectCode: "https://github.com/Fady-Magdy/Todo-App-Redux",
     description: "Tech Used: React - Redux ToolKit",
   },
   {
-    id: 5,
     title: "Phone Chatting",
-    image: projectPhoneChatting,
+    images: [phoneChat1, phoneChat2],
     projectLink: "https://fady-magdy.github.io/Phone-Chatting-v2",
     projectCode: "https://github.com/Fady-Magdy/Phone-Chatting-v2",
     description:
       "A Phone Chatting app i created using Vanilla JavaScript ( First Published )",
   },
   {
-    id: 6,
     title: "More Projects Soon!",
-    image: projectSoon,
+    images: [soon],
     description: "A new project is on the way, I'm trying to do my best",
     soon: true,
   },
@@ -107,6 +126,7 @@ export const fadyData = {
   name: "Fady Magdy",
   email: "fady.programmer@gmail.com",
   phone: "+20 106 753 0598",
+  jobTitle: "Jr Frontend Developer",
   location: "Asyut, Egypt (willing to relocate)",
   resumeViewUrl:
     "https://drive.google.com/file/d/1G3UMTtu6aut3updPAcNM1hR-DBZ7pCdW/view?usp=sharing",
@@ -130,3 +150,11 @@ export const fadyData = {
     },
   ],
 };
+
+export function spliceMyName() {
+  let newName = [];
+  for (let i = 0; i < fadyData.name.length; i++) {
+    newName.push(fadyData.name[i]);
+  }
+  return newName;
+}

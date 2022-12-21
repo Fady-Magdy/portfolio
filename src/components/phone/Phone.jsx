@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { appContext } from "../../contexts/AppContext";
 import { Projects } from "../../data/myData";
 import "./phone.scss";
 // Sound Effects
@@ -10,6 +11,7 @@ import Project from "../project/Project";
 // --------------------------------------------------------------
 export default function Phone(props) {
   // States
+  const { PlayAudio } = useContext(appContext);
   const [scaleDown, setScaleDown] = useState(true);
   const [entered, setEntered] = useState(false);
   const [time, setTime] = useState();
@@ -33,7 +35,7 @@ export default function Phone(props) {
   }, 1000);
   // when mouse enter Phone
   const hoverPhone = () => {
-    if (!entered) props.PlayAudio(hoverSound);
+    if (!entered) PlayAudio(hoverSound);
   };
   // when mouse leave note
   const leavePhone = () => {
@@ -41,7 +43,7 @@ export default function Phone(props) {
       setScaleDown(true);
       setEntered(false);
       setTimeout(() => {
-        props.PlayAudio(drop);
+        PlayAudio(drop);
       }, 220);
       // prevent other items to scale up
       props.setItemInUse(false);
@@ -51,7 +53,7 @@ export default function Phone(props) {
     if (!props.itemInUse) {
       // scale up Phone when clicked
       setScaleDown(false);
-      if (!entered) props.PlayAudio(tap);
+      if (!entered) PlayAudio(tap);
       setTimeout(() => {
         setEntered(true);
       }, 400);
@@ -92,8 +94,8 @@ export default function Phone(props) {
           </div>
           <div className="screen-content">
             <h1 className="projects-title">PROJECTS</h1>
-            {Projects.map((project) => {
-              return <Project key={project.id} project={project} />;
+            {Projects.map((project, index) => {
+              return <Project key={index} project={project} />;
             })}
           </div>
         </div>

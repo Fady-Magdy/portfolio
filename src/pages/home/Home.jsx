@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { appContext } from "../../context/AppContext";
+import { appContext } from "../../contexts/AppContext";
 import { Projects, Skills, fadyData } from "../../data/myData";
 import "./home.scss";
 // -------------------------------------------------------------------------
@@ -108,7 +108,7 @@ const Home = () => {
               }
             })}
           </div>
-          <h4 className="job-title">Junior Front End Developer</h4>
+          <h4 className="job-title">{fadyData.jobTitle}</h4>
         </div>
 
         <div className="skills">

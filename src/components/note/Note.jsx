@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { appContext } from "../../contexts/AppContext";
 import { fadyData } from "../../data/myData";
 import "./note.scss";
 // Sound Effects
@@ -8,13 +9,14 @@ import drop from "../../audio/drop.mp3";
 // -------------------------------------------------------
 const Note = (props) => {
   // States
+  const { PlayAudio } = useContext(appContext);
   const [scaleDown, setScaleDown] = useState(true);
   const [entered, setEntered] = useState(false);
   // -----------------------------------------------------
   // Functions
   // when mouse enter note
   const hoverNote = () => {
-    if (!entered) props.PlayAudio(hoverSound);
+    if (!entered) PlayAudio(hoverSound);
   };
   // when mouse leave note
   const leaveNote = () => {
@@ -22,7 +24,7 @@ const Note = (props) => {
       setScaleDown(true);
       setEntered(false);
       setTimeout(() => {
-        props.PlayAudio(drop);
+        PlayAudio(drop);
       }, 220);
       // prevent other items to scale up
       props.setItemInUse(false);
@@ -32,7 +34,7 @@ const Note = (props) => {
     if (!props.itemInUse) {
       // scale up Note when clicked
       setScaleDown(false);
-      if (!entered) props.PlayAudio(tap);
+      if (!entered) PlayAudio(tap);
       setTimeout(() => {
         setEntered(true);
       }, 400);

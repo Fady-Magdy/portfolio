@@ -1,0 +1,97 @@
+.monitor {
+  width: 40vw;
+  min-width: 300px;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .monitor-screen {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) perspective(400px) rotateX(-45deg);
+    width: 80%;
+    height: 55%;
+    transition: 0.4s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    background-color: #000;
+    h1 {
+      font-family: "lobster", sans-serif;
+      position: absolute;
+      width: 200px;
+      text-align: center;
+      left: -25%;
+      translate: -50%;
+      letter-spacing: -20px;
+      animation: screen-name-move 4s 3.5s;
+      @keyframes screen-name-move {
+        0% {
+          left: -25%;
+          letter-spacing: -20px;
+        }
+        30% {
+          left: 50%;
+          letter-spacing: 0;
+        }
+        70% {
+          left: 50%;
+          letter-spacing: 0;
+        }
+        100% {
+          left: 150%;
+          letter-spacing: -20px;
+        }
+      }
+    }
+    video {
+      width: 100%;
+      z-index: 2;
+      transform: rotateX(20deg);
+      animation: video-start 3s;
+    }
+    @keyframes video-start {
+      0% {
+        filter: brightness(0);
+      }
+      100% {
+        filter: brightness(1);
+      }
+    }
+    img {
+      width: 100%;
+      height: 98%;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 50%;
+    box-shadow: -50px 30px 80px 80px rgba(0, 0, 0, 0.644);
+  }
+  .monitorImage {
+    width: 100%;
+    clip-path: polygon(
+      2% 13%,
+      99% 13%,
+      84% 65%,
+      60% 65%,
+      61% 83%,
+      39% 83%,
+      40% 65%,
+      15% 65%
+    );
+    cursor: pointer;
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+}

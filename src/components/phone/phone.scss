@@ -124,16 +124,48 @@
         overflow-x: hidden;
         .project {
           .top {
+            position: relative;
             width: 100%;
-            height: 200px;
+            height: 180px;
             padding: 0;
             overflow: hidden;
+            background-color: #fff;
             border-bottom: 1px solid rgb(194, 194, 194);
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
             img {
               width: 100%;
               height: 100%;
               object-fit: cover;
-              transition: 0.7s;
+              transition: 0.4s;
+            }
+            .arrow {
+              position: absolute;
+              top: 50%;
+              left: -16px;
+              translate: -50% -50%;
+              width: 20px;
+              height: 100%;
+              background-color: #fff;
+              opacity: 0.7;
+              padding: 15px;
+              border: none;
+              font-size: 20px;
+              font-weight: 600;
+              color: rgba(0, 0, 0, 0.658);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.404);
+              cursor: pointer;
+              transition: 0.3s;
+              &.right {
+                left: 110%;
+              }
+              &:hover {
+                opacity: 1;
+              }
             }
           }
         }
@@ -167,10 +199,17 @@
   width: 450px;
   transform: translate(-50%, -50%);
   .project {
+    .top:hover {
+      .left {
+        left: 14px !important;
+      }
+      .right {
+        left: 96% !important;
+      }
+    }
     .top {
       img:hover {
-        transform: scale(1.05);
-        filter: brightness(0.8);
+        filter: brightness(0.7);
       }
     }
   }

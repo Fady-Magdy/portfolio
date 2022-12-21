@@ -1,0 +1,59 @@
+.my-name-out {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  font-family: lobster, sans-serif;
+  z-index: 5;
+  .my-name-letter {
+    font-size: 60px;
+    font-size: 5cqw;
+    transition: 0.5s;
+    transform: scale(0) translateY(-40px) rotate(-75deg);
+    letter-spacing: 2px;
+    opacity: 0;
+    transform-origin: left;
+    &:hover {
+      scale: 1.3;
+      cursor: default;
+    }
+    &.hidden {
+      visibility: hidden;
+      letter-spacing: 0;
+      cursor: default;
+    }
+  }
+}
+.job-title {
+  position: absolute;
+  font-size: 20px;
+  font-size: 1.5cqw;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 7;
+  cursor: default;
+  animation: job-title-show-table 4s 3s forwards;
+  @keyframes job-title-show-table {
+    0% {
+      translate: 0 -30px;
+      opacity: 0;
+    }
+    30% {
+      translate: 0 0;
+      opacity: 1;
+    }
+    80% {
+      translate: 0 0;
+      opacity: 1;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      display: none;
+    }
+  }
+}
