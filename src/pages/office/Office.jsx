@@ -12,7 +12,7 @@ function Office() {
   useEffect(() => {
     setTimeout(() => {
       firstVisit.current = false;
-    }, 8000);
+    }, 6000);
   }, []);
   // JSX --------------------------------------------------------------------
   return (

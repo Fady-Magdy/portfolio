@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setOpeningShow(false);
-    }, 2950);
+    }, 2000);
   }, [openingShow]);
   // JSX ----------------------------------------------------------------
   return (

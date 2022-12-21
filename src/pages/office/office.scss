@@ -7,6 +7,7 @@
     content: "";
     left: -450px;
     top: -450px;
+    z-index: 4;
     position: absolute;
     border-radius: 50%;
     box-shadow: 300px 300px 500px 400px rgba(255, 255, 255, 0.788);
@@ -18,7 +19,7 @@
     display: flex;
     justify-content: center;
     &.zoom {
-      animation: zoom 3.2s;
+      animation: zoom 2.5s;
     }
     .background {
       top: -220px;
@@ -29,6 +30,7 @@
       background-size: 35vw;
     }
   }
+
   @keyframes zoom {
     0% {
       transform: scale(0.6);

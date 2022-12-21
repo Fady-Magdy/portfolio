@@ -4,13 +4,14 @@ import { useContext } from "react";
 import { appContext } from "../../contexts/AppContext";
 import "./project.scss";
 // ----------------------------------------------------------------
-export default function Project({ project }) {
+export default function Project({ project, setScaleDown }) {
   const { setCurrentProjectImages, setShowProjectImages } =
     useContext(appContext);
   const [currentImage, setCurrentImage] = useState(0);
   const showImages = () => {
     setCurrentProjectImages(project.images);
     setShowProjectImages(true);
+    setScaleDown(true);
   };
   function nextImage() {
     if (currentImage >= project.images.length - 1) return;

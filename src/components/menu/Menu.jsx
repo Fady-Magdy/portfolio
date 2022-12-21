@@ -22,47 +22,54 @@ const Menu = ({ darkMode, setDarkMode }) => {
   // -------------------------------------------------------
   // JSX
   return (
-    <div className={`menu-button ${showMenu ? "show" : ""}`}>
-      <i onClick={() => showMainMenu()} className={`fa-solid fa-bars `}></i>
-      <div className="menu">
-        <h3 className={`${showMenu ? "show" : ""}`}>Menu</h3>
-        <ul>
-          <Link to="/" className="list-item">
-            <div className="icon-holder">
-              <i className="fa-solid fa-briefcase"></i>
-            </div>
-            Office
-          </Link>
-          <Link to="/home" className="list-item">
-            <div className="icon-holder">
-              <i className="fa-solid fa-home"></i>
-            </div>
-            Normal Page
-          </Link>
-          <li
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="list-item"
-          >
-            <div className="icon-holder">
-              <i className="fa-solid fa-moon"></i>
-            </div>
-            {darkMode ? "Light" : "Dark"} Mode
-          </li>
-          <a href={fadyData.resumeDownloadUrl} className="list-item" download>
-            <div className="icon-holder">
-              <i className="fa-solid fa-download"></i>
-            </div>
-            Download Resume
-          </a>
-          <a href={fadyData.resumeViewUrl} className="list-item" target="blank">
-            <div className="icon-holder">
-              <i className="fa-solid fa-eye"></i>
-            </div>
-            View Resume
-          </a>
-        </ul>
+    <>
+      {showMenu && <div onClick={showMainMenu} className="bg-dark"></div>}
+      <div className={`menu-button ${showMenu ? "show" : ""}`}>
+        <i onClick={() => showMainMenu()} className={`fa-solid fa-bars `}></i>
+        <div className="menu">
+          <h3 className={`${showMenu ? "show" : ""}`}>Menu</h3>
+          <ul>
+            <Link to="/" className="list-item">
+              <div className="icon-holder">
+                <i className="fa-solid fa-briefcase"></i>
+              </div>
+              Office
+            </Link>
+            <Link to="/home" className="list-item">
+              <div className="icon-holder">
+                <i className="fa-solid fa-home"></i>
+              </div>
+              Normal Page
+            </Link>
+            <li
+              onClick={() => setDarkMode((prev) => !prev)}
+              className="list-item"
+            >
+              <div className="icon-holder">
+                <i className="fa-solid fa-moon"></i>
+              </div>
+              {darkMode ? "Light" : "Dark"} Mode
+            </li>
+            <a href={fadyData.resumeDownloadUrl} className="list-item" download>
+              <div className="icon-holder">
+                <i className="fa-solid fa-download"></i>
+              </div>
+              Download Resume
+            </a>
+            <a
+              href={fadyData.resumeViewUrl}
+              className="list-item"
+              target="blank"
+            >
+              <div className="icon-holder">
+                <i className="fa-solid fa-eye"></i>
+              </div>
+              View Resume
+            </a>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

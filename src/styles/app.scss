@@ -1,17 +1,54 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   color: #fff;
   overflow: hidden;
   font-family: "Roboto", sans-serif;
+  &::-webkit-scrollbar-thumb {
+    background-color: $purple;
+    border: 1px solid rgba(255, 255, 255, 0.274);
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar {
+    background-color: rgb(43, 0, 92);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.473);
+  }
 }
+
 .app {
   overflow: hidden;
 }
+
+.bg-dark {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(0, 0, 0, 0.253);
+  z-index: 5;
+  animation: showBg 1s;
+  @keyframes showBg {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+// All Media Queries
 @media (orientation: landscape) {
   @keyframes light-change {
     0% {
@@ -97,7 +134,6 @@ body {
           }
         }
         .table {
-          animation: table-shadow-medium 3s infinite alternate;
           .monitor {
             margin-top: 40px;
             &::before {

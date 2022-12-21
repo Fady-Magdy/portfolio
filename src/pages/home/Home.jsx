@@ -108,7 +108,7 @@ const Home = () => {
               }
             })}
           </div>
-          <h4 className="job-title">{fadyData.jobTitle}</h4>
+          <h4 className="job-title-home">{fadyData.jobTitle}</h4>
         </div>
 
         <div className="skills">
@@ -128,11 +128,11 @@ const Home = () => {
       <section className="projects">
         <h1 className="title">Projects</h1>
         <div className="projects-container">
-          {Projects.map((project) => {
+          {Projects.map((project, index) => {
             return (
-              <div className="project" key={project.id}>
+              <div className="project" key={index}>
                 <div className="top-image">
-                  <img src={project.image} alt="" />
+                  <img src={project.images[0]} alt="Project" />
                 </div>
                 <div className="bottom">
                   <div className="text">
@@ -169,9 +169,9 @@ const Home = () => {
           {Projects.map((project, index) => {
             return (
               <div
-                onClick={(e) => setCurrentProject(index)}
+                onClick={() => setCurrentProject(index)}
                 className={`circle ${currentProject === index ? "active" : ""}`}
-                key={project.id}
+                key={index}
               ></div>
             );
           })}

@@ -1,23 +1,23 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
 .mouse-pad {
   width: 10vw;
   min-width: 70px;
   position: absolute;
   bottom: 7%;
   right: 17vw;
-
   img {
     width: 100%;
   }
   .mouse {
+    @include flexCenter;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 4vw;
     min-width: 30px;
     transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     &::before {
       content: "";
       position: absolute;

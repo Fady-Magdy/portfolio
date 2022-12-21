@@ -1,4 +1,4 @@
-import { useState ,useContext} from "react";
+import { useState, useContext } from "react";
 import { appContext } from "../../contexts/AppContext";
 import { Skills } from "../../data/myData";
 import "./book.scss";
@@ -7,7 +7,7 @@ import tap from "../../audio/tap.mp3";
 import hoverSound from "../../audio/hoversound.mp3";
 import drop from "../../audio/drop.mp3";
 // ------------------------------------------------------------
-export default function Book(props) {
+export default function Book() {
   // States
   const { PlayAudio } = useContext(appContext);
   const [scaleDown, setScaleDown] = useState(true);
@@ -26,47 +26,48 @@ export default function Book(props) {
       setTimeout(() => {
         PlayAudio(drop);
       }, 220);
-      // prevent other items to scale up
-      props.setItemInUse(false);
     }
   };
   const ScaleUpBook = () => {
-    if (!props.itemInUse) {
-      // scale up book when clicked
-      setScaleDown(false);
-      if (!entered) PlayAudio(tap);
-      setTimeout(() => {
-        setEntered(true);
-      }, 400);
-      // allow other items to scale up
-      props.setItemInUse(true);
-    }
+    // scale up book when clicked
+    setScaleDown(false);
+    if (!entered) PlayAudio(tap);
+    setTimeout(() => {
+      setEntered(true);
+    }, 400);
+    // allow other items to scale up
   };
   // ----------------------------------------------------------------
   // JSX
   return (
-    <div
-      onMouseEnter={hoverBook}
-      onMouseLeave={leaveBook}
-      onClick={ScaleUpBook}
-      className={`book ${scaleDown ? "scaleDown" : "noScaleDown"}`}
-    >
-      <div className="item-title">Skills</div>
-      <div className="book-inside">
-        <div className="background-darkening-items"></div>
-        <h1>Skills</h1>
-        <hr />
-        <div className="skills-list">
-          {Skills.map((skill, index) => {
-            return (
-              <span key={index}>
-                {skill.icon}
-                <p>{skill.name}</p>
-              </span>
-            );
-          })}
+    <>
+      {!scaleDown && (
+        <div onClick={leaveBook} className="bg-dark">
+          asdasad
+        </div>
+      )}
+      <div
+        onMouseEnter={hoverBook}
+        onClick={ScaleUpBook}
+        className={`book ${scaleDown ? "scaleDown" : "noScaleDown"}`}
+      >
+        <div className="item-title">Skills</div>
+        <div className="book-inside">
+          <div className="background-darkening-items"></div>
+          <h1>Skills</h1>
+          <hr />
+          <div className="skills-list">
+            {Skills.map((skill, index) => {
+              return (
+                <span key={index}>
+                  {skill.icon}
+                  <p>{skill.name}</p>
+                </span>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

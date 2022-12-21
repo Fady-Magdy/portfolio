@@ -9,14 +9,13 @@ import drop from "../../audio/drop.mp3";
 // Components
 import Project from "../project/Project";
 // --------------------------------------------------------------
-export default function Phone(props) {
+export default function Phone() {
   // States
   const { PlayAudio } = useContext(appContext);
   const [scaleDown, setScaleDown] = useState(true);
   const [entered, setEntered] = useState(false);
   const [time, setTime] = useState();
-  // --------------------------------------------------------------
-  // Functions
+  // Functions ----------------------------------------------------
   function getTime() {
     let time = new Date();
     let hours = time.getHours();
@@ -45,61 +44,66 @@ export default function Phone(props) {
       setTimeout(() => {
         PlayAudio(drop);
       }, 220);
-      // prevent other items to scale up
-      props.setItemInUse(false);
     }
   };
   const ScaleUpPhone = () => {
-    if (!props.itemInUse) {
-      // scale up Phone when clicked
-      setScaleDown(false);
-      if (!entered) PlayAudio(tap);
-      setTimeout(() => {
-        setEntered(true);
-      }, 400);
-      // allow other items to scale up
-      props.setItemInUse(true);
-    }
+    // scale up Phone when clicked
+    setScaleDown(false);
+    if (!entered) PlayAudio(tap);
+    setTimeout(() => {
+      setEntered(true);
+    }, 400);
   };
-  // ------------------------------------------------------------
-  // JSX
+  // JSX --------------------------------------------------------
   return (
-    <div
-      onMouseEnter={hoverPhone}
-      onMouseLeave={leavePhone}
-      onClick={ScaleUpPhone}
-      className={`phone ${scaleDown ? "scaleDown" : "noScaleDown"}`}
-    >
-      <div className="item-title">Projects</div>
-      <div className="phone-left-shine"></div>
-      <div className="phone-right-shine"></div>
-      <div className="phone-inside">
-        <div className="top-curve">
-          <div className="camera"></div>
-          <div className="microphone"></div>
+    <>
+      {!scaleDown && (
+        <div onClick={leavePhone} className="bg-dark">
+          asdasad
         </div>
-        <div className="background-darkening-items"></div>
-        <div className="screen">
-          <div className="top">
-            <div className="signal-icons">
-              <span className="material-symbols-outlined">
-                signal_cellular_alt
-              </span>
-              <span className="material-symbols-outlined">
-                signal_cellular_alt
-              </span>
-              <span className="material-symbols-outlined">wifi</span>
-            </div>
-            <p className="time">{time}</p>
+      )}
+      <div
+        onMouseEnter={hoverPhone}
+        onClick={ScaleUpPhone}
+        className={`phone ${scaleDown ? "scaleDown" : "noScaleDown"}`}
+      >
+        <div className="item-title">Projects</div>
+        <div className="phone-left-shine"></div>
+        <div className="phone-right-shine"></div>
+        <div className="phone-inside">
+          <div className="top-curve">
+            <div className="camera"></div>
+            <div className="microphone"></div>
           </div>
-          <div className="screen-content">
-            <h1 className="projects-title">PROJECTS</h1>
-            {Projects.map((project, index) => {
-              return <Project key={index} project={project} />;
-            })}
+          <div className="background-darkening-items"></div>
+          <div className="screen">
+            <div className="top">
+              <div className="signal-icons">
+                <span className="material-symbols-outlined">
+                  signal_cellular_alt
+                </span>
+                <span className="material-symbols-outlined">
+                  signal_cellular_alt
+                </span>
+                <span className="material-symbols-outlined">wifi</span>
+              </div>
+              <p className="time">{time}</p>
+            </div>
+            <div className="screen-content">
+              <h1 className="projects-title">PROJECTS</h1>
+              {Projects.map((project, index) => {
+                return (
+                  <Project
+                    key={index}
+                    project={project}
+                    setScaleDown={setScaleDown}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

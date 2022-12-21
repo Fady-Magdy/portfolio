@@ -85,20 +85,16 @@ export const Projects = [
 
 export const Skills = [
   {
-    name: "HTML",
-    icon: <i className="fa-brands fa-html5"></i>,
+    name: "React.js",
+    icon: <i className="fa-brands fa-react"></i>,
   },
   {
-    name: "CSS",
-    icon: <i className="fa-brands fa-css3-alt"></i>,
+    name: "Node.js",
+    icon: <i className="fa-brands fa-node-js"></i>,
   },
   {
     name: "JavaScript",
     icon: <i className="fa-brands fa-square-js"></i>,
-  },
-  {
-    name: "React.js",
-    icon: <i className="fa-brands fa-react"></i>,
   },
   {
     name: "Redux",
@@ -119,6 +115,10 @@ export const Skills = [
   {
     name: "GitHub",
     icon: <i className="fa-brands fa-github"></i>,
+  },
+  {
+    name: "HTML-CSS",
+    icon: <i className="fa-brands fa-css3-alt"></i>,
   },
 ];
 

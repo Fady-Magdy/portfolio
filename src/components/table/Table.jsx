@@ -24,7 +24,6 @@ export default function Table() {
   const { PlayAudio, PlayMusic, musicOn, animateMyName, firstVisit } =
     useContext(appContext);
   const videoRef = useRef();
-  const [itemInUse, setItemInUse] = useState(false);
   const [videoOn, setVideoOn] = useState(true);
   const [videoStart, setVideoStart] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -84,9 +83,9 @@ export default function Table() {
         videoOrWindows={videoOrWindows}
       />
       <Speakers PlayMusic={PlayMusic} musicOn={musicOn} />
-      <Phone itemInUse={itemInUse} setItemInUse={setItemInUse} />
-      <Book itemInUse={itemInUse} setItemInUse={setItemInUse} />
-      <Note itemInUse={itemInUse} setItemInUse={setItemInUse} />
+      <Phone />
+      <Book />
+      <Note />
       <MyNameShow />
     </div>
   );

@@ -1,3 +1,6 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
 .dark-background {
   position: absolute;
   top: 0;
@@ -17,7 +20,7 @@
   height: 90vh;
   border-radius: 10px;
   background-color: black;
-  color: #fff;
+  color: $white;
   transition: 0.4s;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.493);
   overflow: hidden;
@@ -43,7 +46,7 @@
     right: 0%;
     margin: 20px;
     padding: 5px 10px;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 600;
@@ -60,7 +63,7 @@
     translate: -50% -50%;
     width: 10%;
     height: 10%;
-    background-color: #fff;
+    background-color: $white;
     opacity: 0.8;
     padding: 15px;
     border: none;
@@ -68,9 +71,6 @@
     font-size: 20px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.658);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.604);
     cursor: pointer;
     transition: 0.3s;

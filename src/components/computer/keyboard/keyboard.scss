@@ -1,12 +1,11 @@
 .keyboard {
-  position: relative;
-  width: 20vw;
-  min-width: 150px;
-  height: 6vw;
-  min-height: 50px;
   position: absolute;
-  bottom: 10%;
   left: 30vw;
+  bottom: 10%;
+  width: 20vw;
+  height: 6vw;
+  min-width: 150px;
+  min-height: 50px;
   transform: translateX(-50%);
   z-index: 1;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
