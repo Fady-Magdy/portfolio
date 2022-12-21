@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.f83a5061.css",
-    "main.js": "/portfolio/static/js/main.215ff59f.js",
+    "main.css": "/portfolio/static/css/main.ad80500d.css",
+    "main.js": "/portfolio/static/js/main.9a54592f.js",
     "static/media/video3.mp4": "/portfolio/static/media/video3.f33c9aeb8339b8c7c044.mp4",
     "static/media/video2.mp4": "/portfolio/static/media/video2.d4550cf68cf62c33632e.mp4",
     "static/media/video.mp4": "/portfolio/static/media/video.3908d08bb34a3fd084a8.mp4",
     "static/media/music.mp3": "/portfolio/static/media/music.3b72ad636651834d29a3.mp3",
+    "static/media/1.png": "/portfolio/static/media/1.b344ec207869d6c283bf.png",
+    "static/media/6.jpg": "/portfolio/static/media/6.ba6d6c497dfebd9ddb30.jpg",
     "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.f81b6a2ce879d782b516.jpg",
-    "static/media/games.png": "/portfolio/static/media/games.b344ec207869d6c283bf.png",
-    "static/media/soon.jpg": "/portfolio/static/media/soon.1819176ce2d940b999cd.jpg",
+    "static/media/3.jpg": "/portfolio/static/media/3.c5787050b0d87b05a03e.jpg",
+    "static/media/4.jpg": "/portfolio/static/media/4.437db69f6d957a0b5c29.jpg",
+    "static/media/2.png": "/portfolio/static/media/2.f3c0815c0ec7b9fcff12.png",
+    "static/media/soon.jpg": "/portfolio/static/media/soon.94d2b49eda1aa3e622a8.jpg",
+    "static/media/2.jpg": "/portfolio/static/media/2.e72366f10b0224e4ba9e.jpg",
+    "static/media/1.jpg": "/portfolio/static/media/1.4b8b57ac2cc563977512.jpg",
     "static/media/chair.png": "/portfolio/static/media/chair.18ecc67b3755c48a61b7.png",
-    "static/media/home-stuff-organizer.jpg": "/portfolio/static/media/home-stuff-organizer.cf25074d8a4ef6348b77.jpg",
+    "static/media/5.jpg": "/portfolio/static/media/5.056b9f99bf0120517c7c.jpg",
     "static/media/table-texture.jpg": "/portfolio/static/media/table-texture.309fab70a6c9a3bde01f.jpg",
     "static/media/redux.png": "/portfolio/static/media/redux.9ee0e789999c55bc1faa.png",
     "static/media/floor.jpg": "/portfolio/static/media/floor.d8c59190055436ab1acc.jpg",
-    "static/media/phone-chatting.png": "/portfolio/static/media/phone-chatting.dd67d3274d7b18389adc.png",
-    "static/media/ecommerce-computer-shop.png": "/portfolio/static/media/ecommerce-computer-shop.7f1ad4514abf244c1fed.png",
-    "static/media/todo-app.png": "/portfolio/static/media/todo-app.28527bf222f4e10f08b5.png",
     "static/media/keyboard.png": "/portfolio/static/media/keyboard.08c1378a848abe7f7018.png",
     "static/media/speaker.png": "/portfolio/static/media/speaker.893550703a268d3e2e10.png",
     "static/media/windows.jpg": "/portfolio/static/media/windows.9d4db99f9613f13a340d.jpg",
@@ -34,11 +37,11 @@
     "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
-    "main.f83a5061.css.map": "/portfolio/static/css/main.f83a5061.css.map",
-    "main.215ff59f.js.map": "/portfolio/static/js/main.215ff59f.js.map"
+    "main.ad80500d.css.map": "/portfolio/static/css/main.ad80500d.css.map",
+    "main.9a54592f.js.map": "/portfolio/static/js/main.9a54592f.js.map"
   },
   "entrypoints": [
-    "static/css/main.f83a5061.css",
-    "static/js/main.215ff59f.js"
+    "static/css/main.ad80500d.css",
+    "static/js/main.9a54592f.js"
   ]
 }
