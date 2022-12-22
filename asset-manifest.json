@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.006c61a4.css",
-    "main.js": "/portfolio/static/js/main.f1942764.js",
-    "static/media/video3.mp4": "/portfolio/static/media/video3.f33c9aeb8339b8c7c044.mp4",
-    "static/media/video2.mp4": "/portfolio/static/media/video2.d4550cf68cf62c33632e.mp4",
-    "static/media/video.mp4": "/portfolio/static/media/video.3908d08bb34a3fd084a8.mp4",
+    "main.css": "/portfolio/static/css/main.388aed49.css",
+    "main.js": "/portfolio/static/js/main.50d28d48.js",
+    "static/media/video1.mp4": "/portfolio/static/media/video1.fabc88bcaa67be342368.mp4",
     "static/media/music.mp3": "/portfolio/static/media/music.3b72ad636651834d29a3.mp3",
+    "static/media/video3.mp4": "/portfolio/static/media/video3.e1f4173f18a53f7134d0.mp4",
+    "static/media/video2.mp4": "/portfolio/static/media/video2.d5977417859e729b67b7.mp4",
     "static/media/1.png": "/portfolio/static/media/1.b344ec207869d6c283bf.png",
     "static/media/6.jpg": "/portfolio/static/media/6.ba6d6c497dfebd9ddb30.jpg",
     "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.f81b6a2ce879d782b516.jpg",
@@ -36,11 +36,11 @@
     "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
-    "main.006c61a4.css.map": "/portfolio/static/css/main.006c61a4.css.map",
-    "main.f1942764.js.map": "/portfolio/static/js/main.f1942764.js.map"
+    "main.388aed49.css.map": "/portfolio/static/css/main.388aed49.css.map",
+    "main.50d28d48.js.map": "/portfolio/static/js/main.50d28d48.js.map"
   },
   "entrypoints": [
-    "static/css/main.006c61a4.css",
-    "static/js/main.f1942764.js"
+    "static/css/main.388aed49.css",
+    "static/js/main.50d28d48.js"
   ]
 }
