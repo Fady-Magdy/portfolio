@@ -48,7 +48,7 @@ export default function Phone() {
   };
   const ScaleUpPhone = () => {
     // scale up Phone when clicked
-    setScaleDown(false);
+    if (scaleDown) setScaleDown(false);
     if (!entered) PlayAudio(tap);
     setTimeout(() => {
       setEntered(true);

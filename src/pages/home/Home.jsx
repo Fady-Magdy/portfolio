@@ -25,7 +25,7 @@ const Home = () => {
   }
   function showSkills() {
     let skills = document.querySelectorAll(".skill");
-    let time = 4500;
+    let time = 3000;
     skills.forEach((skill) => {
       setTimeout(() => {
         skill.style.transform = "scale(1) translateX(0) rotateY(0)";
@@ -136,8 +136,8 @@ const Home = () => {
                 </div>
                 <div className="bottom">
                   <div className="text">
-                    <h1>{project.title}</h1>
-                    <p>{project.description}</p>
+                    <h1 className="title">{project.title}</h1>
+                    <p className="description">{project.description}</p>
                   </div>
                   {!project.soon && (
                     <div className="buttons">

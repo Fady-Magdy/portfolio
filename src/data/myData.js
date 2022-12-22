@@ -105,12 +105,12 @@ export const Skills = [
     icon: <img src={JestImg} alt="jest" />,
   },
   {
-    name: "Bootstrap",
-    icon: <i className="fa-brands fa-bootstrap"></i>,
-  },
-  {
     name: "Sass",
     icon: <i className="fa-brands fa-sass"></i>,
+  },
+  {
+    name: "Bootstrap",
+    icon: <i className="fa-brands fa-bootstrap"></i>,
   },
   {
     name: "GitHub",

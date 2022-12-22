@@ -24,7 +24,7 @@
   transition: 0.4s;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.493);
   overflow: hidden;
-  z-index: 4;
+  z-index: 6;
   animation: slide 0.7s;
   @keyframes slide {
     from {
@@ -61,8 +61,8 @@
     position: absolute;
     top: 90%;
     translate: -50% -50%;
-    width: 10%;
-    height: 10%;
+    width: 60px;
+    height: 60px;
     background-color: $white;
     opacity: 0.8;
     padding: 15px;
@@ -83,5 +83,12 @@
     &:hover {
       opacity: 1;
     }
+  }
+}
+@media (orientation: portrait) {
+  .project-image-view {
+    rotate: 90deg;
+    width: 70vh;
+    height: 80vw;
   }
 }

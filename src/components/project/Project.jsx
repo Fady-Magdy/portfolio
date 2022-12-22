@@ -9,9 +9,9 @@ export default function Project({ project, setScaleDown }) {
     useContext(appContext);
   const [currentImage, setCurrentImage] = useState(0);
   const showImages = () => {
+    setScaleDown(true);
     setCurrentProjectImages(project.images);
     setShowProjectImages(true);
-    setScaleDown(true);
   };
   function nextImage() {
     if (currentImage >= project.images.length - 1) return;

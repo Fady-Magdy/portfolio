@@ -21,20 +21,26 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.473);
   }
 }
-
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .app {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
 .bg-dark {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-color: rgba(0, 0, 0, 0.253);
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 400%;
+  height: 400%;
+  background-color: rgba(0, 0, 0, 0.329);
   z-index: 5;
-  animation: showBg 1s;
+  animation: showBg 0.7s;
   @keyframes showBg {
     0% {
       opacity: 0;
@@ -507,14 +513,10 @@ body {
         }
         .table {
           margin-right: 50px;
-          border-radius: 7px;
           width: 80vw;
           height: 40vw;
           top: 50%;
           transform: translate(10%, -70%) rotate(90deg);
-          .background-darkening-table {
-            border-radius: 7px;
-          }
           .monitor {
             .monitor-screen {
               height: 80%;

@@ -11,7 +11,7 @@ import Keyboard from "../computer/keyboard/Keyboard";
 import Mouse from "../computer/mouse/Mouse";
 import Speakers from "../computer/speakers/Speakers";
 //  Videos
-import video from "../../videos/video.mp4";
+import video1 from "../../videos/video1.mp4";
 import video2 from "../../videos/video2.mp4";
 import video3 from "../../videos/video3.mp4";
 //  Audio
@@ -28,7 +28,7 @@ export default function Table() {
   const [videoStart, setVideoStart] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [videoOrWindows, setVideoOrWindows] = useState(true); // to switch between video and windows image
-  const videoList = [video, video2, video3];
+  const videoList = [video1, video2, video3];
   // Functions ----------------------------------------------------------------
   function videoPlay() {
     if (videoStart && videoOrWindows) {
@@ -47,7 +47,7 @@ export default function Table() {
     if (firstVisit.current) {
       setTimeout(() => {
         setVideoStart(true);
-      }, 7000);
+      }, 5000);
     } else {
       setTimeout(() => {
         setVideoStart(true);
