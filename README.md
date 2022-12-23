@@ -7,7 +7,7 @@
 - this is a website that looks like an office
 - you can use items on table to see my Projects, Skills and Contact info
 - Included Dark/Light mode
-- visit: https://fady-magdy.github.io/portfolio
+- visit: https://portfolio-fady-magdy.vercel.app
 
 ---
 

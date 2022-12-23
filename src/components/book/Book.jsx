@@ -41,11 +41,7 @@ export default function Book() {
   // JSX
   return (
     <>
-      {!scaleDown && (
-        <div onClick={leaveBook} className="bg-dark">
-          asdasad
-        </div>
-      )}
+      {!scaleDown && <div onClick={leaveBook} className="bg-dark"></div>}
       <div
         onMouseEnter={hoverBook}
         onClick={ScaleUpBook}

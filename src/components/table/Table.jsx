@@ -17,6 +17,7 @@ import video3 from "../../videos/video3.mp4";
 //  Audio
 import tableKnock from "../../audio/table-knock.mp3";
 import MyNameShow from "../myNameShow/MyNameShow";
+import Paper from "../paper/Paper";
 
 // ---------------------------------------------------------------------------
 export default function Table() {
@@ -86,6 +87,7 @@ export default function Table() {
       <Phone />
       <Book />
       <Note />
+      <Paper />
       <MyNameShow />
     </div>
   );

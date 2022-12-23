@@ -1,0 +1,180 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.paper {
+  position: absolute;
+  transform: scale(0.15) rotate(-5deg);
+  width: 28vw;
+  aspect-ratio: 1/1.5;
+  background-color: #fff;
+  transition: 0.7s;
+  z-index: 1;
+  color: #000;
+  cursor: default;
+  .pen {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    rotate: -10deg;
+    z-index: 2;
+    transition: 0.4s;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .paper-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 30px;
+    .paper-content {
+      text-align: center;
+      .title {
+        margin: 10px;
+      }
+      .hint {
+        margin: 5px;
+        opacity: 0.7;
+      }
+      hr {
+        opacity: 0.5;
+      }
+      form {
+        text-align: start;
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          label {
+            font-weight: 500;
+            opacity: 0.8;
+            margin-bottom: 5px;
+            span {
+              color: red;
+            }
+          }
+          input,
+          textarea {
+            width: 100%;
+            height: 45px;
+            padding-left: 10px;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.37);
+            border-radius: 5px;
+            background-color: transparent;
+            margin-bottom: 10px;
+          }
+          textarea {
+            padding-top: 10px;
+            height: 130px;
+            resize: none;
+          }
+        }
+        .msg {
+          text-align: center;
+          color: rgb(199, 0, 0);
+          margin: 5px;
+          font-weight: 500;
+          visibility: hidden;
+          &.show {
+            visibility: visible;
+          }
+        }
+        .send-btn {
+          width: 100%;
+          padding: 15px;
+          border-radius: 5px;
+          font-weight: 600;
+          font-size: 17px;
+          color: #fff;
+          border: none;
+          background-color: $purple;
+          margin-top: 10px;
+          cursor: pointer;
+          &:hover {
+            filter: brightness(1.2);
+          }
+          &.block {
+            background-color: grey;
+            cursor: not-allowed;
+            &:hover {
+              filter: brightness(1);
+            }
+          }
+        }
+      }
+    }
+  }
+  &.scaleDown {
+    top: -5%;
+    left: 50%;
+    &:hover {
+      .pen {
+        translate: 80px 0;
+        scale: 1.1;
+        animation: floatPenHover 1s alternate infinite;
+        @keyframes floatPenHover {
+          0% {
+            rotate: 0;
+          }
+          100% {
+            rotate: -5deg 0;
+          }
+        }
+      }
+    }
+    .paper-inside {
+      font-size: 1.1vw;
+      .paper-item {
+        h1 {
+          font-size: 2vw;
+        }
+        p {
+          font-size: 1vw;
+        }
+      }
+      .buttons {
+        .resume-button {
+          font-size: 0.5vw;
+        }
+      }
+      .paper-links {
+        a {
+          margin: 1.5vw;
+          i {
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  }
+  &.noScaleDown {
+    margin-top: 20px;
+    top: 40vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    .pen {
+      left: 120%;
+      rotate: -5deg;
+      animation: floatPen 4s infinite alternate ease-in-out;
+      @keyframes floatPen {
+        0% {
+          translate: 0;
+        }
+        50% {
+          translate: 0 20px;
+          rotate: -10deg;
+        }
+        100% {
+          translate: 0;
+        }
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@ const App = () => {
   }, [openingShow]);
   // JSX ----------------------------------------------------------------
   return (
-    <BrowserRouter basename="/portfolio">
+    <BrowserRouter basename="/">
       <div className={`app ${darkMode ? "dark" : ""}`}>
         <Routes>
           <Route path="/" element={<Office />} />

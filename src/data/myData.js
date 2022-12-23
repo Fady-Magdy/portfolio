@@ -41,7 +41,7 @@ export const Projects = [
     projectLink: "https://fady-magdy.github.io/ecommerce-Computer-Shop",
     projectCode: "https://github.com/Fady-Magdy/ecommerce-Computer-Shop",
     description:
-      "Tech Used: React - Sass - Context API This is a full Ecommerce app which you can make a full shopping steps, Add items to Favourite list , Manage Your Orders and there is Dark/Light Mode and more to do",
+      "Tech used: React - Sass - Context API This is a full Ecommerce app which you can make a full shopping steps, Add items to Favourite list , Manage Your Orders and there is Dark/Light Mode and more to do",
   },
   {
     title: "Home Stuff Organizer (Incomplete)",

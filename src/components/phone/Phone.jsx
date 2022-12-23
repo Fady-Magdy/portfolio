@@ -57,11 +57,7 @@ export default function Phone() {
   // JSX --------------------------------------------------------
   return (
     <>
-      {!scaleDown && (
-        <div onClick={leavePhone} className="bg-dark">
-          asdasad
-        </div>
-      )}
+      {!scaleDown && <div onClick={leavePhone} className="bg-dark"></div>}
       <div
         onMouseEnter={hoverPhone}
         onClick={ScaleUpPhone}

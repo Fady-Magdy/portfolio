@@ -43,11 +43,7 @@ const Note = () => {
   // JSX
   return (
     <>
-      {!scaleDown && (
-        <div onClick={leaveNote} className="bg-dark">
-          asdasad
-        </div>
-      )}
+      {!scaleDown && <div onClick={leaveNote} className="bg-dark"></div>}
       <div
         onMouseEnter={hoverNote}
         onClick={ScaleUpNote}

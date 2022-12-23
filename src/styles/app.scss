@@ -177,7 +177,8 @@ body {
           }
           .phone,
           .note,
-          .book {
+          .book,
+          .peper {
             &.scaleDown {
               .phone-inside {
                 .top-curve {
@@ -423,7 +424,8 @@ body {
           }
           .phone,
           .note,
-          .book {
+          .book,
+          .paper {
             .item-title {
               font-size: 60px;
             }
@@ -443,9 +445,13 @@ body {
               transform: scale(0.6) translate(-80%, -80%) rotate(-90deg) !important;
             }
           }
-          .book {
+          .book,
+          .paper {
             &.noScaleDown {
               transform: scale(0.6) translate(-80%, -82%) rotate(-90deg) !important;
+              .pen {
+                left: 90%;
+              }
             }
           }
         }
@@ -529,7 +535,8 @@ body {
           }
           .phone,
           .note,
-          .book {
+          .book,
+          .paper {
             &:hover {
               box-shadow: 100px 100px 30px rgba(0, 0, 0, 0.3);
             }
@@ -544,7 +551,8 @@ body {
             }
           }
           .note,
-          .book {
+          .book,
+          .paper {
             &.noScaleDown {
               top: 50%;
               transform: scale(0.8) translate(-55%, -60%) rotate(-90deg);
