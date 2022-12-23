@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.533f1623.css",
-    "main.js": "/portfolio/static/js/main.3c8ac4ec.js",
+    "main.css": "/portfolio/static/css/main.97cd9cf0.css",
+    "main.js": "/portfolio/static/js/main.0582ac19.js",
     "static/media/video1.mp4": "/portfolio/static/media/video1.fabc88bcaa67be342368.mp4",
     "static/media/music.mp3": "/portfolio/static/media/music.3b72ad636651834d29a3.mp3",
     "static/media/video3.mp4": "/portfolio/static/media/video3.e1f4173f18a53f7134d0.mp4",
     "static/media/video2.mp4": "/portfolio/static/media/video2.d5977417859e729b67b7.mp4",
     "static/media/1.png": "/portfolio/static/media/1.b344ec207869d6c283bf.png",
-    "static/media/pen.png": "/portfolio/static/media/pen.6c32d02c7440d5c5abaa.png",
+    "static/media/pen.png": "/portfolio/static/media/pen.b3570f505b203b7f4b29.png",
     "static/media/6.jpg": "/portfolio/static/media/6.ba6d6c497dfebd9ddb30.jpg",
     "static/media/phone-wallpaper.jpg": "/portfolio/static/media/phone-wallpaper.f81b6a2ce879d782b516.jpg",
     "static/media/3.jpg": "/portfolio/static/media/3.c5787050b0d87b05a03e.jpg",
@@ -22,10 +22,10 @@
     "static/media/redux.png": "/portfolio/static/media/redux.9ee0e789999c55bc1faa.png",
     "static/media/floor.jpg": "/portfolio/static/media/floor.d8c59190055436ab1acc.jpg",
     "static/media/keyboard.png": "/portfolio/static/media/keyboard.08c1378a848abe7f7018.png",
-    "static/media/speaker.png": "/portfolio/static/media/speaker.893550703a268d3e2e10.png",
+    "static/media/speaker.png": "/portfolio/static/media/speaker.0819bbe2743f88a32a9d.png",
     "static/media/windows.jpg": "/portfolio/static/media/windows.9d4db99f9613f13a340d.jpg",
+    "static/media/monitor.png": "/portfolio/static/media/monitor.dc60a6dc4c7470a0e911.png",
     "static/media/jest.png": "/portfolio/static/media/jest.c0b661b27c8ba56c6593.png",
-    "static/media/monitor.png": "/portfolio/static/media/monitor.72a0a77b71746bcfd22a.png",
     "static/media/chair-move.mp3": "/portfolio/static/media/chair-move.289b8beac7ce0e1777b9.mp3",
     "static/media/mouse.png": "/portfolio/static/media/mouse.68274d48cfda92a338b9.png",
     "static/media/chair-back.mp3": "/portfolio/static/media/chair-back.c4e9e2126b99c831f49d.mp3",
@@ -37,11 +37,11 @@
     "static/media/table-knock.mp3": "/portfolio/static/media/table-knock.c9f35a6be73ae03ccf51.mp3",
     "static/media/hoversound.mp3": "/portfolio/static/media/hoversound.73c01f1be019d657f4d6.mp3",
     "index.html": "/portfolio/index.html",
-    "main.533f1623.css.map": "/portfolio/static/css/main.533f1623.css.map",
-    "main.3c8ac4ec.js.map": "/portfolio/static/js/main.3c8ac4ec.js.map"
+    "main.97cd9cf0.css.map": "/portfolio/static/css/main.97cd9cf0.css.map",
+    "main.0582ac19.js.map": "/portfolio/static/js/main.0582ac19.js.map"
   },
   "entrypoints": [
-    "static/css/main.533f1623.css",
-    "static/js/main.3c8ac4ec.js"
+    "static/css/main.97cd9cf0.css",
+    "static/js/main.0582ac19.js"
   ]
 }
